@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# shellcheck disable=SC2034
+description="Utility for determining the type of a given file or files"
+homepage="https://www.darwinsys.com/file/"
+maintainer="Vylen Linux Team"
+
+# shellcheck disable=SC2209
+name=file
+version=5.48
+release=1
+source="ftp://ftp.astron.com/pub/${name}/${name}-${version}.tar.gz"
+
+build() {
+    # shellcheck disable=SC2164
+    cd "${name}-${version}"
+
+    ./configure \
+        --prefix=/usr \
+        --enable-fsect-man5 \
+        --enable-static \
+        --disable-libseccomp \
+        --disable-zstdlib
+
+    make
+    make DESTDIR="${PKG}" install
+}
