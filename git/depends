@@ -1,0 +1,4 @@
+meson
+curl
+openssl
+perl
