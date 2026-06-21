@@ -1,0 +1,29 @@
+#!/usr/bin/env sh
+
+# shellcheck disable=SC2034
+description="High productivity build system"
+homepage="https://mesonbuild.com/"
+maintainer="Vylen Linux Team"
+
+name=meson
+version=1.11.1
+release=1
+
+source="https://github.com/mesonbuild/${name}/releases/download/${version}/${name}-${version}.tar.gz
+    vylen-meson
+    0001-Skip-broken-tests.patch
+    0002-Update-tests-to-work-with-CUDA-13.patch"
+
+build() {
+    # shellcheck disable=SC2164
+    cd "${name}-${version}"
+
+    patch -Np1 -i "${SRC}/0001-Skip-broken-tests.patch"
+    patch -Np1 -i "${SRC}/0002-Update-tests-to-work-with-CUDA-13.patch"
+
+    python3 setup.py build
+    python3 setup.py install --root="${PKG}"
+
+    # meson build wrapper
+    install -Dm755 "${SRC}/vylen-meson" -t "${PKG}/usr/bin/"
+}
