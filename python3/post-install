@@ -1,0 +1,16 @@
+#!/bin/sh
+
+PYTHON_VERSION="$(awk -F'[=.]' '/^version=/{print $2"."$3}' build.eme)"
+
+# Rebuild with a mayor version upgrade
+if [ "${PYTHON_VERSION}" != "3.14" ]; then
+    PYTHON_REBUILD="$(emerald installed | awk '/^python3-/ {print $1}')
+        meson
+        libxml2
+        libxslt
+        gobject-introspection"
+
+    for p in $PYTHON_REBUILD; do
+        emerald is-installed "${p}" && emerald install -fr "${p}"
+    done
+fi
