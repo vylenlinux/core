@@ -1,0 +1,33 @@
+#!/usr/bin/env sh
+
+# shellcheck disable=SC2034
+description="Programs for processing and formatting text"
+homepage="https://www.gnu.org/software/groff/groff.html"
+maintainer="Vylen Linux Team"
+
+name=groff
+version=1.24.1
+release=1
+source="https://ftp.gnu.org/gnu/${name}/${name}-${version}.tar.gz"
+
+build() {
+    # shellcheck disable=SC2164
+    cd "${name}-${version}"
+
+    PAGE=A4 ./configure \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --without-x \
+        --disable-rpath
+
+    emerald is-installed ghostscript || sed -i '/typesetting.pdf/d' Makefile
+
+    make
+    make DESTDIR="${PKG}" install
+
+    ln -s eqn "${PKG}/usr/bin/geqn"
+    ln -s tbl "${PKG}/usr/bin/gtbl"
+    ln -s soelim "${PKG}/usr/bin/zsoelim"
+
+    rm -rf "${PKG}/usr/share/info"
+}
