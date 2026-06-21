@@ -1,0 +1,57 @@
+#!/usr/bn/env sh
+
+# shellcheck disable=SC2034
+description="The GNU Bourne Again shell"
+homepage="https://www.gnu.org/software/bash/bash.html"
+maintainer="Vylen Linux Team"
+
+name=bash
+version=5.3.15
+release=1
+
+source="https://ftp.gnu.org/gnu/${name}/${name}-${version%.*}.tar.gz
+    bashrc
+    profile"
+
+patch_name="$(printf '%s' "$version" | awk -F. '{print "bash"$1$2"-"}')"
+patchver="${version##*.}"
+
+# Download bash patches
+if [ "${patchver}" -gt 0 ] 2>/dev/null; then
+    _p=1
+
+    while [ "${_p}" -le "${patchver}" ]; do
+        source="${source} https://ftp.gnu.org/gnu/${name}/${name}-${version%.*}-patches/${patch_name}$(printf "%03d" "$_p")"
+        _p=$((_p + 1))
+    done
+fi
+
+backup="etc/profile
+    etc/bashrc"
+
+build() {
+    # shellcheck disable=SC2164
+    cd "${name}-${version%.*}"
+
+    # Apply bash patches
+    if [ "${patchver}" -gt 0 ] 2>/dev/null; then
+        for p in "${SRC}/${patch_name}"*; do
+            patch -Np0 -i "${p}"
+        done
+    fi
+
+    ./configure \
+        --prefix=/usr \
+        --with-curses \
+        --enable-readline \
+        --without-bash-malloc \
+        --with-installed-readline
+
+    make
+    make DESTDIR="${PKG}" install
+
+    mkdir -p "${PKG}/bin"
+    mv "${PKG}/usr/bin/bash" "${PKG}/bin"
+
+    install -Dm644 "${SRC}/bashrc" "${SRC}/profile" -t "${PKG}/etc/"
+}
