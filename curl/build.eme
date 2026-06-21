@@ -1,0 +1,37 @@
+#!/usr/bin/env sh
+
+# shellcheck disable=SC2034
+description="Utility and a library used for transferring files"
+homepage="https://curl.se/"
+maintainer="Vylen Linux Team"
+
+name=curl
+version=8.20.0
+release=1
+source="https://curl.haxx.se/download/${name}-${version}.tar.xz"
+
+build() {
+    # shellcheck disable=SC2164
+    cd "${name}-${version}"
+    autoreconf
+
+    ./configure \
+        --prefix=/usr \
+        --disable-static \
+        --disable-ldap \
+        --disable-ldaps \
+        --enable-ipv6 \
+        --enable-threaded-resolver \
+        --with-ca-bundle=/etc/ssl/cert.pem \
+        --with-ca-path=/etc/ssl/certs \
+        --with-nghttp2 \
+        --with-openssl \
+        --without-brotli \
+        --without-libidn2 \
+        --without-libpsl \
+        --without-librtmp \
+        --without-zstd
+
+    make
+    make DESTDIR="${PKG}" install
+}
