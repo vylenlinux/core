@@ -1,0 +1,20 @@
+description="Miscellaneous procfs tools"
+homepage="https://gitlab.com/psmisc/psmisc"
+maintainer="Vylen Linux Team"
+
+name=psmisc
+version=23.7
+release=1
+source="https://sourceforge.net/projects/psmisc/files/psmisc/psmisc-$version.tar.xz"
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr --disable-nls
+	make
+	make DESTDIR=$PKG install
+
+	mkdir -p $PKG/bin
+	mv -v $PKG/usr/bin/fuser   $PKG/bin
+	mv -v $PKG/usr/bin/killall $PKG/bin
+}
