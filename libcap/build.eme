@@ -1,0 +1,30 @@
+#!/usr/bin/env sh
+
+# shellcheck disable=SC2034
+description="Implements the user-space interfaces to the POSIX 1003.1e capabilities available in Linux kernels"
+homepage="https://sites.google.com/site/fullycapable/"
+maintainer="Vylen Linux Team"
+
+name=libcap
+version=2.78
+release=1
+source="https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/${name}-${version}.tar.xz"
+
+build() {
+    # shellcheck disable=SC2164
+    cd "${name}-${version}"
+
+    # use our buildflags
+    sed -i "s/CFLAGS :=/CFLAGS += \$(CPPFLAGS) /" Make.Rules
+    sed -i "s/LDFLAGS :=/LDFLAGS +=/" Make.Rules
+
+    # Disable tests, as they cause cross-build failure
+    sed -e '/test:/,/.sh/d' -e '/tests/d' -i Makefile
+
+    make GOLANG=no RAISE_SETFCAP=no lib=lib prefix=/usr DESTDIR="${PKG}" install
+    chmod -v 755 "${PKG}/usr/lib/libcap.so"
+
+    mkdir -p "${PKG}/lib"
+    mv -v "${PKG}/usr/lib"/libcap.so.* "${PKG}/lib"
+    ln -sfv "../../lib/$(readlink "${PKG}/usr/lib/libcap.so")" "${PKG}/usr/lib/libcap.so"
+}
