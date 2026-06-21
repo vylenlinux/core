@@ -1,0 +1,32 @@
+#!/usr/bin/env sh
+
+# shellcheck disable=SC2034
+description="Reading/writing various compression formats"
+homepage="https://libarchive.org/"
+maintainer="Vylen Linux Team"
+
+name=libarchive
+version=3.8.7
+release=1
+source="https://github.com/${name}/${name}/releases/download/v${version}/${name}-${version}.tar.xz"
+
+build() {
+    # shellcheck disable=SC2164
+    cd "${name}-${version}"
+    autoreconf -fvi
+
+	./configure \
+        --prefix=/usr \
+        --disable-bsdcat \
+        --without-lz4 \
+        --without-zstd \
+        --without-nettle \
+        --without-xml2 \
+        --disable-static
+
+    make
+    make DESTDIR="${PKG}" install
+
+    # Remove iconv from pc file
+    sed -i "s/iconv//" "${PKG}/usr/lib/pkgconfig/libarchive.pc"
+}
