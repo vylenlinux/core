@@ -1,0 +1,7 @@
+NAME="Vylen Linux"
+PRETTY_NAME="Vylen GNU/Linux"
+VERSION="rolling"
+ID="vylen"
+VERSION_ID="rolling"
+HOME_URL="https://vylen.gitlab.io/"
+LOGO=vylenlinux-logo
