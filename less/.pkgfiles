@@ -1,0 +1,9 @@
+less-704-1
+drwxr-xr-x root/root    usr/
+drwxr-xr-x root/root    usr/bin/
+-rwxr-xr-x root/root    usr/bin/less
+-rwxr-xr-x root/root    usr/bin/lesskey
+drwxr-xr-x root/root    usr/lib/
+-rwxr-xr-x root/root    usr/lib/less-osc8-open
+-rwxr-xr-x root/root    usr/lib/lessecho
+drwxr-xr-x root/root    usr/share/
