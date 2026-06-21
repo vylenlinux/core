@@ -1,0 +1,34 @@
+description="utilities for handling the ext2, ext3 and ext4 file system"
+homepage="http://e2fsprogs.sourceforge.net/"
+maintainer="Vylen Linux Team"
+
+name=e2fsprogs
+version=1.47.4
+release=1
+source="https://mirrors.edge.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v$version/e2fsprogs-$version.tar.xz"
+
+build() {
+	cd $name-$version
+
+	./configure \
+		--prefix=/usr \
+		--bindir=/bin \
+		--with-root-prefix='' \
+		--libdir=/usr/lib \
+		--libexecdir=/usr/lib \
+		--enable-elf-shlibs \
+		--disable-e2initrd-helper \
+		--disable-nls \
+		--disable-fsck \
+		--disable-libblkid \
+		--disable-libuuid \
+		--disable-uuidd \
+		--disable-fuse2fs
+	make
+	make DESTDIR=$PKG install 
+	make DESTDIR=$PKG install-libs
+
+	for i in libcom_err libe2p libext2fs libss; do
+		chmod -v u+w $PKG/usr/lib/${i}.a
+	done
+}
