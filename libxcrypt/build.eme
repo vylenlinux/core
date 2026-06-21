@@ -1,0 +1,24 @@
+description="Modern library for one-way hashing of passwords "
+homepage="https://github.com/besser82/libxcrypt/"
+maintainer="Vylen Linux Team"
+
+name=libxcrypt
+version=4.5.2
+release=1
+source="https://github.com/besser82/${name}/archive/v${version}/${name}-${version}.tar.gz
+	174c24d6e87aeae631bc0a7bb1ba983cf8def4de.patch"
+
+build() {
+	cd ${name}-${version}
+
+	patch -Np1 -i $SRC/174c24d6e87aeae631bc0a7bb1ba983cf8def4de.patch
+
+	NOCONFIGURE=1 ./autogen.sh
+	./configure --prefix=/usr \
+		--disable-static \
+		--enable-hashes=strong,glibc \
+		--enable-obsolete-api=no \
+		--disable-failure-tokens
+	make
+	make DESTDIR="$PKG" install
+}
