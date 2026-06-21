@@ -1,0 +1,18 @@
+description="Program for compiling packages"
+homepage="https://www.gnu.org/software/make"
+maintainer="Vylen Linux Team"
+
+name=make
+version=4.4.1
+release=1
+source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.gz"
+
+build() {
+	cd $name-$version
+	./configure \
+		--prefix=/usr \
+		--disable-nls \
+		--without-guile
+	make
+	make DESTDIR=$PKG install
+}
