@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# shellcheck disable=SC2034
+description="A utility to show the full path of commands"
+homepage="https://savannah.gnu.org/projects/which/"
+maintainer="Vylen Linux Team"
+
+name=which
+version=2.25
+release=1
+source="https://ftp.gnu.org/gnu/${name}/${name}-${version}.tar.gz"
+
+build() {
+    # shellcheck disable=SC2164
+    cd "${name}-${version}"
+    ./configure --prefix=/usr
+
+    make
+    make DESTDIR="${PKG}" install
+}
