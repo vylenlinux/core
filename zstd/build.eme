@@ -1,0 +1,15 @@
+description="Zstandard - Fast real-time compression algorithm"
+homepage="https://facebook.github.io/zstd/"
+maintainer="Vylen Linux Team"
+
+name=zstd
+version=1.5.7
+release=1
+source="https://github.com/facebook/zstd/releases/download/v$version/$name-$version.tar.gz"
+
+build() {
+	cd $name-$version
+
+	make
+	make PREFIX=/usr DESTDIR=$PKG install
+}
