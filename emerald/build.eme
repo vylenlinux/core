@@ -1,0 +1,23 @@
+#!/usr/bin/env sh
+
+# shellcheck disable=SC2034
+description="Vylen Linux Package Manager"
+homepage="https://gitlab.com/vylen/emerald"
+maintainer="Vylen Linux Team"
+
+name=emerald
+version=20260617
+release=1
+source="https://gitlab.com/vylen/${name}/-/archive/${version}/${name}-${version}.tar.gz"
+
+backup="etc/${name}.conf
+    etc/${name}.alias
+    etc/${name}.repo
+    etc/${name}.mask
+    etc/revdep.conf"
+
+build() {
+    vylen-meson "${name}-${version}" build
+    meson compile -C build
+    DESTDIR="${PKG}" meson install --no-rebuild -C build
+}
