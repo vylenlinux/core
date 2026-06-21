@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# shellcheck disable=SC2034
+description="Portable foreign function interface library"
+homepage="https://sourceware.org/libffi/"
+maintainer="Vylen Linux Team"
+
+name=libffi
+version=3.6.0
+release=1
+source="https://github.com/${name}/${name}/releases/download/v${version}/${name}-${version}.tar.gz"
+
+build() {
+    # shellcheck disable=SC2164
+    cd "${name}-${version}"
+
+    ./configure \
+        --prefix=/usr \
+        --disable-static \
+        --disable-multi-os-directory \
+        --disable-exec-static-tramp \
+        --enable-pax_emutramp
+
+    make
+    make DESTDIR="${PKG}" install
+}
