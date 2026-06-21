@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# shellcheck disable=SC2034
+description="Easily download, build, install, upgrade, and uninstall Python packages"
+homepage="https://pypi.org/project/setuptools/"
+maintainer="Vylen Linux Team"
+
+name=python3-setuptools
+version=82.0.1
+release=1
+source="${name}-${version}.tar.gz::https://files.pythonhosted.org/packages/source/s/${name#*-}/${name#*-}-${version}.tar.gz"
+
+build() {
+    # shellcheck disable=SC2164
+    cd "setuptools-${version}"
+
+    export SETUPTOOLS_INSTALL_WINDOWS_SPECIFIC_FILES=0
+    export PYTHONDONTWRITEBYTECODE=1
+
+    python3 setup.py build
+
+    python3 setup.py install \
+        --prefix=/usr \
+        --root="${PKG}" \
+        --optimize=1 \
+        --skip-build
+}
