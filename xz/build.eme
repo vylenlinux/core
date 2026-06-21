@@ -1,0 +1,33 @@
+#!/usr/bin/env sh
+
+# shellcheck disable=SC2034
+description="Library and command line tools for XZ and LZMA compressed files"
+homepage="https://xz.tukaani.org/xz-utils/"
+maintainer="Vylen Linux Team"
+
+name=xz
+version=5.8.3
+release=1
+source="https://github.com/tukaani-project/${name}/archive/refs/tags/v${version}/${name}-${version}.tar.gz"
+
+build() {
+    # shellcheck disable=SC2164
+    cd "${name}-${version}"
+    autoreconf -fi
+
+    ./configure --prefix=/usr \
+        --disable-static \
+        --disable-nls
+
+    make
+    make DESTDIR="${PKG}" install
+
+    mkdir -pv "${PKG}/bin" "${PKG}/lib"
+
+    for i in lzma unlzma lzcat xz unxz xzcat; do
+        mv -v "${PKG}/usr/bin/${i}" "${PKG}/bin"
+    done
+
+    mv -v "${PKG}/usr/lib"/liblzma.so.* "${PKG}/lib"
+    ln -svf "../../lib/$(readlink "${PKG}/usr/lib/liblzma.so")" "${PKG}/usr/lib/liblzma.so"
+}
