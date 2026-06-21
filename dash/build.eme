@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+# shellcheck disable=SC2034
+description="POSIX compliant shell"
+homepage="http://gondor.apana.org.au/~herbert/dash/"
+maintainer="Vylen Linux Team"
+
+name=dash
+version=0.5.13.4
+release=1
+source="http://gondor.apana.org.au/~herbert/${name}/files/${name}-${version}.tar.gz"
+
+build() {
+    # shellcheck disable=SC2164
+    cd "${name}-${version}"
+
+    ./configure \
+        --prefix=/usr \
+        --bindir=/bin \
+        --mandir=/usr/share/man
+
+    make
+    make DESTDIR="${PKG}" install
+
+    ln -s dash "${PKG}/bin/sh"
+}
