@@ -1,0 +1,33 @@
+description="Utilities for internationalization and localization"
+homepage="https://www.gnu.org/software/gettext/"
+maintainer="Vylen Linux Team"
+
+name=gettext
+version=1.0
+release=1
+source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz"
+
+build() {
+	cd $name-$version
+
+	./configure \
+		--prefix=/usr \
+		--libexecdir=/usr/lib \
+		--disable-static \
+		--disable-nls \
+		--disable-java \
+		--disable-csharp \
+		--enable-shared \
+		--with-included-glib \
+		--with-included-libcroco \
+		--with-included-libunistring \
+		--without-cvs \
+		--without-git \
+		--without-emacs \
+		--without-included-gettext \
+		--without-included-libxml 
+	make
+	make DESTDIR=$PKG install
+
+}
+
