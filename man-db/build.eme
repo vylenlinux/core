@@ -1,0 +1,24 @@
+description="Tools for reading manual pages"
+homepage="https://gitlab.com/man-db/man-db"
+maintainer="Vylen Linux Team"
+
+name=man-db
+version=2.13.1
+release=1
+source="https://download-mirror.savannah.gnu.org/releases/man-db/$name-$version.tar.xz"
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr \
+	            --sysconfdir=/etc \
+		    --libexecdir=/usr/lib \
+	            --disable-setuid \
+	            --disable-cache-owner \
+	            --with-systemdtmpfilesdir=no \
+		    --with-systemdsystemunitdir=no
+	make
+	make DESTDIR=$PKG install
+
+	install -d $PKG/var/cache/man
+}
