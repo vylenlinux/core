@@ -1,0 +1,71 @@
+#!/usr/bin/env sh
+
+# shellcheck disable=SC2034
+description="GNU C Library"
+homepage="https://www.gnu.org/software/libc"
+maintainer="Vylen Linux Team"
+
+name=glibc
+version=2.43
+release=1
+
+source="https://ftp.gnu.org/gnu/${name}/${name}-${version}.tar.xz
+    genlocales
+    nsswitch.conf"
+
+backup="etc/locales"
+
+nostrip="lib.*/ld-.*\.so$
+    lib.*/libc-.*\.so$
+    lib.*/libpthread-.*\.so$
+    lib.*/libthread_db-.*\.so$"
+
+build() {
+    # shellcheck disable=SC2164
+    cd "${name}-${version}"
+
+    mkdir build
+    # shellcheck disable=SC2164
+    cd build
+
+    # shellcheck disable=SC2086
+    ../configure \
+        --libexecdir=/usr/lib \
+        libc_cv_slibdir=/lib \
+        --enable-sframe \
+        --prefix=/usr \
+        --with-headers=/usr/include \
+        --disable-nscd \
+        --disable-profile \
+        --disable-werror \
+        --enable-bind-now \
+        --enable-kernel=4.14 \
+        --enable-stack-protector=strong \
+        --enable-multi-arch \
+        libc_cv_include_x86_isa_level=no
+
+    make
+
+    # shellcheck disable=SC2016
+    sed '/test-installation/s@$(PERL)@echo not running@' -i ../Makefile
+    make install_root="${PKG}" install
+
+    # pregenerate C.UTF-8 locale until it is built into glibc
+    # (https://sourceware.org/glibc/wiki/Proposals/C.UTF-8)
+    elf/ld.so --library-path "${PWD}" locale/localedef -c -f ../localedata/charmaps/UTF-8 -i ../localedata/locales/C ../C.UTF-8/
+    install -Dm644 ../nscd/nscd.conf "${SRC}/nsswitch.conf" -t "${PKG}/etc/"
+
+    # supported locales
+    sed -e '1,3d' -e 's|/| |g' -e 's|\\| |g' -e 's|^|#|g' ../localedata/SUPPORTED >> "${PKG}/etc/locales"
+
+    # locales generator
+    install -Dm755 "${SRC}/genlocales" -t "${PKG}/usr/bin/"
+
+    cp -r ../C.UTF-8 "${PKG}/usr/lib/locale"
+    sed -i '/#C\.UTF-8 /d' "${PKG}/etc/locales"
+
+    # shipped with tzdata
+    rm "${PKG}/usr/bin/zdump" \
+        "${PKG}/usr/sbin/zic" \
+        "${PKG}/usr/bin/tzselect"
+}
