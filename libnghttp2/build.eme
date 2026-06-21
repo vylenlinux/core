@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+
+# shellcheck disable=SC2034
+description="Framing layer of HTTP/2 is implemented as a reusable C library"
+homepage="https://nghttp2.org"
+maintainer="Vylen Linux Team"
+
+name=libnghttp2
+version=1.69.0
+release=1
+source="https://github.com/nghttp2/nghttp2/releases/download/v${version}/nghttp2-${version}.tar.xz"
+
+build() {
+    # shellcheck disable=SC2164
+    cd "nghttp2-${version}"
+    autoreconf -i
+
+    ./configure \
+        --prefix=/usr \
+        --disable-examples \
+        --disable-python-bindings \
+        --enable-lib-only
+
+    make
+    make DESTDIR="${PKG}" install
+}
