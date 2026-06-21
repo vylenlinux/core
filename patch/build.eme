@@ -1,0 +1,16 @@
+description="A utility to apply patch files to original sources"
+homepage="https://www.gnu.org/software/patch/"
+maintainer="Vylen Linux Team"
+
+name=patch
+version=2.8
+release=1
+source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz"
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}
