@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# shellcheck disable=SC2034
+description="Pluggable Authentication Modules used to enable the local system administrator to choose how applications authenticate users"
+homepage="https://github.com/linux-pam/linux-pam"
+maintainer="Vylen Linux Team"
+
+name=linux-pam
+version=1.7.2
+release=1
+
+source="${name}-${version}.tar.xz::https://github.com/${name}/${name}/releases/download/v${version}/Linux-PAM-${version}.tar.xz
+    system-account.pam
+    system-auth.pam
+    system-session.pam
+    system-password.pam
+    other.pam"
+
+build() {
+    vylen-meson "Linux-PAM-${version}" build \
+        -Ddocs=disabled \
+        -Dlogind=disabled \
+        -Dselinux=disabled
+
+    meson compile -C build
+    DESTDIR="${PKG}" meson install --no-rebuild -C build
+
+    # Enable setuid bit for the unix_chkpwd
+    chmod -v 4755 "${PKG}/usr/sbin/unix_chkpwd"
+
+    # Create PAM configuration files
+    install -Dm644 "${SRC}/system-account.pam" "${PKG}/etc/pam.d/system-account"
+    install -Dm644 "${SRC}/system-auth.pam" "${PKG}/etc/pam.d/system-auth"
+    install -Dm644 "${SRC}/system-session.pam" "${PKG}/etc/pam.d/system-session"
+    install -Dm644 "${SRC}/system-password.pam" "${PKG}/etc/pam.d/system-password"
+    install -Dm644 "${SRC}/other.pam" "${PKG}/etc/pam.d/other"
+}
