@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+# shellcheck disable=SC2034
+description="Programs for basic and advanced IPV4-based networking"
+homepage="https://git.kernel.org/pub/scm/network/iproute2/iproute2.git"
+maintainer="Vylen Linux Team"
+
+name=iproute2
+version=7.1.0
+release=1
+source="https://www.kernel.org/pub/linux/utils/net/${name}/${name}-${version}.tar.xz"
+
+build() {
+    # shellcheck disable=SC2164
+    cd "${name}-${version}"
+
+    make
+    make DESTDIR="${PKG}" install
+}
