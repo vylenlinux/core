@@ -1,0 +1,23 @@
+#!/usr/bin/env sh
+
+# shellcheck disable=SC2034
+description="Bundle of CA Root Certificates from Mozilla"
+homepage="https://curl.se/docs/caextract.html"
+maintainer="Vylen Linux Team"
+
+name=ca-certificates
+version=20260514
+release=1
+
+_noyear="${version#????}"
+_version="${version%????}-${_noyear%??}-${version#??????}"
+
+source="${name}-${version}.pem::https://curl.se/ca/cacert-${_version}.pem"
+
+build() {
+    install -Dm644 "${name}-${version}.pem" "${PKG}/etc/ssl/cert.pem"
+    install -d "${PKG}/etc/ssl/certs"
+
+    ln -s /etc/ssl/cert.pem "${PKG}/etc/ssl/certs/ca-certificates.crt"
+    ln -s /etc/ssl/cert.pem "${PKG}/etc/ssl/ca-bundle.crt"
+}
