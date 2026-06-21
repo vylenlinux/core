@@ -1,0 +1,53 @@
+#!/usr/bin/env sh
+
+# shellcheck disable=SC2034
+description="The OpenRC init system"
+maintainer="Vylen Linux Team"
+homepage="https://github.com/OpenRC/openrc"
+
+name=openrc
+version=0.63.2
+release=1
+
+source="${name}-${version}.tar.gz::https://github.com/${name}/${name}/archive/refs/tags/${version}.tar.gz
+    halt
+    reboot"
+
+build() {
+    # shellcheck disable=SC2164
+    cd "${name}-${version}"
+
+    sed -i -e "s|@VCS_TAG@|${version}|" \
+        src/shared/version.h.in \
+        src/shared/version.in
+
+    vylen-meson . build \
+        --bindir=/sbin \
+        --sbindir=/sbin \
+        -Dbranding='"Vylen Linux"' \
+        -Dpam=true \
+        -Dpkg_prefix='' \
+        -Dpkgconfig=true \
+        -Dselinux=disabled \
+        -Dbash-completions=true \
+        -Dzsh-completions=true
+
+    meson compile -C build
+    DESTDIR="${PKG}" meson install --no-rebuild -C build
+
+    install -Dm644 support/sysvinit/inittab "${PKG}/etc/inittab"
+
+    for i in $(seq 6); do
+        ln -s agetty "${PKG}/etc/init.d/agetty.tty${i}"
+        ln -sf "/etc/init.d/agetty.tty${i}" "${PKG}/etc/runlevels/default/agetty.tty${i}"
+    done
+
+    install -d "${PKG}/sbin"
+    ln -s /sbin/openrc-init "${PKG}/sbin/init"
+    ln -s /sbin/openrc-shutdown "${PKG}/sbin/shutdown"
+
+    install -Dm755 "${SRC}/halt" -t "${PKG}/sbin/"
+    install -Dm755 "${SRC}/reboot" -t "${PKG}/sbin/"
+
+    ln -sf halt "${PKG}/sbin/poweroff"
+}
