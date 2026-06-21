@@ -1,0 +1,51 @@
+#!/usr/bin/env sh
+
+# shellcheck disable=SC2034
+description="Utilities for handling file systems, consoles, partitions, and messages"
+homepage="https://github.com/util-linux/util-linux"
+maintainer="Vylen Linux Team"
+
+name=util-linux
+version=2.42.2
+release=1
+source="${name}-${version}.tar.gz::https://github.com/${name}/${name}/archive/refs/tags/v${version}.tar.gz"
+
+build() {
+    vylen-meson "${name}-${version}" build \
+        --libdir=/usr/lib \
+        --libexecdir=/usr/lib \
+        -Db_lto=false \
+        -Dnls=disabled \
+        -Dcryptsetup=disabled \
+        -Dbuild-chfn-chsh=disabled \
+        -Dbuild-login=disabled \
+        -Dbuild-su=disabled \
+        -Dbuild-sulogin=disabled \
+        -Dbuild-nologin=disabled \
+        -Dbuild-runuser=disabled \
+        -Dbuild-vipw=disabled \
+        -Dbuild-raw=disabled \
+        -Dbuild-newgrp=disabled \
+        -Dbuild-bfs=disabled \
+        -Dbuild-minix=disabled \
+        -Dbuild-line=disabled \
+        -Dsystemd=disabled
+
+    meson compile -C build -j "${JOBS:-1}"
+    DESTDIR="${PKG}" meson install --no-rebuild -C build
+
+    # move from /usr/bin to /bin
+    install -d "${PKG}/bin"
+
+    for p in dmesg findmnt kill lsblk lsfd more mount mountpoint pipesz umount wdctl; do
+        mv "${PKG}/usr/bin/${p}" "${PKG}/bin"
+    done
+
+    # move from /usr/sbin to /sbin
+    install -d "${PKG}/sbin"
+    mv "${PKG}/usr/sbin"/* "${PKG}/sbin/"
+
+    for p in addpart delpart ldattach partx readprofile resizepart rfkill rtcwake uuidd; do
+        mv "${PKG}/sbin/${p}" "${PKG}/usr/sbin/"
+    done
+}
