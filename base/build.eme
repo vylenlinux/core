@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+# shellcheck disable=SC2034
+description="Meta port for base system"
+homepage="https://vylen.gitlab.io/"
+maintainer="Vylen Linux Team"
+
+name=base
+version=20260313
+release=1
+
+build() {
+    mkdir -pv "${PKG}/usr"
+}
