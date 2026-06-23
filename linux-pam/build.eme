@@ -8,13 +8,7 @@ maintainer="Vylen Linux Team"
 name=linux-pam
 version=1.7.2
 release=1
-
-source="${name}-${version}.tar.xz::https://github.com/${name}/${name}/releases/download/v${version}/Linux-PAM-${version}.tar.xz
-    system-account.pam
-    system-auth.pam
-    system-session.pam
-    system-password.pam
-    other.pam"
+source="${name}-${version}.tar.xz::https://github.com/${name}/${name}/releases/download/v${version}/Linux-PAM-${version}.tar.xz"
 
 build() {
     vylen-meson "Linux-PAM-${version}" build \
@@ -26,12 +20,8 @@ build() {
     DESTDIR="${PKG}" meson install --no-rebuild -C build
 
     # Enable setuid bit for the unix_chkpwd
-    chmod -v 4755 "${PKG}/usr/sbin/unix_chkpwd"
+    chmod 4755 "${PKG}/usr/sbin/unix_chkpwd"
 
     # Create PAM configuration files
-    install -Dm644 "${SRC}/system-account.pam" "${PKG}/etc/pam.d/system-account"
-    install -Dm644 "${SRC}/system-auth.pam" "${PKG}/etc/pam.d/system-auth"
-    install -Dm644 "${SRC}/system-session.pam" "${PKG}/etc/pam.d/system-session"
-    install -Dm644 "${SRC}/system-password.pam" "${PKG}/etc/pam.d/system-password"
-    install -Dm644 "${SRC}/other.pam" "${PKG}/etc/pam.d/other"
+    do_pam system-account system-auth system-session system-password other
 }
