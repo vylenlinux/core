@@ -6,13 +6,12 @@ homepage="https://www.iana.org/protocols"
 maintainer="Vylen Linux Team"
 
 name=iana-etc
-version=20260530
+version=20260617
 release=1
 
 source="services
     protocols"
 
 build() {
-    install -Dm644 services  -t "${PKG}/etc/"
-    install -Dm644 protocols -t "${PKG}/etc/"
+    install -Dm644 services protocols -t "${PKG}/etc/"
 }
