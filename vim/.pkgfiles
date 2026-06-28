@@ -1,4 +1,4 @@
-vim-9.2.0677-1
+vim-9.2.0735-1
 drwxr-xr-x root/root    etc/
 -rw-r--r-- root/root    etc/vimrc
 drwxr-xr-x root/root    usr/
@@ -891,6 +891,7 @@ drwxr-xr-x root/root    usr/share/vim/vim92/indent/
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/bst.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/bzl.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/c.vim
+-rw-r--r-- root/root    usr/share/vim/vim92/indent/cabal.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/cdl.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/ch.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/chaiscript.vim
