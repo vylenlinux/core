@@ -1,26 +1,32 @@
+#!/bin/sh
+
+# shellcheck disable=SC2034
 description="Utilities to administer Access Control Lists, which are used to define more fine-grained discretionary access rights for files and directories"
 homepage="https://savannah.nongnu.org/projects/acl"
 maintainer="Vylen Linux Team"
 
 name=acl
-version=2.3.2
+version=2.4.0
 release=1
-source="https://download.savannah.gnu.org/releases/$name/$name-$version.tar.gz"
+source="https://download.savannah.gnu.org/releases/${name}/${name}-${version}.tar.gz"
 
 build() {
-	cd $name-$version
-	./configure --prefix=/usr    \
-	            --bindir=/bin    \
-	            --disable-static \
-		    --disable-nls    \
-	            --libexecdir=/usr/lib
-	make
-	make DESTDIR=$PKG install
+    # shellcheck disable=SC2164
+    cd "${name}-${version}"
 
-	chmod -v 755 $PKG/usr/lib/libacl.so
+    ./configure \
+        --prefix=/usr \
+        --bindir=/bin \
+        --disable-static \
+        --disable-nls \
+        --libexecdir=/usr/lib
 
-	mkdir -p $PKG/lib
-	mv -v $PKG/usr/lib/libacl.so.* $PKG/lib
-	ln -sfv ../../lib/$(readlink $PKG/usr/lib/libacl.so) $PKG/usr/lib/libacl.so
+    make
+    make DESTDIR="${PKG}" install
 
+    chmod 755 "${PKG}/usr/lib/libacl.so"
+    mkdir -p "${PKG}/lib"
+
+    mv "${PKG}/usr/lib"/libacl.so.* "${PKG}/lib/"
+    ln -sf "../../lib/$(readlink "${PKG}/usr/lib/libacl.so")" "${PKG}/usr/lib/libacl.so"
 }
