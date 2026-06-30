@@ -39,12 +39,12 @@ build() {
         mkdir -p "${PKG}/${d}"
     done
 
-    install -dm 0750 "${PKG}/root"
+    install -dm750 "${PKG}/root"
 
     install -dm555 "${PKG}/proc" \
         "${PKG}/sys"
 
-    install -dm 1777 "${PKG}/tmp" \
+    install -dm1777 "${PKG}/tmp" \
         "${PKG}/var/tmp"
 
     # /usr and /usr/local dirs
@@ -63,9 +63,9 @@ build() {
         mkdir -p "${PKG}/var/${d}"
     done
 
-    ln -sfv ../run "${PKG}/var/run"
+    ln -sf ../run "${PKG}/var/run"
     ln -s /proc/self/mounts "${PKG}/etc/mtab"
-    ln -sv lib "${PKG}/lib64"
+    ln -s lib "${PKG}/lib64"
 
     for f in btmp faillog lastlog wtmp; do
         touch "${PKG}/var/log/${f}"
