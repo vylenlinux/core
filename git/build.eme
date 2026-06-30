@@ -15,7 +15,8 @@ build() {
 
     vylen-meson "${name}-${version}" build \
         -Druntime_prefix=true \
-        -Dtests=false
+        -Dtests=false \
+        -Drust="$(emerald is-installed rust && printf "enabled" || printf "disabled")"
 
     meson compile -C build -j "${JOBS:-1}"
     DESTDIR="${PKG}" meson install -C build
