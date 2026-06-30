@@ -1,4 +1,4 @@
-vim-9.2.0735-1
+vim-9.2.0752-1
 drwxr-xr-x root/root    etc/
 -rw-r--r-- root/root    etc/vimrc
 drwxr-xr-x root/root    usr/
@@ -1917,8 +1917,12 @@ drwxr-xr-x root/root    usr/share/vim/vim92/syntax/shared/
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/srec.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/srt.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/ssa.vim
+-rw-r--r-- root/root    usr/share/vim/vim92/syntax/sshallowedsigners.vim
+-rw-r--r-- root/root    usr/share/vim/vim92/syntax/sshauthorizedkeys.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/sshconfig.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/sshdconfig.vim
+-rw-r--r-- root/root    usr/share/vim/vim92/syntax/sshknownhosts.vim
+-rw-r--r-- root/root    usr/share/vim/vim92/syntax/sshpublickey.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/st.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/stata.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/stp.vim
