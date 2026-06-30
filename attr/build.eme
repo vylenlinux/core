@@ -1,27 +1,32 @@
+#!/bin/sh
+
+# shellcheck disable=SC2034
 description="Utilities to administer the extended attributes on filesystem objects"
 homepage="https://savannah.nongnu.org/projects/attr"
 maintainer="Vylen Linux Team"
 
 name=attr
-version=2.5.2
+version=2.6.0
 release=1
-source="https://download-mirror.savannah.gnu.org/releases/$name/$name-$version.tar.xz"
+source="https://download-mirror.savannah.gnu.org/releases/${name}/${name}-${version}.tar.xz"
 
 build() {
-	cd $name-$version
+    # shellcheck disable=SC2164
+    cd "${name}-${version}"
 
-	./configure --prefix=/usr \
-	            --bindir=/bin \
-	            --disable-static \
-            	    --sysconfdir=/etc \
-		    --disable-nls
-	make
-	make DESTDIR=$PKG install
+    ./configure \
+        --prefix=/usr \
+        --bindir=/bin \
+        --disable-static \
+        --sysconfdir=/etc \
+        --disable-nls
 
-	chmod -v 755 $PKG/usr/lib/libattr.so
+    make
+    make DESTDIR="${PKG}" install
 
-	mkdir -p $PKG/lib
-	mv -v $PKG/usr/lib/libattr.so.* $PKG/lib
-	ln -sfv ../../lib/$(readlink $PKG/usr/lib/libattr.so) $PKG/usr/lib/libattr.so
+    chmod 755 "${PKG}/usr/lib/libattr.so"
+    mkdir -p "${PKG}/lib"
 
+    mv "${PKG}/usr/lib"/libattr.so.* "${PKG}/lib/"
+    ln -sf "../../lib/$(readlink "${PKG}/usr/lib/libattr.so")" "${PKG}/usr/lib/libattr.so"
 }
