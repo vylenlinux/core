@@ -1,4 +1,4 @@
-openrc-0.63.2-1
+openrc-0.63.3-1
 drwxr-xr-x root/root    etc/
 drwxr-xr-x root/root    etc/conf.d/
 -rw-r--r-- root/root    etc/conf.d/agetty
