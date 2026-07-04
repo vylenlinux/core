@@ -1,21 +1,28 @@
+#!/bin/sh
+
+# shellcheck disable=SC2034
 description="Utility used to store, backup, and transport files"
 homepage="https://www.gnu.org/software/tar/"
 maintainer="Vylen Linux Team"
 
 name=tar
 version=1.35
-release=1
-source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz"
+release=2
+
+source="https://ftp.gnu.org/gnu/${name}/${name}-${version}.tar.xz
+    acl-2.40.patch"
 
 build() {
-	cd $name-$version
+    # shellcheck disable=SC2164
+    cd "${name}-${version}"
+    patch -Np1 -i "${SRC}/acl-2.40.patch"
 
-	FORCE_UNSAFE_CONFIGURE=1  \
-	./configure --prefix=/usr \
-		    --libexecdir=/usr/lib/$name \
-	            --bindir=/bin \
-		    --disable-nls
-	make
-	make DESTDIR=$PKG install
+    FORCE_UNSAFE_CONFIGURE=1 ./configure \
+        --prefix=/usr \
+        --libexecdir="/usr/lib/${name}" \
+        --bindir=/bin \
+        --disable-nls
 
+    make
+    make DESTDIR="${PKG}" install
 }
