@@ -1,4 +1,4 @@
-python3-setuptools-82.0.1-1
+python3-setuptools-83.0.0-1
 drwxr-xr-x root/root    usr/
 drwxr-xr-x root/root    usr/lib/
 drwxr-xr-x root/root    usr/lib/python3.14/
@@ -7,13 +7,13 @@ drwxr-xr-x root/root    usr/lib/python3.14/site-packages/_distutils_hack/
 -rw-r--r-- root/root    usr/lib/python3.14/site-packages/_distutils_hack/__init__.py
 -rw-r--r-- root/root    usr/lib/python3.14/site-packages/_distutils_hack/override.py
 -rw-r--r-- root/root    usr/lib/python3.14/site-packages/distutils-precedence.pth
-drwxr-xr-x root/root    usr/lib/python3.14/site-packages/setuptools-82.0.1-py3.14.egg-info/
--rw-r--r-- root/root    usr/lib/python3.14/site-packages/setuptools-82.0.1-py3.14.egg-info/PKG-INFO
--rw-r--r-- root/root    usr/lib/python3.14/site-packages/setuptools-82.0.1-py3.14.egg-info/SOURCES.txt
--rw-r--r-- root/root    usr/lib/python3.14/site-packages/setuptools-82.0.1-py3.14.egg-info/dependency_links.txt
--rw-r--r-- root/root    usr/lib/python3.14/site-packages/setuptools-82.0.1-py3.14.egg-info/entry_points.txt
--rw-r--r-- root/root    usr/lib/python3.14/site-packages/setuptools-82.0.1-py3.14.egg-info/requires.txt
--rw-r--r-- root/root    usr/lib/python3.14/site-packages/setuptools-82.0.1-py3.14.egg-info/top_level.txt
+drwxr-xr-x root/root    usr/lib/python3.14/site-packages/setuptools-83.0.0-py3.14.egg-info/
+-rw-r--r-- root/root    usr/lib/python3.14/site-packages/setuptools-83.0.0-py3.14.egg-info/PKG-INFO
+-rw-r--r-- root/root    usr/lib/python3.14/site-packages/setuptools-83.0.0-py3.14.egg-info/SOURCES.txt
+-rw-r--r-- root/root    usr/lib/python3.14/site-packages/setuptools-83.0.0-py3.14.egg-info/dependency_links.txt
+-rw-r--r-- root/root    usr/lib/python3.14/site-packages/setuptools-83.0.0-py3.14.egg-info/entry_points.txt
+-rw-r--r-- root/root    usr/lib/python3.14/site-packages/setuptools-83.0.0-py3.14.egg-info/requires.txt
+-rw-r--r-- root/root    usr/lib/python3.14/site-packages/setuptools-83.0.0-py3.14.egg-info/top_level.txt
 drwxr-xr-x root/root    usr/lib/python3.14/site-packages/setuptools/
 -rw-r--r-- root/root    usr/lib/python3.14/site-packages/setuptools/__init__.py
 -rw-r--r-- root/root    usr/lib/python3.14/site-packages/setuptools/_core_metadata.py
@@ -58,6 +58,7 @@ drwxr-xr-x root/root    usr/lib/python3.14/site-packages/setuptools/_distutils/c
 -rw-r--r-- root/root    usr/lib/python3.14/site-packages/setuptools/_distutils/compilers/C/cygwin.py
 -rw-r--r-- root/root    usr/lib/python3.14/site-packages/setuptools/_distutils/compilers/C/errors.py
 -rw-r--r-- root/root    usr/lib/python3.14/site-packages/setuptools/_distutils/compilers/C/msvc.py
+-rw-r--r-- root/root    usr/lib/python3.14/site-packages/setuptools/_distutils/compilers/C/py.typed
 drwxr-xr-x root/root    usr/lib/python3.14/site-packages/setuptools/_distutils/compilers/C/tests/
 -rw-r--r-- root/root    usr/lib/python3.14/site-packages/setuptools/_distutils/compilers/C/tests/test_base.py
 -rw-r--r-- root/root    usr/lib/python3.14/site-packages/setuptools/_distutils/compilers/C/tests/test_cygwin.py
@@ -78,6 +79,7 @@ drwxr-xr-x root/root    usr/lib/python3.14/site-packages/setuptools/_distutils/c
 -rw-r--r-- root/root    usr/lib/python3.14/site-packages/setuptools/_distutils/file_util.py
 -rw-r--r-- root/root    usr/lib/python3.14/site-packages/setuptools/_distutils/filelist.py
 -rw-r--r-- root/root    usr/lib/python3.14/site-packages/setuptools/_distutils/log.py
+-rw-r--r-- root/root    usr/lib/python3.14/site-packages/setuptools/_distutils/py.typed
 -rw-r--r-- root/root    usr/lib/python3.14/site-packages/setuptools/_distutils/spawn.py
 -rw-r--r-- root/root    usr/lib/python3.14/site-packages/setuptools/_distutils/sysconfig.py
 drwxr-xr-x root/root    usr/lib/python3.14/site-packages/setuptools/_distutils/tests/

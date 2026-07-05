@@ -6,7 +6,7 @@ homepage="https://pypi.org/project/setuptools/"
 maintainer="Vylen Linux Team"
 
 name=python3-setuptools
-version=82.0.1
+version=83.0.0
 release=1
 source="${name}-${version}.tar.gz::https://files.pythonhosted.org/packages/source/s/${name#*-}/${name#*-}-${version}.tar.gz"
 
