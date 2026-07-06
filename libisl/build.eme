@@ -1,19 +1,25 @@
+#!/bin/sh
+
+# shellcheck disable=SC2034
 description="An Integer Set Library for the Polyhedral Model"
 homepage="http://isl.gforge.inria.fr/"
 maintainer="Vylen Linux Team"
 
 name=libisl
-version=0.27
+version=0.28
 release=1
-source="$name-$version.tar.bz2::https://libisl.sourceforge.io/isl-$version.tar.bz2"
+source="${name}-${version}.tar.bz2::https://libisl.sourceforge.io/isl-${version}.tar.bz2"
 
 build() {
-	cd isl-$version
-	./configure \
-		--prefix=/usr \
-		--mandir=/usr/share/man \
-		--infodir=/usr/share/info \
-		--localstatedir=/var 
-	make
-	make DESTDIR=$PKG install
+    # shellcheck disable=SC2164
+    cd "isl-${version}"
+
+    ./configure \
+        --prefix=/usr \
+        --mandir=/usr/share/man \
+        --infodir=/usr/share/info \
+        --localstatedir=/var
+
+    make
+    make DESTDIR="${PKG}" install
 }

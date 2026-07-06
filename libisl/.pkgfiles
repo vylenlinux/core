@@ -1,4 +1,4 @@
-libisl-0.27-1
+libisl-0.28-1
 drwxr-xr-x root/root    usr/
 drwxr-xr-x root/root    usr/include/
 drwxr-xr-x root/root    usr/include/isl/
@@ -14,9 +14,14 @@ drwxr-xr-x root/root    usr/include/isl/
 -rw-r--r-- root/root    usr/include/isl/fixed_box.h
 -rw-r--r-- root/root    usr/include/isl/flow.h
 -rw-r--r-- root/root    usr/include/isl/hash.h
+-rw-r--r-- root/root    usr/include/isl/hbase.h
+-rw-r--r-- root/root    usr/include/isl/hbase_templ.c
 -rw-r--r-- root/root    usr/include/isl/hmap.h
 -rw-r--r-- root/root    usr/include/isl/hmap_templ.c
+-rw-r--r-- root/root    usr/include/isl/hset.h
+-rw-r--r-- root/root    usr/include/isl/hset_templ.c
 -rw-r--r-- root/root    usr/include/isl/id.h
+-rw-r--r-- root/root    usr/include/isl/id_set.h
 -rw-r--r-- root/root    usr/include/isl/id_to_ast_expr.h
 -rw-r--r-- root/root    usr/include/isl/id_to_id.h
 -rw-r--r-- root/root    usr/include/isl/id_to_pw_aff.h
@@ -66,9 +71,12 @@ drwxr-xr-x root/root    usr/include/isl/
 -rw-r--r-- root/root    usr/include/isl/vertices.h
 drwxr-xr-x root/root    usr/lib/
 -rw-r--r-- root/root    usr/lib/libisl.a
-lrwxrwxrwx root/root    usr/lib/libisl.so -> libisl.so.23.4.0
-lrwxrwxrwx root/root    usr/lib/libisl.so.23 -> libisl.so.23.4.0
--rwxr-xr-x root/root    usr/lib/libisl.so.23.4.0
--rw-r--r-- root/root    usr/lib/libisl.so.23.4.0-gdb.py
+lrwxrwxrwx root/root    usr/lib/libisl.so -> libisl.so.23.5.0
+lrwxrwxrwx root/root    usr/lib/libisl.so.23 -> libisl.so.23.5.0
+-rwxr-xr-x root/root    usr/lib/libisl.so.23.5.0
+-rw-r--r-- root/root    usr/lib/libisl.so.23.5.0-gdb.py
 drwxr-xr-x root/root    usr/lib/pkgconfig/
 -rw-r--r-- root/root    usr/lib/pkgconfig/isl.pc
+drwxr-xr-x root/root    usr/share/
+drwxr-xr-x root/root    usr/share/aclocal/
+-rw-r--r-- root/root    usr/share/aclocal/isl_detect_clang.m4
