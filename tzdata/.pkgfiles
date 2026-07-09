@@ -1,4 +1,4 @@
-tzdata-2026b-1
+tzdata-2026c-1
 drwxr-xr-x root/root    etc/
 drwxr-xr-x root/root    usr/
 drwxr-xr-x root/root    usr/bin/
@@ -9,16 +9,6 @@ drwxr-xr-x root/root    usr/lib/
 drwxr-xr-x root/root    usr/sbin/
 -rwxr-xr-x root/root    usr/sbin/zic
 drwxr-xr-x root/root    usr/share/
-drwxr-xr-x root/root    usr/share/man/
-drwxr-xr-x root/root    usr/share/man/man3/
--rw-r--r-- root/root    usr/share/man/man3/newctime.3.gz
--rw-r--r-- root/root    usr/share/man/man3/newtzset.3.gz
-drwxr-xr-x root/root    usr/share/man/man5/
--rw-r--r-- root/root    usr/share/man/man5/tzfile.5.gz
-drwxr-xr-x root/root    usr/share/man/man8/
--rw-r--r-- root/root    usr/share/man/man8/tzselect.8.gz
--rw-r--r-- root/root    usr/share/man/man8/zdump.8.gz
--rw-r--r-- root/root    usr/share/man/man8/zic.8.gz
 drwxr-xr-x root/root    usr/share/zoneinfo/
 drwxr-xr-x root/root    usr/share/zoneinfo/Africa/
 hrw-r--r-- root/root    usr/share/zoneinfo/Africa/Abidjan link to usr/share/zoneinfo/Africa/Accra

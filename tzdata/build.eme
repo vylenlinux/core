@@ -6,10 +6,10 @@ homepage="https://www.iana.org/time-zones"
 maintainer="Vylen Linux Team"
 
 name=tzdata
-version=2026b
+version=2026c
 release=1
 
-source="https://www.iana.org/time-zones/repository/releases/${name}${version}.tar.gz
+source="${name}-${version}.tar.gz::https://www.iana.org/time-zones/repository/releases/${name}${version}.tar.gz
     https://www.iana.org/time-zones/repository/releases/tzcode${version}.tar.gz"
 
 build() {
@@ -18,7 +18,7 @@ build() {
 
     ZONEINFO="${PKG}/usr/share/zoneinfo"
 
-    mkdir -pv "${ZONEINFO}/posix" \
+    mkdir -p "${ZONEINFO}/posix" \
         "${ZONEINFO}/right"
 
     for tz in etcetera southamerica northamerica europe africa antarctica asia australasia backward; do
@@ -27,7 +27,7 @@ build() {
         ./zic -L leapseconds -d "${ZONEINFO}/right" -y "sh yearistype.sh" "${tz}"
     done
 
-    cp -v zone.tab zone1970.tab iso3166.tab "${ZONEINFO}"
+    cp zone.tab zone1970.tab iso3166.tab "${ZONEINFO}"
     ./zic -d "${ZONEINFO}" -p America/New_York
 
     # conflict with glibc
