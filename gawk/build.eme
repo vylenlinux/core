@@ -1,22 +1,29 @@
+#!/bin/sh
+
+# shellcheck disable=SC2034
 description="Programs for manipulating text files"
 homepage="https://www.gnu.org/software/gawk/"
 maintainer="Vylen Linux Team"
 
 name=gawk
-version=5.4.0
+version=5.4.1
 release=1
-source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz"
+source="https://ftp.gnu.org/gnu/${name}/${name}-${version}.tar.xz"
 
 build() {
-	cd $name-$version
+    # shellcheck disable=SC2164
+    cd "${name}-${version}"
+    export ac_cv_libsigsegv=no
 
-	export ac_cv_libsigsegv=no
+    # ensure some unneeded files are not installed
+    sed -i 's/extras//' Makefile.in
 
-	# ensure some unneeded files are not installed
-	sed -i 's/extras//' Makefile.in
+    ./configure \
+        --prefix=/usr \
+        --libexecdir=/usr/lib \
+        --sysconfdir=/etc \
+        --disable-nls
 
-	./configure --prefix=/usr --libexecdir=/usr/lib --sysconfdir=/etc --disable-nls
-	make
-	make DESTDIR=$PKG install
-
+    make
+    make DESTDIR="${PKG}" install
 }
