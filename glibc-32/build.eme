@@ -8,7 +8,9 @@ homepage="https://www.gnu.org/software/libc"
 name=glibc-32
 version=2.43
 release=1
-source="https://ftp.gnu.org/gnu/glibc/glibc-${version}.tar.xz"
+
+source="https://ftp.gnu.org/gnu/glibc/glibc-${version}.tar.xz
+    lib32.conf"
 
 nostrip="lib.*/ld-.*\.so$
     lib.*/libc-.*\.so$
@@ -60,5 +62,5 @@ build() {
     ln -s ../usr/lib32/ld-linux.so.2 "${PKG}/lib/ld-linux.so.2"
     ln -s ../lib/locale "${PKG}/usr/lib32/locale"
 
-    echo "/usr/lib32" > "${PKG}/etc/ld.so.conf.d/lib32.conf"
+    install -Dm644 "${SRC}/lib32.conf" -t "${PKG}/etc/ld.so.conf.d/"
 }
