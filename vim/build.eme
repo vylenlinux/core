@@ -6,16 +6,17 @@ homepage="https://www.vim.org/"
 maintainer="Vylen Linux Team"
 
 name=vim
-version=9.2.0782
+version=9.2.0804
 release=1
 
 source="${name}-${version}.tar.gz::https://github.com/${name}/${name}/archive/v${version}/${name}-v${version}.tar.gz
-    vimrc"
+    vimrc
+    feature.h.in"
 
 build() {
     # shellcheck disable=SC2164
     cd "${name}-${version}"
-    echo '#define SYS_VIMRC_FILE "/etc/vimrc"' >> src/feature.h
+    cat "${SRC}/feature.h.in" >> src/feature.h
 
     ./configure \
         --prefix=/usr \
