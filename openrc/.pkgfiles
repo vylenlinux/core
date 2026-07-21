@@ -1,4 +1,4 @@
-openrc-0.63.3-1
+openrc-0.63.3-2
 drwxr-xr-x root/root    etc/
 drwxr-xr-x root/root    etc/conf.d/
 -rw-r--r-- root/root    etc/conf.d/agetty
@@ -67,7 +67,6 @@ lrwxrwxrwx root/root    etc/init.d/functions.sh -> /usr/lib/rc/sh/functions.sh
 -rwxr-xr-x root/root    etc/init.d/sysfs
 -rwxr-xr-x root/root    etc/init.d/termencoding
 -rwxr-xr-x root/root    etc/init.d/user
--rw-r--r-- root/root    etc/inittab
 drwxr-xr-x root/root    etc/local.d/
 -rw-r--r-- root/root    etc/local.d/README
 drwxr-xr-x root/root    etc/pam.d/

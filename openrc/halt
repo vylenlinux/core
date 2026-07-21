@@ -11,7 +11,7 @@ while getopts :nwdfiph opt; do
         p) poweroff_arg="--poweroff" ;;
 
         [?])
-            printf "%s\n" "${0##*/}: invalid command line option" >&2
+            printf "%s: invalid command line option\n" "${0##*/}" >&2
             exit 1
         ;;
     esac

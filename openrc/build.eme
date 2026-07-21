@@ -7,7 +7,7 @@ homepage="https://github.com/OpenRC/openrc"
 
 name=openrc
 version=0.63.3
-release=1
+release=2
 
 source="${name}-${version}.tar.gz::https://github.com/${name}/${name}/archive/refs/tags/${version}.tar.gz
     halt
@@ -34,8 +34,6 @@ build() {
 
     meson compile -C build
     DESTDIR="${PKG}" meson install --no-rebuild -C build
-
-    install -Dm644 support/sysvinit/inittab "${PKG}/etc/inittab"
 
     for i in $(seq 6); do
         ln -s agetty "${PKG}/etc/init.d/agetty.tty${i}"
