@@ -6,7 +6,7 @@ homepage="https://gitea.treehouse.systems/ariadne/pkgconf"
 maintainer="Vylen Linux Team"
 
 name=pkgconf
-version=3.0.3
+version=3.0.4
 release=1
 source="https://distfiles.ariadne.space/${name}/${name}-${version}.tar.xz"
 
@@ -16,5 +16,5 @@ build() {
     DESTDIR="${PKG}" meson install --no-rebuild -C build
 
     ln -s pkgconf "${PKG}/usr/bin/pkg-config"
-    rm -rf "${PKG}/usr/lib/libpkgconf.a"
+    rm -f "${PKG}/usr/lib/libpkgconf.a"
 }
