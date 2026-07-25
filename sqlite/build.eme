@@ -6,7 +6,7 @@ homepage="https://www.sqlite.org/"
 maintainer="Vylen Linux Team"
 
 name=sqlite
-version=3.53.3
+version=3.53.4
 release=1
 
 # shellcheck disable=SC2046
