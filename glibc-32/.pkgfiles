@@ -1,4 +1,4 @@
-glibc-32-2.43-1
+glibc-32-2.44-1
 drwxr-xr-x root/root    etc/
 drwxr-xr-x root/root    etc/ld.so.conf.d/
 -rw-r--r-- root/root    etc/ld.so.conf.d/lib32.conf
