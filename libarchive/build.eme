@@ -13,11 +13,11 @@ source="https://github.com/${name}/${name}/releases/download/v${version}/${name}
 build() {
     # shellcheck disable=SC2164
     cd "${name}-${version}"
-    autoreconf -fvi
 
     ./configure \
         --prefix=/usr \
         --disable-bsdcat \
+        --without-iconv \
         --without-lz4 \
         --without-zstd \
         --without-nettle \
@@ -26,7 +26,4 @@ build() {
 
     make
     make DESTDIR="${PKG}" install
-
-    # Remove iconv from pc file
-    sed -i "s/iconv//" "${PKG}/usr/lib/pkgconfig/libarchive.pc"
 }
