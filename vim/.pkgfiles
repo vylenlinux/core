@@ -1,4 +1,4 @@
-vim-9.2.0854-1
+vim-9.2.0875-1
 drwxr-xr-x root/root    etc/
 -rw-r--r-- root/root    etc/vimrc
 drwxr-xr-x root/root    usr/
@@ -1665,6 +1665,7 @@ drwxr-xr-x root/root    usr/share/vim/vim92/syntax/
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/manual.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/maple.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/markdown.vim
+-rw-r--r-- root/root    usr/share/vim/vim92/syntax/marko.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/masm.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/mason.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/master.vim
