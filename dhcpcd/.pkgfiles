@@ -1,4 +1,4 @@
-dhcpcd-10.3.2-1
+dhcpcd-10.5.0-1
 drwxr-xr-x root/root    etc/
 -rw-r--r-- root/root    etc/dhcpcd.conf
 drwxr-xr-x root/root    etc/init.d/
