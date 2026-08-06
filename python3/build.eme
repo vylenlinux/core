@@ -6,7 +6,7 @@ homepage="https://www.python.org"
 maintainer="Vylen Linux Team"
 
 name=python3
-version=3.14.6
+version=3.14.7
 release=1
 
 source="${name}-${version}.tar.xz::https://www.python.org/ftp/python/${version}/Python-${version}.tar.xz
@@ -49,8 +49,6 @@ build() {
     chmod 755 "${PKG}/usr/lib/libpython${version%.*}.so" \
         "${PKG}/usr/lib/libpython3.so"
 
-    mv "${PKG}/usr/include/python${version%.*}/pyconfig.h" \
-        "${PKG}/usr/include/python${version%.*}/pyconfig-64.h"
-
-    install -Dm644 "${SRC}/pyconfig.h" "${PKG}/usr/include/python${version%.*}/"
+    mv "${PKG}/usr/include/python${version%.*}/pyconfig.h" "${PKG}/usr/include/python${version%.*}/pyconfig-64.h"
+    install -Dm644 "${SRC}/pyconfig.h" -t "${PKG}/usr/include/python${version%.*}/"
 }
