@@ -1,4 +1,4 @@
-vim-9.2.0875-1
+vim-9.2.0920-1
 drwxr-xr-x root/root    etc/
 -rw-r--r-- root/root    etc/vimrc
 drwxr-xr-x root/root    usr/
@@ -617,6 +617,7 @@ drwxr-xr-x root/root    usr/share/vim/vim92/ftplugin/
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/json.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/json5.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/jsonc.vim
+-rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/jsonld.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/jsonnet.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/jsp.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/julia.vim
@@ -960,6 +961,7 @@ drwxr-xr-x root/root    usr/share/vim/vim92/indent/
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/json.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/json5.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/jsonc.vim
+-rw-r--r-- root/root    usr/share/vim/vim92/indent/jsonld.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/jsp.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/julia.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/just.vim
@@ -1453,6 +1455,7 @@ drwxr-xr-x root/root    usr/share/vim/vim92/syntax/
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/dylanintr.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/dylanlid.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/ecd.vim
+-rw-r--r-- root/root    usr/share/vim/vim92/syntax/ed.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/edif.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/editorconfig.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/eiffel.vim
@@ -1599,6 +1602,7 @@ drwxr-xr-x root/root    usr/share/vim/vim92/syntax/
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/json.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/json5.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/jsonc.vim
+-rw-r--r-- root/root    usr/share/vim/vim92/syntax/jsonld.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/jsp.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/julia.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/just.vim
