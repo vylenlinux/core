@@ -62,5 +62,8 @@ build() {
     mv "${PKG}/usr/lib"/*gdb.py "${PKG}/usr/share/gdb/auto-load/usr/lib/"
 
     install -Dm755 "${SRC}/c89" "${SRC}/c99" -t "${PKG}/usr/bin/"
-    rm -r "${PKG}/usr/share/${name}-${version}"
+
+    # rm -r "${PKG}/usr/share/${name}-${version}"
+    python3 -m compileall "${PKG}/usr/share/${name}-${version}/"
+    python3 -O -m compileall "${PKG}/usr/share/${name}-${version}/"
 }
