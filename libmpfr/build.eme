@@ -1,3 +1,6 @@
+#!/bin/sh
+
+# shellcheck disable=SC2034
 description="Functions for multiple precision math"
 homepage="https://www.mpfr.org/"
 maintainer="Vylen Linux Team"
@@ -5,16 +8,17 @@ maintainer="Vylen Linux Team"
 name=libmpfr
 version=4.2.2
 release=1
-source="https://www.mpfr.org/mpfr-$version/mpfr-$version.tar.xz"
+source="${name}-${version}.tar.xz::https://www.mpfr.org/mpfr-${version}/mpfr-${version}.tar.xz"
 
 build() {
-	cd mpfr-$version
+    # shellcheck disable=SC2164
+    cd "mpfr-${version}"
 
-	./configure --prefix=/usr        \
-	            --disable-static     \
-	            --enable-thread-safe
-	make
-	make DESTDIR=$PKG install
+    ./configure \
+        --prefix=/usr \
+        --disable-static \
+        --enable-thread-safe
 
-	rm -r $PKG/usr/share
+    make
+    make DESTDIR="${PKG}" install
 }
