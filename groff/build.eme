@@ -28,6 +28,4 @@ build() {
     ln -s eqn "${PKG}/usr/bin/geqn"
     ln -s tbl "${PKG}/usr/bin/gtbl"
     ln -s soelim "${PKG}/usr/bin/zsoelim"
-
-    rm -rf "${PKG}/usr/share/info"
 }
