@@ -1,18 +1,21 @@
+#!/bin/sh
+
+# shellcheck disable=SC2034
 description="The GNU macro processor"
 homepage="https://www.gnu.org/software/m4"
 maintainer="Vylen Linux Team"
 
+# shellcheck disable=SC2209
 name=m4
 version=1.4.21
 release=1
-source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz"
+source="https://ftp.gnu.org/gnu/${name}/${name}-${version}.tar.xz"
 
 build() {
-	cd $name-$version
+    # shellcheck disable=SC2164
+    cd "${name}-${version}"
+    ./configure --prefix=/usr
 
-	./configure --prefix=/usr
-	make
-	make DESTDIR=$PKG install
-
-	rm -r $PKG/usr/share/info
+    make
+    make DESTDIR="${PKG}" install
 }
