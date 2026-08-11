@@ -26,5 +26,4 @@ build() {
 
     mkdir -p "${PKG}/bin"
     mv "${PKG}/usr/bin/find" "${PKG}/bin"
-    rm -rf "${PKG}/usr/share/info"
 }
