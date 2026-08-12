@@ -9,14 +9,19 @@ name=dhcpcd
 version=10.5.0
 release=1
 source="https://github.com/NetworkConfiguration/${name}/releases/download/v${version}/${name}-${version}.tar.xz"
+backup="etc/dhcpcd/dhcpcd.conf"
 
 build() {
     # shellcheck disable=SC2164
     cd "${name}-${version}"
 
     ./configure \
+        --prefix= \
         --libexecdir=/lib/dhcpcd \
-        --dbdir=/var/lib/dhcpcd
+        --dbdir=/var/lib/dhcpcd \
+        --sysconfdir=/etc/dhcpcd \
+        --rundir=/run/dhcpcd \
+        --privsepuser=dhcpcd
 
     make
     make DESTDIR="${PKG}" install

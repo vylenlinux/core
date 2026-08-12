@@ -1,6 +1,7 @@
 dhcpcd-10.5.0-1
 drwxr-xr-x root/root    etc/
--rw-r--r-- root/root    etc/dhcpcd.conf
+drwxr-xr-x root/root    etc/dhcpcd/
+-rw-r--r-- root/root    etc/dhcpcd/dhcpcd.conf.epkgnew
 drwxr-xr-x root/root    etc/init.d/
 -rwxr-xr-x root/root    etc/init.d/dhcpcd
 drwxr-xr-x root/root    lib/
