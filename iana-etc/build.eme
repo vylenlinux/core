@@ -6,7 +6,7 @@ homepage="https://www.iana.org/protocols"
 maintainer="Vylen Linux Team"
 
 name=iana-etc
-version=20260719
+version=20260811
 release=1
 
 source="services

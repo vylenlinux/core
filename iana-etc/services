@@ -1,4 +1,4 @@
-# /etc/services, created 2026-07-19T19:47:57+0200
+# /etc/services, created 2026-08-12T10:43:55+0000
 # Source: https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xml
 tcpmux              1/tcp
 tcpmux              1/udp
@@ -9493,6 +9493,7 @@ rothaga          7117/tcp
 virprot-lm       7121/tcp
 virprot-lm       7121/udp
 snif             7123/tcp
+snif             7123/udp
 scenidm          7128/tcp
 scenidm          7128/udp
 scenccs          7129/tcp
