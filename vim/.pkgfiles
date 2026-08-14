@@ -1,4 +1,4 @@
-vim-9.2.0920-1
+vim-9.2.0957-1
 drwxr-xr-x root/root    etc/
 -rw-r--r-- root/root    etc/vimrc
 drwxr-xr-x root/root    usr/
@@ -588,6 +588,7 @@ drwxr-xr-x root/root    usr/share/vim/vim92/ftplugin/
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/help.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/hgcommit.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/hip.vim
+-rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/hlsl.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/hlsplaylist.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/hog.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/hostconf.vim
@@ -948,6 +949,7 @@ drwxr-xr-x root/root    usr/share/vim/vim92/indent/
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/hare.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/hcl.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/hip.vim
+-rw-r--r-- root/root    usr/share/vim/vim92/indent/hlsl.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/hog.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/html.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/htmldjango.vim
@@ -1554,6 +1556,7 @@ drwxr-xr-x root/root    usr/share/vim/vim92/syntax/
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/hgcommit.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/hip.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/hitest.vim
+-rw-r--r-- root/root    usr/share/vim/vim92/syntax/hlsl.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/hlsplaylist.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/hog.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/hollywood.vim
