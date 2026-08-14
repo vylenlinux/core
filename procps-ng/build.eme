@@ -1,24 +1,28 @@
+#!/bin/sh
+
+# shellcheck disable=SC2034
 description="Utilities for monitoring your system and its processes"
 homepage="https://gitlab.com/procps-ng/procps"
 maintainer="Vylen Linux Team"
 
 name=procps-ng
-version=4.0.6
+version=4.0.7
 release=1
-source="https://sourceforge.net/projects/procps-ng/files/Production/$name-$version.tar.xz"
+source="https://sourceforge.net/projects/${name}/files/Production/${name}-${version}.tar.xz"
 
 build() {
-	cd $name-$version
+    # shellcheck disable=SC2164
+    cd "${name}-${version}"
 
-	CONFIG_SHELL=/bin/bash \
-	./configure \
-		--prefix=/usr \
-		--disable-kill \
-		--disable-modern-top \
-		--disable-rpath \
-		--disable-static \
-		--disable-w-from \
-		--with-ncurses
-	make
-	make DESTDIR=$PKG install
+    CONFIG_SHELL=/bin/bash ./configure \
+        --prefix=/usr \
+        --disable-kill \
+        --disable-modern-top \
+        --disable-rpath \
+        --disable-static \
+        --disable-w-from \
+        --with-ncurses
+
+    make
+    make DESTDIR="${PKG}" install
 }
