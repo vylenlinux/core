@@ -6,7 +6,7 @@ homepage="https://sourceware.org/elfutils/"
 maintainer="Vylen Linux Team"
 
 name=elfutils
-version=0.195
+version=0.196
 release=1
 source="https://sourceware.org/ftp/${name}/${version}/${name}-${version}.tar.bz2"
 
