@@ -1,4 +1,3 @@
 #!/bin/sh
 
 localedef -i C -f UTF-8 C.UTF-8
-

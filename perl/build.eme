@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 # shellcheck disable=SC2034
 description="A highly capable, feature-rich programming language"
@@ -6,7 +6,7 @@ homepage="https://www.perl.org/"
 maintainer="Vylen Linux Team"
 
 name=perl
-version=5.42.2
+version=5.44.0
 release=1
 source="https://www.cpan.org/src/5.0/${name}-${version}.tar.xz"
 
@@ -17,7 +17,8 @@ build() {
     export BUILD_ZLIB=False
     export BUILD_BZIP2=0
 
-    sh Configure -des -Dprefix=/usr \
+    sh Configure -des \
+        -Dprefix=/usr \
         -Dvendorprefix=/usr \
         -Dprivlib="/usr/lib/perl5/${version%.*}" \
         -Dsitelib="/usr/lib/perl5/site_perl/${version%.*}" \
@@ -39,9 +40,11 @@ build() {
         -iname 'TODO*' -or \
         -iname 'Change*' -or \
         -iname 'README*' -or \
+        \
         -name '*.bs' -or \
         -name '.packlist' -or \
-        -name 'perllocal.pod' | xargs rm
+        -name 'perllocal.pod' \
+    | xargs rm
 
     find "${PKG}" -depth -empty -exec rmdir {} \;
     chmod -R +w "${PKG}"
