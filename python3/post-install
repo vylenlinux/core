@@ -8,7 +8,6 @@ if [ "${PYTHON_VERSION}" != "3.15" ]; then
         [ "${pkg}" = "python3" ] && continue
 
         if emerald files "${pkg}" | grep -Eq '^usr/lib/python[^/]*/site-packages/?$'; then
-            printf "Reinstalling: %s\n" "${pkg}"
             emerald is-installed "${pkg}" && emerald install -fr "${pkg}"
         fi
     done
