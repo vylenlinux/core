@@ -6,9 +6,6 @@ PYTHON_VERSION="$(emerald info --field=version python3 | cut -d. -f1-2)"
 if [ "${PYTHON_VERSION}" != "3.15" ]; then
     emerald installed | awk '{print $1;}' | while read -r pkg; do
         [ "${pkg}" = "python3" ] && continue
-
-        if emerald files "${pkg}" | grep -Eq '^usr/lib/python[^/]*/site-packages/?$'; then
-            emerald is-installed "${pkg}" && emerald install -fr "${pkg}"
-        fi
+        emerald files "${pkg}" | grep -Eq '^usr/lib/python[^/]*/site-packages/?$' && emerald install -fr "${pkg}"
     done
 fi
