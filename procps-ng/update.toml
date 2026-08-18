@@ -2,4 +2,4 @@ name = "procps-ng"
 provider = "repology"
 
 [source]
-package = "procps-ng"
+package = "procps"
