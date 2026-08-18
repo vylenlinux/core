@@ -1,16 +1,15 @@
 #!/bin/sh
 
-PYTHON_VERSION="$(awk -F'[=.]' '/^version=/{print $2"."$3}' build.eme)"
+PYTHON_VERSION="$(emerald info --field=version python3 | cut -d. -f1-2)"
 
-# Rebuild with a mayor version upgrade
-if [ "${PYTHON_VERSION}" != "3.14" ]; then
-    PYTHON_REBUILD="$(emerald installed | awk '/^python3-/ {print $1}')
-        meson
-        libxml2
-        libxslt
-        gobject-introspection"
+# Rebuild with a major version upgrade
+if [ "${PYTHON_VERSION}" != "3.15" ]; then
+    emerald installed | while read -r pkg; do
+        [ "${pkg}" = "python3" ] && continue
 
-    for p in $PYTHON_REBUILD; do
-        emerald is-installed "${p}" && emerald install -fr "${p}"
+        if emerald files "${pkg}" | grep -Eq '^usr/lib/python[^/]*/site-packages/?$'; then
+            printf "Reinstalling: %s\n" "${pkg}"
+            emerald is-installed "${pkg}" && emerald install -fr "${pkg}"
+        fi
     done
 fi
