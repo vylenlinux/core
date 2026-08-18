@@ -1,0 +1,5 @@
+name = "libmpc"
+provider = "repology"
+
+[source]
+package = "gnumpc"

@@ -1,0 +1,5 @@
+name = "python3-setuptools"
+provider = "repology"
+
+[source]
+package = "python:setuptools"

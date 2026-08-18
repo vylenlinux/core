@@ -1,0 +1,5 @@
+name = "curl"
+provider = "repology"
+
+[source]
+package = "curl"

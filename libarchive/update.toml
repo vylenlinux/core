@@ -1,0 +1,5 @@
+name = "libarchive"
+provider = "repology"
+
+[source]
+package = "libarchive"

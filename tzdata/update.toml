@@ -1,0 +1,5 @@
+name = "tzdata"
+provider = "repology"
+
+[source]
+package = "tzdata"

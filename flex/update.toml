@@ -1,0 +1,5 @@
+name = "flex"
+provider = "repology"
+
+[source]
+package = "flex"

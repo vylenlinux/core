@@ -1,0 +1,5 @@
+name = "gawk"
+provider = "repology"
+
+[source]
+package = "gawk"

@@ -1,0 +1,5 @@
+name = "which"
+provider = "repology"
+
+[source]
+package = "which"

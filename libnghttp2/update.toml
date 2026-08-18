@@ -1,0 +1,5 @@
+name = "libnghttp2"
+provider = "repology"
+
+[source]
+package = "nghttp2"

@@ -1,0 +1,5 @@
+name = "bzip2"
+provider = "repology"
+
+[source]
+package = "bzip2"

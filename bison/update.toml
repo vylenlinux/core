@@ -1,0 +1,5 @@
+name = "bison"
+provider = "repology"
+
+[source]
+package = "bison"

@@ -1,0 +1,5 @@
+name = "sed"
+provider = "repology"
+
+[source]
+package = "sed"

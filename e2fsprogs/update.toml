@@ -1,0 +1,5 @@
+name = "e2fsprogs"
+provider = "repology"
+
+[source]
+package = "e2fsprogs"

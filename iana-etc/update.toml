@@ -1,0 +1,5 @@
+name = "iana-etc"
+provider = "repology"
+
+[source]
+package = "iana-etc"

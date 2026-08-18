@@ -1,0 +1,5 @@
+name = "file"
+provider = "repology"
+
+[source]
+package = "file"

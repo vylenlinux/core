@@ -1,0 +1,5 @@
+name = "tar"
+provider = "repology"
+
+[source]
+package = "tar"

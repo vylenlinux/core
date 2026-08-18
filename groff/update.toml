@@ -1,0 +1,5 @@
+name = "groff"
+provider = "repology"
+
+[source]
+package = "groff"

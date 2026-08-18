@@ -1,0 +1,5 @@
+name = "diffutils"
+provider = "repology"
+
+[source]
+package = "diffutils"

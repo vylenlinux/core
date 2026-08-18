@@ -1,0 +1,5 @@
+name = "readline"
+provider = "repology"
+
+[source]
+package = "readline"

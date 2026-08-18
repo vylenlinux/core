@@ -1,0 +1,5 @@
+name = "lz4"
+provider = "repology"
+
+[source]
+package = "lz4"

@@ -1,0 +1,5 @@
+name = "perl"
+provider = "repology"
+
+[source]
+package = "perl"

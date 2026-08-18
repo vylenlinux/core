@@ -1,0 +1,5 @@
+name = "libmpfr"
+provider = "repology"
+
+[source]
+package = "mpfr"

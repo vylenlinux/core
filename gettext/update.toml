@@ -1,0 +1,5 @@
+name = "gettext"
+provider = "repology"
+
+[source]
+package = "gettext"

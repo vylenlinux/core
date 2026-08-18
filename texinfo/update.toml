@@ -1,0 +1,5 @@
+name = "texinfo"
+provider = "repology"
+
+[source]
+package = "texinfo"

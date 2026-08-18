@@ -1,0 +1,5 @@
+name = "gzip"
+provider = "repology"
+
+[source]
+package = "gzip"

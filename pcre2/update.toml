@@ -1,0 +1,5 @@
+name = "pcre2"
+provider = "repology"
+
+[source]
+package = "pcre2"

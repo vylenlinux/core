@@ -1,0 +1,5 @@
+name = "libpipeline"
+provider = "repology"
+
+[source]
+package = "libpipeline"

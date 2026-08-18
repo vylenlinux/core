@@ -1,0 +1,5 @@
+name = "patch"
+provider = "repology"
+
+[source]
+package = "patch"

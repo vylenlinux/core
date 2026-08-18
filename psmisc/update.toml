@@ -1,0 +1,5 @@
+name = "psmisc"
+provider = "repology"
+
+[source]
+package = "psmisc"

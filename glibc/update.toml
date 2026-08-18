@@ -1,0 +1,5 @@
+name = "glibc"
+provider = "repology"
+
+[source]
+package = "glibc"

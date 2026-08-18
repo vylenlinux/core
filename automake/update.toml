@@ -1,0 +1,5 @@
+name = "automake"
+provider = "repology"
+
+[source]
+package = "automake"

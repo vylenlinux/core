@@ -1,0 +1,5 @@
+name = "dash"
+provider = "repology"
+
+[source]
+package = "dash-shell"

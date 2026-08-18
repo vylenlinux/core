@@ -1,0 +1,5 @@
+name = "gcc"
+provider = "repology"
+
+[source]
+package = "gcc"

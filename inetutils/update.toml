@@ -1,0 +1,5 @@
+name = "inetutils"
+provider = "repology"
+
+[source]
+package = "inetutils"

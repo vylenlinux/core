@@ -1,0 +1,5 @@
+name = "zstd"
+provider = "repology"
+
+[source]
+package = "zstd"

@@ -1,0 +1,5 @@
+name = "vim"
+provider = "repology"
+
+[source]
+package = "vim"

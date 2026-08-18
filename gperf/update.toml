@@ -1,0 +1,5 @@
+name = "gperf"
+provider = "repology"
+
+[source]
+package = "gperf"

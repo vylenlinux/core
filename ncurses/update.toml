@@ -1,0 +1,5 @@
+name = "ncurses"
+provider = "repology"
+
+[source]
+package = "ncurses"

@@ -1,0 +1,5 @@
+name = "openrc"
+provider = "repology"
+
+[source]
+package = "openrc"

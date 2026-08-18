@@ -1,0 +1,5 @@
+name = "ca-certificates"
+provider = "repology"
+
+[source]
+package = "ca-certificates"

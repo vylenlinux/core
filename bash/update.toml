@@ -1,0 +1,5 @@
+name = "bash"
+provider = "repology"
+
+[source]
+package = "bash"

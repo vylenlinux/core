@@ -1,0 +1,5 @@
+name = "dhcpcd"
+provider = "repology"
+
+[source]
+package = "dhcpcd"

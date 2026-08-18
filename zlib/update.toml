@@ -1,0 +1,5 @@
+name = "zlib"
+provider = "repology"
+
+[source]
+package = "zlib"

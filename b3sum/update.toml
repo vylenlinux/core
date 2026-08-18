@@ -1,0 +1,5 @@
+name = "b3sum"
+provider = "repology"
+
+[source]
+package = "cb3sum"

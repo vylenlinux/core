@@ -1,0 +1,5 @@
+name = "libtool"
+provider = "repology"
+
+[source]
+package = "libtool"

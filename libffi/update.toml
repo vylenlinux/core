@@ -1,0 +1,5 @@
+name = "libffi"
+provider = "repology"
+
+[source]
+package = "libffi"

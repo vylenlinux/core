@@ -1,0 +1,5 @@
+name = "python3"
+provider = "repology"
+
+[source]
+package = "python"

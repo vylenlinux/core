@@ -1,0 +1,5 @@
+name = "grep"
+provider = "repology"
+
+[source]
+package = "grep"

@@ -1,0 +1,5 @@
+name = "meson"
+provider = "repology"
+
+[source]
+package = "meson"

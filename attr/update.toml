@@ -1,0 +1,5 @@
+name = "attr"
+provider = "repology"
+
+[source]
+package = "attr"

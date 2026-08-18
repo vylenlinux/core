@@ -1,0 +1,5 @@
+name = "coreutils"
+provider = "repology"
+
+[source]
+package = "coreutils"

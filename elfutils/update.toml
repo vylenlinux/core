@@ -1,0 +1,5 @@
+name = "elfutils"
+provider = "repology"
+
+[source]
+package = "elfutils"
