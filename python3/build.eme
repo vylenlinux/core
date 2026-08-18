@@ -6,10 +6,10 @@ homepage="https://www.python.org"
 maintainer="Vylen Linux Team"
 
 name=python3
-version=3.14.7
+version=3.15.0rc1
 release=1
 
-source="${name}-${version}.tar.xz::https://www.python.org/ftp/python/${version}/Python-${version}.tar.xz
+source="${name}-${version}.tar.xz::https://www.python.org/ftp/python/${version%rc1}/Python-${version}.tar.xz
     pyconfig.h"
 
 build() {
