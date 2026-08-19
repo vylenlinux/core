@@ -1,11 +1,27 @@
 #!/bin/sh
 
-PYTHON_VERSION="$(emerald info --field=version python3 | cut -d. -f1-2)"
-
 # Rebuild with a major version upgrade
-if [ "${PYTHON_VERSION}" != "3.15" ]; then
+if [ -f /tmp/.python3-major-update ]; then
+    PYTHON_REBUILD="python3-setuptools
+        cython3
+        ninja
+        meson
+        meson-python
+        python3-gpep517
+        python3-installer
+        python3-flit-core
+        python3-wheel
+        python3-setuptools-scm
+        python3-build"
+
+    for p in $PYTHON_REBUILD; do
+        emerald is-installed "${p}" && emerald install -fr "${p}"
+    done
+
     emerald installed | awk '{print $1;}' | while read -r pkg; do
         [ "${pkg}" = "python3" ] && continue
-        emerald files "${pkg}" | grep -Eq '^usr/lib/python[^/]*/site-packages/?$' && emerald install -fr "${pkg}"
+        emerald files "${pkg}" | grep -Eq '^usr/lib/python[^/]*/site-packages/' && emerald install -fr "${pkg}"
     done
+
+    rm -f /tmp/.python3-major-update
 fi
