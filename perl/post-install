@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ -f /tmp/.perl-major-update ]; then
+    emerald installed | awk '{print $1;}' | while read -r pkg; do
+        [ "${pkg}" = "perl" ] && continue
+        emerald files "${pkg}" | grep -Eq '^usr/lib/perl5/' && emerald install -fr "${pkg}"
+    done
+
+    rm -f /tmp/.perl-major-update
+fi
