@@ -1,3 +1,7 @@
 #!/bin/sh
 
+INSTALLED_VERSION="$(emerald info --field=installed perl | cut -d. -f1-2)"
+LATEST_VERSION="$(emerald info --field=version perl | cut -d. -f1-2)"
+
+[ "${INSTALLED_VERSION}" != "${LATEST_VERSION}" ] && printf 'yes' > /tmp/.perl-major-update
 localedef -i C -f UTF-8 C.UTF-8
