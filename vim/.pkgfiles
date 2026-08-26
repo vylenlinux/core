@@ -1,4 +1,4 @@
-vim-9.2.1001-1
+vim-9.2.1011-1
 drwxr-xr-x root/root    etc/
 -rw-r--r-- root/root    etc/vimrc
 drwxr-xr-x root/root    usr/
@@ -468,6 +468,7 @@ drwxr-xr-x root/root    usr/share/vim/vim92/ftplugin/
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/awk.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/bash.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/basic.vim
+-rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/bazelrc.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/bdf.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/beancount.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/bicep-params.vim
@@ -1344,6 +1345,7 @@ drwxr-xr-x root/root    usr/share/vim/vim92/syntax/
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/baan.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/bash.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/basic.vim
+-rw-r--r-- root/root    usr/share/vim/vim92/syntax/bazelrc.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/bc.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/bdf.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/beancount.vim
