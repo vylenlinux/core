@@ -1,4 +1,4 @@
-man-pages-6.18-1
+man-pages-6.19-1
 drwxr-xr-x root/root    usr/
 drwxr-xr-x root/root    usr/bin/
 -rwxr-xr-x root/root    usr/bin/diffman-git
@@ -11,6 +11,8 @@ drwxr-xr-x root/root    usr/bin/
 -rwxr-xr-x root/root    usr/bin/sortman
 drwxr-xr-x root/root    usr/share/
 drwxr-xr-x root/root    usr/share/man/
+drwxr-xr-x root/root    usr/share/man/man0/
+-rw-r--r-- root/root    usr/share/man/man0/intro.0.gz
 drwxr-xr-x root/root    usr/share/man/man1/
 -rw-r--r-- root/root    usr/share/man/man1/diffman-git.1.gz
 -rw-r--r-- root/root    usr/share/man/man1/getent.1.gz
@@ -32,9 +34,7 @@ drwxr-xr-x root/root    usr/share/man/man1/
 -rw-r--r-- root/root    usr/share/man/man1/sprof.1.gz
 -rw-r--r-- root/root    usr/share/man/man1/time.1.gz
 drwxr-xr-x root/root    usr/share/man/man2/
--rw-r--r-- root/root    usr/share/man/man2/_Exit.2.gz
 -rw-r--r-- root/root    usr/share/man/man2/__clone2.2.gz
--rw-r--r-- root/root    usr/share/man/man2/_exit.2.gz
 -rw-r--r-- root/root    usr/share/man/man2/_llseek.2.gz
 -rw-r--r-- root/root    usr/share/man/man2/_newselect.2.gz
 -rw-r--r-- root/root    usr/share/man/man2/_syscall.2.gz
@@ -813,6 +813,25 @@ drwxr-xr-x root/root    usr/share/man/man2const/
 -rw-r--r-- root/root    usr/share/man/man2const/PR_SVE_SET_VL.2const.gz
 -rw-r--r-- root/root    usr/share/man/man2const/PR_TASK_PERF_EVENTS_DISABLE.2const.gz
 -rw-r--r-- root/root    usr/share/man/man2const/PR_TASK_PERF_EVENTS_ENABLE.2const.gz
+-rw-r--r-- root/root    usr/share/man/man2const/Q_GETFMT.2const.gz
+-rw-r--r-- root/root    usr/share/man/man2const/Q_GETINFO.2const.gz
+-rw-r--r-- root/root    usr/share/man/man2const/Q_GETNEXTQUOTA.2const.gz
+-rw-r--r-- root/root    usr/share/man/man2const/Q_GETQUOTA.2const.gz
+-rw-r--r-- root/root    usr/share/man/man2const/Q_GETSTATS.2const.gz
+-rw-r--r-- root/root    usr/share/man/man2const/Q_QUOTAOFF.2const.gz
+-rw-r--r-- root/root    usr/share/man/man2const/Q_QUOTAON.2const.gz
+-rw-r--r-- root/root    usr/share/man/man2const/Q_SETINFO.2const.gz
+-rw-r--r-- root/root    usr/share/man/man2const/Q_SETQUOTA.2const.gz
+-rw-r--r-- root/root    usr/share/man/man2const/Q_SYNC.2const.gz
+-rw-r--r-- root/root    usr/share/man/man2const/Q_XGETNEXTQUOTA.2const.gz
+-rw-r--r-- root/root    usr/share/man/man2const/Q_XGETQSTAT.2const.gz
+-rw-r--r-- root/root    usr/share/man/man2const/Q_XGETQSTATV.2const.gz
+-rw-r--r-- root/root    usr/share/man/man2const/Q_XGETQUOTA.2const.gz
+-rw-r--r-- root/root    usr/share/man/man2const/Q_XQUOTAOFF.2const.gz
+-rw-r--r-- root/root    usr/share/man/man2const/Q_XQUOTAON.2const.gz
+-rw-r--r-- root/root    usr/share/man/man2const/Q_XQUOTARM.2const.gz
+-rw-r--r-- root/root    usr/share/man/man2const/Q_XQUOTASYNC.2const.gz
+-rw-r--r-- root/root    usr/share/man/man2const/Q_XSETQLIM.2const.gz
 -rw-r--r-- root/root    usr/share/man/man2const/SO_PEERSEC.2const.gz
 -rw-r--r-- root/root    usr/share/man/man2const/TCFLSH.2const.gz
 -rw-r--r-- root/root    usr/share/man/man2const/TCGETA.2const.gz
@@ -872,6 +891,8 @@ drwxr-xr-x root/root    usr/share/man/man2const/
 -rw-r--r-- root/root    usr/share/man/man2const/UFFDIO_MOVE.2const.gz
 -rw-r--r-- root/root    usr/share/man/man2const/UFFDIO_POISON.2const.gz
 -rw-r--r-- root/root    usr/share/man/man2const/UFFDIO_REGISTER.2const.gz
+-rw-r--r-- root/root    usr/share/man/man2const/UFFDIO_RWPROTECT.2const.gz
+-rw-r--r-- root/root    usr/share/man/man2const/UFFDIO_SET_MODE.2const.gz
 -rw-r--r-- root/root    usr/share/man/man2const/UFFDIO_UNREGISTER.2const.gz
 -rw-r--r-- root/root    usr/share/man/man2const/UFFDIO_WAKE.2const.gz
 -rw-r--r-- root/root    usr/share/man/man2const/UFFDIO_WRITEPROTECT.2const.gz
@@ -890,6 +911,9 @@ drwxr-xr-x root/root    usr/share/man/man2const/
 -rw-r--r-- root/root    usr/share/man/man2const/VT_SETMODE.2const.gz
 -rw-r--r-- root/root    usr/share/man/man2const/VT_WAITACTIVE.2const.gz
 drwxr-xr-x root/root    usr/share/man/man2type/
+-rw-r--r-- root/root    usr/share/man/man2type/dqblk.2type.gz
+-rw-r--r-- root/root    usr/share/man/man2type/dqinfo.2type.gz
+-rw-r--r-- root/root    usr/share/man/man2type/fs_disk_quota.2type.gz
 -rw-r--r-- root/root    usr/share/man/man2type/in_pktinfo.2type.gz
 -rw-r--r-- root/root    usr/share/man/man2type/ip_mreq.2type.gz
 -rw-r--r-- root/root    usr/share/man/man2type/ip_mreq_source.2type.gz
@@ -1035,6 +1059,7 @@ drwxr-xr-x root/root    usr/share/man/man3/
 -rw-r--r-- root/root    usr/share/man/man3/TIMESPEC_TO_TIMEVAL.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/TIMEVAL_TO_TIMESPEC.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/_Countof.3.gz
+-rw-r--r-- root/root    usr/share/man/man3/_Exit.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/_Fork.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/_Generic.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/_Maxof.3.gz
@@ -1067,6 +1092,7 @@ drwxr-xr-x root/root    usr/share/man/man3/
 -rw-r--r-- root/root    usr/share/man/man3/__realloc_hook.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/__riscv_flush_icache.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/__setfpucw.3.gz
+-rw-r--r-- root/root    usr/share/man/man3/_exit.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/_flushlbf.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/a64l.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/abort.3.gz
@@ -1831,6 +1857,7 @@ drwxr-xr-x root/root    usr/share/man/man3/
 -rw-r--r-- root/root    usr/share/man/man3/llround.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/llroundf.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/llroundl.3.gz
+-rw-r--r-- root/root    usr/share/man/man3/llseek.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/localeconv.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/localtime.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/localtime_r.3.gz
@@ -1904,6 +1931,7 @@ drwxr-xr-x root/root    usr/share/man/man3/
 -rw-r--r-- root/root    usr/share/man/man3/mempcpy.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/memrchr.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/memset.3.gz
+-rw-r--r-- root/root    usr/share/man/man3/memset_explicit.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/minor.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/mkdtemp.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/mkfifo.3.gz
@@ -2351,6 +2379,8 @@ drwxr-xr-x root/root    usr/share/man/man3/
 -rw-r--r-- root/root    usr/share/man/man3/strftime.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/strftime_l.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/string.3.gz
+-rw-r--r-- root/root    usr/share/man/man3/strlcat.3.gz
+-rw-r--r-- root/root    usr/share/man/man3/strlcpy.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/strlen.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/strncasecmp.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/strncat.3.gz
@@ -2434,7 +2464,6 @@ drwxr-xr-x root/root    usr/share/man/man3/
 -rw-r--r-- root/root    usr/share/man/man3/tdestroy.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/telldir.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/tempnam.3.gz
--rw-r--r-- root/root    usr/share/man/man3/termios.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/tfind.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/tgamma.3.gz
 -rw-r--r-- root/root    usr/share/man/man3/tgammaf.3.gz
@@ -2644,6 +2673,7 @@ drwxr-xr-x root/root    usr/share/man/man3const/
 -rw-r--r-- root/root    usr/share/man/man3const/PA_WCHAR.3const.gz
 -rw-r--r-- root/root    usr/share/man/man3const/PA_WSTRING.3const.gz
 drwxr-xr-x root/root    usr/share/man/man3head/
+-rw-r--r-- root/root    usr/share/man/man3head/memory.h.3head.gz
 -rw-r--r-- root/root    usr/share/man/man3head/printf.h.3head.gz
 -rw-r--r-- root/root    usr/share/man/man3head/sysexits.h.3head.gz
 drwxr-xr-x root/root    usr/share/man/man3type/
@@ -2716,6 +2746,7 @@ drwxr-xr-x root/root    usr/share/man/man3type/
 -rw-r--r-- root/root    usr/share/man/man3type/stat.3type.gz
 -rw-r--r-- root/root    usr/share/man/man3type/suseconds_t.3type.gz
 -rw-r--r-- root/root    usr/share/man/man3type/tcflag_t.3type.gz
+-rw-r--r-- root/root    usr/share/man/man3type/termios.3type.gz
 -rw-r--r-- root/root    usr/share/man/man3type/time_t.3type.gz
 -rw-r--r-- root/root    usr/share/man/man3type/timer_t.3type.gz
 -rw-r--r-- root/root    usr/share/man/man3type/timespec.3type.gz
@@ -2792,6 +2823,7 @@ drwxr-xr-x root/root    usr/share/man/man5/
 -rw-r--r-- root/root    usr/share/man/man5/hosts.equiv.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/intro.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/issue.5.gz
+-rw-r--r-- root/root    usr/share/man/man5/ld.so.conf.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/locale.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/motd.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/networks.5.gz
@@ -2931,6 +2963,7 @@ drwxr-xr-x root/root    usr/share/man/man5/
 -rw-r--r-- root/root    usr/share/man/man5/termcap.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/tmpfs.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/ttytype.5.gz
+-rw-r--r-- root/root    usr/share/man/man5/tunables.conf.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/utmp.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/utmpx.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/wtmp.5.gz
@@ -3086,6 +3119,7 @@ drwxr-xr-x root/root    usr/share/man/man7/
 -rw-r--r-- root/root    usr/share/man/man7/sysvipc.7.gz
 -rw-r--r-- root/root    usr/share/man/man7/tcp.7.gz
 -rw-r--r-- root/root    usr/share/man/man7/termio.7.gz
+-rw-r--r-- root/root    usr/share/man/man7/termios.7.gz
 -rw-r--r-- root/root    usr/share/man/man7/thread-keyring.7.gz
 -rw-r--r-- root/root    usr/share/man/man7/time.7.gz
 -rw-r--r-- root/root    usr/share/man/man7/time_namespaces.7.gz
@@ -3117,3 +3151,5 @@ drwxr-xr-x root/root    usr/share/man/man8/
 -rw-r--r-- root/root    usr/share/man/man8/ldconfig.8.gz
 -rw-r--r-- root/root    usr/share/man/man8/nscd.8.gz
 -rw-r--r-- root/root    usr/share/man/man8/sln.8.gz
+drwxr-xr-x root/root    usr/share/man/man9/
+-rw-r--r-- root/root    usr/share/man/man9/strscpy.9.gz

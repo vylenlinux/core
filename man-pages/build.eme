@@ -6,7 +6,7 @@ homepage="https://www.kernel.org/doc/man-pages/"
 maintainer="Vylen Linux Team"
 
 name=man-pages
-version=6.18
+version=6.19
 release=1
 source="https://www.kernel.org/pub/linux/docs/${name}/${name}-${version}.tar.xz"
 
