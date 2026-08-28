@@ -1,5 +1,6 @@
 name = "curl"
-provider = "repology"
+provider = "ftp"
 
-[source]
-package = "curl"
+[ftp]
+url = "https://curl.haxx.se/download/"
+filename = "curl-{version}.tar.xz"
