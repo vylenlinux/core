@@ -1,6 +1,6 @@
 name = "glibc-32"
 provider = "repology"
+dedup_key = "glibc"
 
 [source]
 package = "glibc"
-dedup_key = "glibc"
