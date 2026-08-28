@@ -6,7 +6,7 @@ homepage="https://gitlab.com/vylen/emerald"
 maintainer="Vylen Linux Team"
 
 name=emerald
-version=20260827
+version=20260828
 release=1
 source="https://gitlab.com/vylen/${name}/-/archive/${version}/${name}-${version}.tar.gz"
 
