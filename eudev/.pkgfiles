@@ -1,9 +1,9 @@
 eudev-3.2.14-3
 drwxr-xr-x root/root    etc/
 drwxr-xr-x root/root    etc/conf.d/
--rw-r--r-- root/root    etc/conf.d/udev
--rw-r--r-- root/root    etc/conf.d/udev-settle
--rw-r--r-- root/root    etc/conf.d/udev-trigger
+-rw-r--r-- root/root    etc/conf.d/udev-settle.epkgnew
+-rw-r--r-- root/root    etc/conf.d/udev-trigger.epkgnew
+-rw-r--r-- root/root    etc/conf.d/udev.epkgnew
 drwxr-xr-x root/root    etc/init.d/
 -rwxr-xr-x root/root    etc/init.d/udev
 -rwxr-xr-x root/root    etc/init.d/udev-settle
