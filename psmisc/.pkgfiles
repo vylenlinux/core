@@ -1,4 +1,3 @@
-psmisc-23.7-1
 drwxr-xr-x root/root    bin/
 -rwxr-xr-x root/root    bin/fuser
 -rwxr-xr-x root/root    bin/killall
