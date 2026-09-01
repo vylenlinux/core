@@ -1,25 +1,30 @@
+#!/bin/sh
+
+# shellcheck disable=SC2034
 description="A library that implements Perl 5-style regular expressions. 2nd version"
 homepage="https://github.com/PCRE2Project/pcre2"
 maintainer="Vylen Linux Team"
 
 name=pcre2
-version=10.47
+version=10.48
 release=1
-source="https://github.com/PCRE2Project/pcre2/releases/download/$name-$version/$name-$version.tar.bz2"
+source="https://github.com/PCRE2Project/${name}/releases/download/${name}-${version}/${name}-${version}.tar.bz2"
 
 build() {
-	cd $name-$version
-	
-	./configure --prefix=/usr \
-	            --enable-unicode \
-		    --enable-jit \
-	            --enable-pcre2-16 \
-	            --enable-pcre2-32 \
-	            --enable-pcre2grep-libz \
-	            --enable-pcre2grep-libbz2 \
-	            --enable-pcre2test-libreadline \
-	            --disable-static
-	make
-	make DESTDIR=$PKG install
+    # shellcheck disable=SC2164
+    cd "${name}-${version}"
 
+    ./configure \
+        --prefix=/usr \
+        --enable-unicode \
+        --enable-jit \
+        --enable-pcre2-16 \
+        --enable-pcre2-32 \
+        --enable-pcre2grep-libz \
+        --enable-pcre2grep-libbz2 \
+        --enable-pcre2test-libreadline \
+        --disable-static
+
+    make
+    make DESTDIR="${PKG}" install
 }
