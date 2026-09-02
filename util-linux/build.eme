@@ -6,14 +6,12 @@ homepage="https://github.com/util-linux/util-linux"
 maintainer="Vylen Linux Team"
 
 name=util-linux
-version=2.42.2
+version=2.42.3
 release=1
 source="${name}-${version}.tar.gz::https://github.com/${name}/${name}/archive/refs/tags/v${version}.tar.gz"
 
 build() {
     vylen-meson "${name}-${version}" build \
-        --libdir=/usr/lib \
-        --libexecdir=/usr/lib \
         -Db_lto=false \
         -Dnls=disabled \
         -Dcryptsetup=disabled \
@@ -38,7 +36,7 @@ build() {
     install -d "${PKG}/bin"
 
     for p in dmesg findmnt kill lsblk lsfd more mount mountpoint pipesz umount wdctl; do
-        mv "${PKG}/usr/bin/${p}" "${PKG}/bin"
+        mv "${PKG}/usr/bin/${p}" -t "${PKG}/bin/"
     done
 
     # move from /usr/sbin to /sbin
@@ -46,6 +44,6 @@ build() {
     mv "${PKG}/usr/sbin"/* "${PKG}/sbin/"
 
     for p in addpart delpart ldattach partx readprofile resizepart rfkill rtcwake uuidd; do
-        mv "${PKG}/sbin/${p}" "${PKG}/usr/sbin/"
+        mv "${PKG}/sbin/${p}" -t "${PKG}/usr/sbin/"
     done
 }
