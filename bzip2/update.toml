@@ -1,5 +1,10 @@
 name = "bzip2"
-provider = "repology"
+provider = "github"
 
 [source]
-package = "bzip2"
+owner = "libarchive"
+repo = "bzip2"
+
+[github]
+use_releases = false
+use_tags = true
