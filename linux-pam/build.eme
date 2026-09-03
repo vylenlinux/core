@@ -7,7 +7,7 @@ maintainer="Vylen Linux Team"
 
 name=linux-pam
 version=1.7.2
-release=1
+release=2
 source="${name}-${version}.tar.xz::https://github.com/${name}/${name}/releases/download/v${version}/Linux-PAM-${version}.tar.xz"
 
 build() {
