@@ -6,7 +6,7 @@ homepage="https://xz.tukaani.org/xz-utils/"
 maintainer="Vylen Linux Team"
 
 name=xz
-version=5.8.3
+version=5.8.4
 release=1
 source="https://github.com/tukaani-project/${name}/archive/refs/tags/v${version}/${name}-${version}.tar.gz"
 
@@ -15,19 +15,21 @@ build() {
     cd "${name}-${version}"
     autoreconf -fi
 
-    ./configure --prefix=/usr \
+    ./configure \
+        --prefix=/usr \
         --disable-static \
         --disable-nls
 
     make
     make DESTDIR="${PKG}" install
 
-    mkdir -pv "${PKG}/bin" "${PKG}/lib"
+    mkdir -p "${PKG}/bin" \
+        "${PKG}/lib"
 
     for i in lzma unlzma lzcat xz unxz xzcat; do
-        mv -v "${PKG}/usr/bin/${i}" "${PKG}/bin"
+        mv "${PKG}/usr/bin/${i}" -t "${PKG}/bin/"
     done
 
-    mv -v "${PKG}/usr/lib"/liblzma.so.* "${PKG}/lib"
-    ln -svf "../../lib/$(readlink "${PKG}/usr/lib/liblzma.so")" "${PKG}/usr/lib/liblzma.so"
+    mv "${PKG}/usr/lib"/liblzma.so.* -t "${PKG}/lib/"
+    ln -sf "../../lib/$(readlink "${PKG}/usr/lib/liblzma.so")" "${PKG}/usr/lib/liblzma.so"
 }
