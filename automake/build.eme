@@ -1,18 +1,22 @@
+#!/bin/sh
+
+# shellcheck disable=SC2034
 description="Programs for generating Makefiles for use with Autoconf"
 homepage="https://www.gnu.org/software/automake"
 maintainer="Vylen Linux Team"
 
 name=automake
-version=1.18.1
+version=1.19
 release=1
-source="https://ftp.gnu.org/gnu/$name/$name-$version.tar.xz"
+source="https://ftp.gnu.org/gnu/${name}/${name}-${version}.tar.xz"
 
 build() {
-	cd $name-$version
+    # shellcheck disable=SC2164
+    cd "${name}-${version}"
+    ./configure --prefix=/usr
 
-	./configure --prefix=/usr
-	make
-	make DESTDIR=$PKG install
+    make
+    make DESTDIR="${PKG}" install
 
-	rm $PKG/usr/share/automake-*/texinfo.tex
+    rm "${PKG}/usr/share"/automake-*/texinfo.tex
 }
