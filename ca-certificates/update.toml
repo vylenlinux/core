@@ -3,3 +3,6 @@ provider = "repology"
 
 [source]
 package = "ca-certificates"
+
+[repology]
+ignore_versions = ["20260816"]
