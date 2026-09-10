@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="Linux man pages"
 homepage="https://www.kernel.org/doc/man-pages/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=man-pages
 version=6.19

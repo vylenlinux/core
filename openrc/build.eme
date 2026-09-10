@@ -2,7 +2,7 @@
 
 # shellcheck disable=SC2034
 description="The OpenRC init system"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 homepage="https://github.com/OpenRC/openrc"
 
 name=openrc

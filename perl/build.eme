@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="A highly capable, feature-rich programming language"
 homepage="https://www.perl.org/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=perl
 version=5.44.0

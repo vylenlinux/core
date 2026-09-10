@@ -1,6 +1,6 @@
 description="Zstandard - Fast real-time compression algorithm"
 homepage="https://facebook.github.io/zstd/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=zstd
 version=1.5.7

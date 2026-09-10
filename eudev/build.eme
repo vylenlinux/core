@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="Programs for dynamic creation of device nodes"
 homepage="https://github.com/eudev-project/udev"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=eudev
 version=3.2.14

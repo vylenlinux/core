@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="Utilities to administer the extended attributes on filesystem objects"
 homepage="https://savannah.nongnu.org/projects/attr"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=attr
 version=2.6.0

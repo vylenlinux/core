@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="Vylen Linux Package Manager"
 homepage="https://gitlab.com/vylen/emerald"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=emerald
 version=20260909

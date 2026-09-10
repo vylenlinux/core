@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="Functions for multiple precision math"
 homepage="https://www.mpfr.org/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=libmpfr
 version=4.2.2

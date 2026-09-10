@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="GNU readline library"
 homepage="https://tiswww.case.edu/php/chet/readline/rltop.html"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=readline
 version=8.3.3

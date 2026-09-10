@@ -1,6 +1,6 @@
 description="Miscellaneous procfs tools"
 homepage="https://gitlab.com/psmisc/psmisc"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=psmisc
 version=23.7

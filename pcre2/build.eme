@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="A library that implements Perl 5-style regular expressions. 2nd version"
 homepage="https://github.com/PCRE2Project/pcre2"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=pcre2
 version=10.48

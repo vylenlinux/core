@@ -1,6 +1,6 @@
 description="Contains math libraries that useful functions for arbitrary precision arithmetic"
 homepage="https://gmplib.org/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=libgmp
 version=6.3.0

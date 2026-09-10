@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="System V Release 4.0 curses emulation library"
 homepage="https://invisible-island.net/ncurses/ncurses.html"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=ncurses
 version=6.6

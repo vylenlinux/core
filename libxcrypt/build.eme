@@ -1,6 +1,6 @@
 description="Modern library for one-way hashing of passwords "
 homepage="https://github.com/besser82/libxcrypt/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=libxcrypt
 version=4.5.2

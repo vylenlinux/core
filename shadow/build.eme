@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="Programs for handling passwords in a secure way"
 homepage="https://github.com/shadow-maint/shadow"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=shadow
 version=4.20.2

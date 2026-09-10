@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="Reading/writing various compression formats"
 homepage="https://libarchive.org/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=libarchive
 version=3.8.9

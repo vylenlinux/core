@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="A utility to show the full path of commands"
 homepage="https://savannah.gnu.org/projects/which/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=which
 version=2.25

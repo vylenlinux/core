@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="Management tools and libraries relating to cryptography"
 homepage="https://www.openssl.org"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=openssl
 version=4.0.2

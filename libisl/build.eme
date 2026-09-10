@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="An Integer Set Library for the Polyhedral Model"
 homepage="http://isl.gforge.inria.fr/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=libisl
 version=0.28

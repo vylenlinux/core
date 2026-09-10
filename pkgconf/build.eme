@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="Package compiler and linker metadata toolkit"
 homepage="https://gitea.treehouse.systems/ariadne/pkgconf"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=pkgconf
 version=3.0.7

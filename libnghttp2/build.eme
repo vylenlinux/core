@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="Framing layer of HTTP/2 is implemented as a reusable C library"
 homepage="https://nghttp2.org"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=libnghttp2
 version=1.70.0

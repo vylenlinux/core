@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="High productivity build system"
 homepage="https://mesonbuild.com/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=meson
 version=1.12.0

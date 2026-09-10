@@ -1,6 +1,6 @@
 description="utilities for handling the ext2, ext3 and ext4 file system"
 homepage="http://e2fsprogs.sourceforge.net/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=e2fsprogs
 version=1.47.4

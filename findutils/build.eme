@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="Programs to find files"
 homepage="https://www.gnu.org/software/findutils/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=findutils
 version=4.11.0

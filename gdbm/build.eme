@@ -1,6 +1,6 @@
 description="The GNU Database Manager"
 homepage="https://www.gnu.org/software/gdbm/gdbm.html"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=gdbm
 version=1.26

@@ -1,6 +1,6 @@
 description="Programs for compressing and decompressing files"
 homepage="https://sourceware.org/bzip2/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=bzip2
 version=1.0.8

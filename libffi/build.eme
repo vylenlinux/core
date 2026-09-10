@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="Portable foreign function interface library"
 homepage="https://sourceware.org/libffi/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=libffi
 version=3.8.0

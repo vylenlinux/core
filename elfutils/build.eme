@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="utilities and libraries for handling ELF files"
 homepage="https://sourceware.org/elfutils/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=elfutils
 version=0.196

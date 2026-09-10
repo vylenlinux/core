@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="Utility and a library used for transferring files"
 homepage="https://curl.se/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=curl
 version=8.22.0

@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="Next generation of the python high-level scripting language"
 homepage="https://www.python.org"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=python3
 version=3.15.0rc2

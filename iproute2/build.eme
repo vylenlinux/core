@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="Programs for basic and advanced IPV4-based networking"
 homepage="https://git.kernel.org/pub/scm/network/iproute2/iproute2.git"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=iproute2
 version=7.2.0

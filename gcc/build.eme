@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="The GNU compiler collection, which includes the C and C++ compilers"
 homepage="https://gcc.gnu.org/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=gcc
 version=16.2.0

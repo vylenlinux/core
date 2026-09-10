@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="Utilities to administer Access Control Lists, which are used to define more fine-grained discretionary access rights for files and directories"
 homepage="https://savannah.nongnu.org/projects/acl"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=acl
 version=2.4.0

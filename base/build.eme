@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="Meta port for base system"
 homepage="https://vylen.gitlab.io/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=base
 version=20260313

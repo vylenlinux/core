@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="A collection of binary tools"
 homepage="https://www.gnu.org/software/binutils"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=binutils
 version=2.47

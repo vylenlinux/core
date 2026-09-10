@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="Utilities for showing and setting the basic system characteristics"
 homepage="https://www.gnu.org/software/coreutils/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=coreutils
 version=9.11

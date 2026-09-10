@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="Provides data for network services and protocols"
 homepage="https://www.iana.org/protocols"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=iana-etc
 version=20260817

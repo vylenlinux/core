@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="Base Vylen Linux files"
 homepage="https://vylen.gitlab.io/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=filesystem
 version=20260416

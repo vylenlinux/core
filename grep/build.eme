@@ -1,6 +1,6 @@
 description="Programs for searching through files"
 homepage="https://www.gnu.org/software/grep/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=grep
 version=3.12

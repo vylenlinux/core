@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="Sources for time zone and daylight saving time data"
 homepage="https://www.iana.org/time-zones"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=tzdata
 version=2026c

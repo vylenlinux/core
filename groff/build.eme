@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="Programs for processing and formatting text"
 homepage="https://www.gnu.org/software/groff/groff.html"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=groff
 version=1.24.1

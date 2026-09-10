@@ -1,6 +1,6 @@
 description="Tools for reading manual pages"
 homepage="https://gitlab.com/man-db/man-db"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=man-db
 version=2.13.1

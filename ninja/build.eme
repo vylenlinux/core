@@ -1,6 +1,6 @@
 description="Small build system with a focus on speed"
 homepage="https://ninja-build.org/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=ninja
 version=1.13.2

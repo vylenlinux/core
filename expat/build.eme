@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="A stream oriented C library for parsing XML"
 homepage="https://libexpat.github.io"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=expat
 version=2.8.4

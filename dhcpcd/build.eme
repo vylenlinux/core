@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="An implementation of the DHCP client specified in RFC2131"
 homepage="https://roy.marples.name/projects/dhcpcd/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=dhcpcd
 version=10.5.2

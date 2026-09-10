@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="A text file viewer"
 homepage="https://www.greenwoodsoftware.com/less/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=less
 version=704

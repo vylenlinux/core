@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="Version control system designed to handle everything from small to very large projects with speed and efficiency"
 homepage="https://git-scm.com/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=git
 version=2.55.0

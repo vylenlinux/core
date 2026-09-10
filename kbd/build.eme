@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="Key-table files, console fonts, and keyboard utilities"
 homepage="http://www.kbd-project.org/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=kbd
 version=2.10.0

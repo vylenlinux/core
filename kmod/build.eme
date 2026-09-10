@@ -1,6 +1,6 @@
 description="Libraries and utilities for loading kernel modules"
 homepage="https://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=kmod
 version=34.2

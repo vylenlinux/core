@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="A C library that implements an SQL database engine"
 homepage="https://www.sqlite.org/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=sqlite
 version=3.53.4

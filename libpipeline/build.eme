@@ -1,6 +1,6 @@
 description="A library for manipulating pipelines of subprocesses in a flexible and convenient way"
 homepage="https://nongnu.org/libpipeline/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=libpipeline
 version=1.5.8

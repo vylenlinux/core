@@ -2,7 +2,7 @@
 
 # shellcheck disable=SC2034
 description="GNU C Library (32-bit)"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 homepage="https://www.gnu.org/software/libc"
 
 name=glibc-32

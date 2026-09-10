@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="Utilities for monitoring your system and its processes"
 homepage="https://gitlab.com/procps-ng/procps"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=procps-ng
 version=4.0.7

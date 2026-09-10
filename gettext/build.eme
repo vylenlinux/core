@@ -1,6 +1,6 @@
 description="Utilities for internationalization and localization"
 homepage="https://www.gnu.org/software/gettext/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=gettext
 version=1.0

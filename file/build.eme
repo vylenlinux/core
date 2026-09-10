@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 description="Utility for determining the type of a given file or files"
 homepage="https://www.darwinsys.com/file/"
-maintainer="Vylen Linux Team"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 # shellcheck disable=SC2209
 name=file
