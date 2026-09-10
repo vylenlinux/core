@@ -6,10 +6,10 @@ homepage="https://www.python.org"
 maintainer="Vylen Linux Team"
 
 name=python3
-version=3.15.0rc1
+version=3.15.0rc2
 release=1
 
-source="${name}-${version}.tar.xz::https://www.python.org/ftp/python/${version%rc1}/Python-${version}.tar.xz
+source="${name}-${version}.tar.xz::https://www.python.org/ftp/python/${version%rc2}/Python-${version}.tar.xz
     pyconfig.h"
 
 build() {
@@ -42,9 +42,10 @@ build() {
 
     # Hack to avoid building again
     sed -i 's/^all:.*$/all: build_all/' Makefile
+    export EXTRA_CFLAGS="${CFLAGS}"
 
-    make EXTRA_CFLAGS="${CFLAGS}"
-    make EXTRA_CFLAGS="${CFLAGS}" DESTDIR="${PKG}" install maninstall
+    make
+    make DESTDIR="${PKG}" install maninstall
 
     chmod 755 "${PKG}/usr/lib/libpython${version%.*}.so" \
         "${PKG}/usr/lib/libpython3.so"
