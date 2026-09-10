@@ -7,40 +7,43 @@ maintainer="Vylen Linux Team"
 
 name=shadow
 version=4.20.2
-release=1
+release=2
 
 source="https://github.com/shadow-maint/${name}/releases/download/${version}/${name}-${version}.tar.xz
-    https://github.com/shadow-maint/${name}/commit/ba4419c57b222b0d34a2b933e7ee92914a51b596.patch
     pwck"
 
 build() {
     # shellcheck disable=SC2164
     cd "${name}-${version}"
 
-    # shellcheck disable=SC2016
-    sed -i 's/groups$(EXEEXT) //' src/Makefile.in
-    patch -Np1 -i "${SRC}/ba4419c57b222b0d34a2b933e7ee92914a51b596.patch"
-
-    find man -name Makefile.in -exec sed -i 's/groups\.1 / /' {} \;
-    find man -name Makefile.in -exec sed -i 's/getspnam\.3 / /' {} \;
-    find man -name Makefile.in -exec sed -i 's/passwd\.5 / /' {} \;
-
-    sed -i -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD YESCRYPT@' etc/login.defs
+    sed -i -e 's/^#ENCRYPT_METHOD.*/ENCRYPT_METHOD YESCRYPT/' etc/login.defs
+    export pamddir=
 
     ./configure \
         --prefix=/usr \
         --sysconfdir=/etc \
         --disable-logind \
-        --disable-nsl \
+        --disable-nls \
         --disable-static \
         --enable-lastlog \
+        --with-libpam \
         --with-yescrypt \
+        --without-audit \
+        --without-bcrypt \
         --without-libbsd \
-        --without-libpam \
+        --without-selinux \
         --with-group-name-max-length=32
 
     make
     make DESTDIR="${PKG}" install
 
     install -Dm755 "${SRC}/pwck" -t "${PKG}/etc/cron/daily/"
+
+    do_pam chage chpasswd login passwd su
+    sed -e "s/chpasswd/newusers/" "${PKG}/etc/pam.d/chpasswd" > "${PKG}/etc/pam.d/newusers"
+
+    for bin in chfn chgpasswd chsh groupadd groupdel groupmems groupmod useradd userdel usermod; do
+        install -m644 "${PKG}/etc/pam.d/chage" "${PKG}/etc/pam.d/${bin}"
+        sed -i "s/chage/${bin}/" "${PKG}/etc/pam.d/${bin}"
+    done
 }
