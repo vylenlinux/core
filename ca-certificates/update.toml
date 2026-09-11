@@ -5,4 +5,7 @@ provider = "repology"
 package = "ca-certificates"
 
 [repology]
-ignore_versions = ["20260816"]
+ignore_versions = [
+    "20260816",
+    "20260910"
+]
