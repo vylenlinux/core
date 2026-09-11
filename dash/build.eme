@@ -2,13 +2,13 @@
 
 # shellcheck disable=SC2034
 description="POSIX compliant shell"
-homepage="http://gondor.apana.org.au/~herbert/dash/"
+homepage="https://gondor.apana.org.au/~herbert/dash/"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=dash
 version=0.5.13.5
 release=1
-source="http://gondor.apana.org.au/~herbert/${name}/files/${name}-${version}.tar.gz"
+source="https://gondor.apana.org.au/~herbert/${name}/files/${name}-${version}.tar.gz"
 
 build() {
     # shellcheck disable=SC2164

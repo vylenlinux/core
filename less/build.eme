@@ -8,7 +8,7 @@ maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 name=less
 version=704
 release=1
-source="${name}-${version}.tar.gz::http://greenwoodsoftware.com/${name}/${name}-${version}-beta.tar.gz"
+source="${name}-${version}.tar.gz::https://greenwoodsoftware.com/${name}/${name}-${version}-beta.tar.gz"
 
 build() {
     # shellcheck disable=SC2164
