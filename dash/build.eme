@@ -2,7 +2,7 @@
 
 # shellcheck disable=SC2034
 description="POSIX compliant shell"
-homepage="https://gondor.apana.org.au/~herbert/dash/"
+homepage="http://gondor.apana.org.au/~herbert/dash/"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=dash
