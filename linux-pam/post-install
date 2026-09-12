@@ -1,0 +1,3 @@
+#!/bin/sh
+
+emerald hook post install elogind
