@@ -8,7 +8,7 @@ maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 name=dash
 version=0.5.13.5
 release=1
-source="https://gondor.apana.org.au/~herbert/${name}/files/${name}-${version}.tar.gz"
+source="http://gondor.apana.org.au/~herbert/${name}/files/${name}-${version}.tar.gz"
 
 build() {
     # shellcheck disable=SC2164
