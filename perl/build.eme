@@ -17,7 +17,8 @@ build() {
     export BUILD_ZLIB=False
     export BUILD_BZIP2=0
 
-    sh Configure -des \
+    sh Configure \
+        -des \
         -Dprefix=/usr \
         -Dvendorprefix=/usr \
         -Dprivlib="/usr/lib/perl5/${version%.*}" \
@@ -35,17 +36,5 @@ build() {
     ln -sf "perl${version%-*}" "${PKG}/usr/bin/perl"
     ln -sf perlbug.1pm "${PKG}/usr/share/man/man1/perlthanks.1pm"
 
-    # shellcheck disable=SC2038
-    find "${PKG}" \
-        -iname 'TODO*' -or \
-        -iname 'Change*' -or \
-        -iname 'README*' -or \
-        \
-        -name '*.bs' -or \
-        -name '.packlist' -or \
-        -name 'perllocal.pod' \
-    | xargs rm
-
-    find "${PKG}" -depth -empty -exec rmdir {} \;
     chmod -R +w "${PKG}"
 }
