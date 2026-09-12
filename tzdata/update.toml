@@ -1,5 +1,6 @@
 name = "tzdata"
-provider = "repology"
+provider = "ftp"
 
-[source]
-package = "tzdata"
+[ftp]
+url = "https://www.iana.org/time-zones/repository/releases/"
+filename = "tzdata{version}.tar.gz"
