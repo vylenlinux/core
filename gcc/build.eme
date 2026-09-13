@@ -24,7 +24,7 @@ build() {
     # shellcheck disable=SC2164
     cd build
 
-    SED="sed" ../configure \
+    ../configure \
         --prefix=/usr \
         --libexecdir=/usr/lib \
         --disable-bootstrap \
@@ -52,14 +52,14 @@ build() {
     make -j1 DESTDIR="${PKG}" install
 
     mkdir "${PKG}/lib"
-    ln -s ../usr/bin/cpp "${PKG}/lib/cpp"
+    ln -s ../usr/bin/cpp -t "${PKG}/lib/"
     ln -s gcc "${PKG}/usr/bin/cc"
 
     install -dm755 "${PKG}/usr/lib/bfd-plugins"
-    ln -sf "../../lib/gcc/$(gcc -dumpmachine)/${version}/liblto_plugin.so" "${PKG}/usr/lib/bfd-plugins/"
+    ln -sf "../../lib/gcc/$(gcc -dumpmachine)/${version}/liblto_plugin.so" -t "${PKG}/usr/lib/bfd-plugins/"
 
     mkdir -p "${PKG}/usr/share/gdb/auto-load/usr/lib"
-    mv "${PKG}/usr/lib"/*gdb.py "${PKG}/usr/share/gdb/auto-load/usr/lib/"
+    mv "${PKG}/usr/lib"/*gdb.py -t "${PKG}/usr/share/gdb/auto-load/usr/lib/"
 
     install -Dm755 "${SRC}/c89" "${SRC}/c99" -t "${PKG}/usr/bin/"
 
