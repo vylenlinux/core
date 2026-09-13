@@ -1,4 +1,4 @@
-# /etc/services, created 2026-08-17T06:28:43+0000
+# /etc/services, created 2026-09-12T21:21:24+0000
 # Source: https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xml
 tcpmux              1/tcp
 tcpmux              1/udp
@@ -8697,7 +8697,7 @@ amc              5506/udp
 psl-management   5507/tcp
 matter           5540/tcp
 matter           5540/udp
-qftest-licserve  5543/tcp
+qftest-lic-mcp   5543/tcp
 cbus             5550/tcp
 sgi-eventmond    5553/tcp
 sgi-eventmond    5553/udp
