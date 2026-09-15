@@ -28,6 +28,7 @@ lrwxrwxrwx root/root    etc/init.d/agetty.tty3 -> agetty
 lrwxrwxrwx root/root    etc/init.d/agetty.tty4 -> agetty
 lrwxrwxrwx root/root    etc/init.d/agetty.tty5 -> agetty
 lrwxrwxrwx root/root    etc/init.d/agetty.tty6 -> agetty
+-rwxr-xr-x root/root    etc/init.d/backlight
 -rwxr-xr-x root/root    etc/init.d/binfmt
 -rwxr-xr-x root/root    etc/init.d/bootmisc
 -rwxr-xr-x root/root    etc/init.d/cgroups
@@ -64,6 +65,7 @@ lrwxrwxrwx root/root    etc/init.d/functions.sh -> /usr/lib/rc/sh/functions.sh
 -rwxr-xr-x root/root    etc/init.d/swclock
 -rwxr-xr-x root/root    etc/init.d/sysctl
 -rwxr-xr-x root/root    etc/init.d/sysfs
+-rwxr-xr-x root/root    etc/init.d/sysv-initctl
 -rwxr-xr-x root/root    etc/init.d/termencoding
 -rwxr-xr-x root/root    etc/init.d/user
 drwxr-xr-x root/root    etc/local.d/
@@ -124,6 +126,7 @@ lrwxrwxrwx root/root    sbin/init -> /sbin/openrc-init
 -rwxr-xr-x root/root    sbin/openrc-run
 -rwxr-xr-x root/root    sbin/openrc-shutdown
 lrwxrwxrwx root/root    sbin/poweroff -> halt
+-rwxr-xr-x root/root    sbin/rc-environ
 -rwxr-xr-x root/root    sbin/rc-service
 -rwxr-xr-x root/root    sbin/rc-sstat
 -rwxr-xr-x root/root    sbin/rc-status
@@ -147,6 +150,7 @@ drwxr-xr-x root/root    usr/lib/pkgconfig/
 drwxr-xr-x root/root    usr/lib/rc/
 drwxr-xr-x root/root    usr/lib/rc/bin/
 -rwxr-xr-x root/root    usr/lib/rc/bin/checkpath
+-rwxr-xr-x root/root    usr/lib/rc/bin/do_unmount
 -rwxr-xr-x root/root    usr/lib/rc/bin/ebegin
 -rwxr-xr-x root/root    usr/lib/rc/bin/eend
 -rwxr-xr-x root/root    usr/lib/rc/bin/eerror
@@ -172,6 +176,7 @@ drwxr-xr-x root/root    usr/lib/rc/bin/
 -rwxr-xr-x root/root    usr/lib/rc/bin/rc-depend
 -rwxr-xr-x root/root    usr/lib/rc/bin/save_options
 -rwxr-xr-x root/root    usr/lib/rc/bin/service_crashed
+-rwxr-xr-x root/root    usr/lib/rc/bin/service_export
 -rwxr-xr-x root/root    usr/lib/rc/bin/service_get_value
 -rwxr-xr-x root/root    usr/lib/rc/bin/service_hotplugged
 -rwxr-xr-x root/root    usr/lib/rc/bin/service_inactive
@@ -203,6 +208,7 @@ drwxr-xr-x root/root    usr/lib/rc/sbin/
 -rwxr-xr-x root/root    usr/lib/rc/sbin/rc-abort
 -rwxr-xr-x root/root    usr/lib/rc/sbin/seedrng
 -rwxr-xr-x root/root    usr/lib/rc/sbin/swclock
+-rwxr-xr-x root/root    usr/lib/rc/sbin/sysv-initctl
 drwxr-xr-x root/root    usr/lib/rc/sh/
 -rwxr-xr-x root/root    usr/lib/rc/sh/binfmt.sh
 -rwxr-xr-x root/root    usr/lib/rc/sh/cgroup-release-agent.sh
@@ -214,7 +220,6 @@ drwxr-xr-x root/root    usr/lib/rc/sh/
 -rwxr-xr-x root/root    usr/lib/rc/sh/openrc-user.sh
 -rw-r--r-- root/root    usr/lib/rc/sh/rc-cgroup.sh
 -rw-r--r-- root/root    usr/lib/rc/sh/rc-functions.sh
--rw-r--r-- root/root    usr/lib/rc/sh/rc-mount.sh
 -rw-r--r-- root/root    usr/lib/rc/sh/runit.sh
 -rwxr-xr-x root/root    usr/lib/rc/sh/s6-svscanboot.sh
 -rw-r--r-- root/root    usr/lib/rc/sh/s6.sh
