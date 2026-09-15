@@ -38,7 +38,7 @@ build() {
 
     for i in $(seq 6); do
         ln -s agetty "${PKG}/etc/init.d/agetty.tty${i}"
-        ln -sf "/etc/init.d/agetty.tty${i}" "${PKG}/etc/runlevels/default/agetty.tty${i}"
+        ln -sf "/etc/init.d/agetty.tty${i}" -t "${PKG}/etc/runlevels/default/"
     done
 
     install -d "${PKG}/sbin"
