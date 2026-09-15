@@ -6,7 +6,7 @@ homepage="https://www.gnu.org/software/coreutils/"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=coreutils
-version=9.11
+version=9.12
 release=1
 source="https://ftp.gnu.org/gnu/${name}/${name}-${version}.tar.xz"
 
@@ -24,16 +24,16 @@ build() {
     make
     make DESTDIR="${PKG}" install
 
-    mkdir -pv "${PKG}/bin" \
+    mkdir -p "${PKG}/bin" \
         "${PKG}/usr/sbin"
 
     for i in cat chgrp chmod chown cp date dd df echo false ln ls mkdir mknod mv pwd rm rmdir stty sync true uname head sleep nice; do
-        mv -v "${PKG}/usr/bin/${i}" "${PKG}/bin"
+        mv "${PKG}/usr/bin/${i}" -t "${PKG}/bin/"
     done
 
-    mv -v "${PKG}/usr/bin/chroot" "${PKG}/usr/sbin"
-    mkdir -pv "${PKG}/usr/share/man/man8"
+    mv "${PKG}/usr/bin/chroot" -t "${PKG}/usr/sbin/"
+    mkdir -p "${PKG}/usr/share/man/man8"
 
-    mv -v "${PKG}/usr/share/man/man1/chroot.1" "${PKG}/usr/share/man/man8/chroot.8"
+    mv "${PKG}/usr/share/man/man1/chroot.1" "${PKG}/usr/share/man/man8/chroot.8"
     sed -i s/\"1\"/\"8\"/1 "${PKG}/usr/share/man/man8/chroot.8"
 }
