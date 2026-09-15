@@ -6,7 +6,7 @@ homepage="https://tiswww.case.edu/php/chet/readline/rltop.html"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=readline
-version=8.3.3
+version=8.3.6
 release=1
 
 source="https://ftp.gnu.org/gnu/${name}/${name}-${version%.*}.tar.gz
