@@ -15,9 +15,7 @@ source="https://github.com/shadow-maint/${name}/releases/download/${version}/${n
 build() {
     # shellcheck disable=SC2164
     cd "${name}-${version}"
-
     sed -i -e 's/^#ENCRYPT_METHOD.*/ENCRYPT_METHOD YESCRYPT/' etc/login.defs
-    export pamddir=
 
     ./configure \
         --prefix=/usr \
@@ -35,7 +33,7 @@ build() {
         --with-group-name-max-length=32
 
     make
-    make DESTDIR="${PKG}" install
+    make pamddir= DESTDIR="${PKG}" install
 
     install -Dm755 "${SRC}/pwck" -t "${PKG}/etc/cron/daily/"
 
