@@ -45,10 +45,8 @@ build() {
         --disable-static \
         --with-curses
 
-    export SHLIB_LIBS="-lncursesw"
-
-    make
-    make DESTDIR="${PKG}" install
+    make SHLIB_LIBS="-lncursesw"
+    make SHLIB_LIBS="-lncursesw" DESTDIR="${PKG}" install
 
     install -d "${PKG}/lib"
 
