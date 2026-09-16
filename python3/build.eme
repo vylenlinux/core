@@ -42,10 +42,9 @@ build() {
 
     # Hack to avoid building again
     sed -i 's/^all:.*$/all: build_all/' Makefile
-    export EXTRA_CFLAGS="${CFLAGS}"
 
-    make
-    make DESTDIR="${PKG}" install maninstall
+    make EXTRA_CFLAGS="${CFLAGS}"
+    make EXTRA_CFLAGS="${CFLAGS}" DESTDIR="${PKG}" install maninstall
 
     chmod 755 "${PKG}/usr/lib/libpython${version%.*}.so" \
         "${PKG}/usr/lib/libpython3.so"
