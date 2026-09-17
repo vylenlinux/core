@@ -1,5 +1,10 @@
 name = "vim"
-provider = "repology"
+provider = "github"
 
 [source]
-package = "vim"
+owner = "vim"
+repo = "vim"
+
+[github]
+use_releases = false
+use_tags = true

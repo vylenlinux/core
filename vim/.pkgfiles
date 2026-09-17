@@ -696,6 +696,7 @@ drwxr-xr-x root/root    usr/share/vim/vim92/ftplugin/
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/muttrc.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/mysql.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/nanorc.vim
+-rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/nasm.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/neomuttrc.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/netrc.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/nginx.vim
