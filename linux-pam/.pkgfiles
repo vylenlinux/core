@@ -9,6 +9,13 @@ drwxr-xr-x root/root    etc/security/
 drwxr-xr-x root/root    etc/security/limits.d/
 drwxr-xr-x root/root    etc/security/namespace.d/
 drwxr-xr-x root/root    usr/
+drwxr-xr-x root/root    usr/bin/
+-rwxr-xr-x root/root    usr/bin/faillock
+-rwxr-xr-x root/root    usr/bin/mkhomedir_helper
+-rwxr-xr-x root/root    usr/bin/pam_namespace_helper
+-rwxr-xr-x root/root    usr/bin/pam_timestamp_check
+-rwxr-xr-x root/root    usr/bin/pwhistory_helper
+-rwsr-xr-x root/root    usr/bin/unix_chkpwd
 drwxr-xr-x root/root    usr/include/
 drwxr-xr-x root/root    usr/include/security/
 -rw-r--r-- root/root    usr/include/security/_pam_compat.h
@@ -79,13 +86,6 @@ drwxr-xr-x root/root    usr/lib/security/pam_filter/
 -rwxr-xr-x root/root    usr/lib/security/pam_warn.so
 -rwxr-xr-x root/root    usr/lib/security/pam_wheel.so
 -rwxr-xr-x root/root    usr/lib/security/pam_xauth.so
-drwxr-xr-x root/root    usr/sbin/
--rwxr-xr-x root/root    usr/sbin/faillock
--rwxr-xr-x root/root    usr/sbin/mkhomedir_helper
--rwxr-xr-x root/root    usr/sbin/pam_namespace_helper
--rwxr-xr-x root/root    usr/sbin/pam_timestamp_check
--rwxr-xr-x root/root    usr/sbin/pwhistory_helper
--rwsr-xr-x root/root    usr/sbin/unix_chkpwd
 drwxr-xr-x root/root    usr/share/
 drwxr-xr-x root/root    usr/share/locale/
 drwxr-xr-x root/root    usr/share/locale/af/

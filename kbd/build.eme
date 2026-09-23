@@ -27,12 +27,4 @@ build() {
 
     make
     make DESTDIR="${PKG}" install
-
-    mkdir -p "${PKG}/bin"
-
-    mv "${PKG}/usr/bin/dumpkeys" \
-        "${PKG}/usr/bin/kbd_mode" \
-        "${PKG}/usr/bin/loadkeys" \
-        "${PKG}/usr/bin/setfont" \
-        "${PKG}/bin"
 }

@@ -16,8 +16,9 @@ build() {
     cd "${name}-${version}"
 
     ./configure \
-        --prefix= \
-        --libexecdir=/lib/dhcpcd \
+        --prefix=/usr \
+        --sbindir=/usr/bin \
+        --libexecdir=/usr/lib/dhcpcd \
         --dbdir=/var/lib/dhcpcd \
         --sysconfdir=/etc/dhcpcd \
         --rundir=/run/dhcpcd \

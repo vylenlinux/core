@@ -17,6 +17,4 @@ build() {
 
     make
     make DESTDIR="${PKG}" install
-
-    rm "${PKG}/usr/share"/automake-*/texinfo.tex
 }

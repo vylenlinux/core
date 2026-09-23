@@ -10,5 +10,5 @@ version=20260313
 release=1
 
 build() {
-    mkdir -pv "${PKG}/usr"
+    mkdir -p "${PKG}/usr"
 }

@@ -1,8 +1,8 @@
-#!/sbin/openrc-run
+#!/usr/bin/openrc-run
 
 # shellcheck disable=SC2034
 # shellcheck disable=SC2154
-command=/sbin/udevd
+command=/usr/bin/udevd
 command_args="${udev_opts}"
 command_background=yes
 pidfile=/run/udev.pid

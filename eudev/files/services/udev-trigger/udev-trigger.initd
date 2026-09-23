@@ -1,4 +1,4 @@
-#!/sbin/openrc-run
+#!/usr/bin/openrc-run
 
 # shellcheck disable=SC2034
 description="udev Coldplug all Devices"
@@ -23,7 +23,7 @@ start_pre() {
             --make-pidfile \
             --pidfile "${udevmonitor_pid}" \
             --background \
-            --exec /bin/udevadm \
+            --exec /usr/bin/udevadm \
             -- \
             monitor "${udev_monitor_opts}"
     fi
@@ -55,7 +55,7 @@ start_post() {
             start-stop-daemon \
                 --stop \
                 --pidfile "${udevmonitor_pid}" \
-                --exec /bin/udevadm
+                --exec /usr/bin/udevadm
         fi
     fi
 

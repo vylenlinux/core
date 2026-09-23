@@ -1,13 +1,13 @@
 drwxr-xr-x root/root    etc/
 drwxr-xr-x root/root    etc/ld.so.conf.d/
 -rw-r--r-- root/root    etc/ld.so.conf.d/lib32.conf
-drwxr-xr-x root/root    lib/
-lrwxrwxrwx root/root    lib/ld-linux.so.2 -> ../usr/lib32/ld-linux.so.2
 drwxr-xr-x root/root    usr/
 drwxr-xr-x root/root    usr/include/
 drwxr-xr-x root/root    usr/include/gnu/
 -rw-r--r-- root/root    usr/include/gnu/lib-names-32.h
 -rw-r--r-- root/root    usr/include/gnu/stubs-32.h
+drwxr-xr-x root/root    usr/lib/
+lrwxrwxrwx root/root    usr/lib/ld-linux.so.2 -> /usr/lib32/ld-linux.so.2
 drwxr-xr-x root/root    usr/lib32/
 -rw-r--r-- root/root    usr/lib32/Mcrt1.o
 -rw-r--r-- root/root    usr/lib32/Scrt1.o
@@ -324,5 +324,5 @@ lrwxrwxrwx root/root    usr/lib32/libthread_db.so -> libthread_db.so.1
 -rwxr-xr-x root/root    usr/lib32/libthread_db.so.1
 -rw-r--r-- root/root    usr/lib32/libutil.a
 -rwxr-xr-x root/root    usr/lib32/libutil.so.1
-lrwxrwxrwx root/root    usr/lib32/locale -> ../lib/locale
+lrwxrwxrwx root/root    usr/lib32/locale -> /usr/lib/locale
 -rw-r--r-- root/root    usr/lib32/rcrt1.o

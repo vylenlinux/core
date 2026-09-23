@@ -4,31 +4,6 @@ drwxr-xr-x root/root    etc/
 -rw-r--r-- root/root    etc/nscd.conf
 -rw-r--r-- root/root    etc/nsswitch.conf
 -rw-r--r-- root/root    etc/rpc
-drwxr-xr-x root/root    lib/
--rwxr-xr-x root/root    lib/ld-linux-x86-64.so.2
--rwxr-xr-x root/root    lib/libBrokenLocale.so.1
--rwxr-xr-x root/root    lib/libanl.so.1
--rwxr-xr-x root/root    lib/libc.so.6
--rwxr-xr-x root/root    lib/libc_malloc_debug.so.0
--rwxr-xr-x root/root    lib/libdl.so.2
--rwxr-xr-x root/root    lib/libm.so.6
--rwxr-xr-x root/root    lib/libmemusage.so
--rwxr-xr-x root/root    lib/libmvec.so.1
--rwxr-xr-x root/root    lib/libnsl.so.1
--rwxr-xr-x root/root    lib/libnss_compat.so.2
--rwxr-xr-x root/root    lib/libnss_db.so.2
--rwxr-xr-x root/root    lib/libnss_dns.so.2
--rwxr-xr-x root/root    lib/libnss_files.so.2
--rwxr-xr-x root/root    lib/libnss_hesiod.so.2
--rwxr-xr-x root/root    lib/libpcprofile.so
--rwxr-xr-x root/root    lib/libpthread.so.0
--rwxr-xr-x root/root    lib/libresolv.so.2
--rwxr-xr-x root/root    lib/librt.so.1
--rwxr-xr-x root/root    lib/libthread_db.so.1
--rwxr-xr-x root/root    lib/libutil.so.1
-drwxr-xr-x root/root    sbin/
--rwxr-xr-x root/root    sbin/ldconfig
--rwxr-xr-x root/root    sbin/sln
 drwxr-xr-x root/root    usr/
 drwxr-xr-x root/root    usr/bin/
 -rwxr-xr-x root/root    usr/bin/gencat
@@ -36,7 +11,9 @@ drwxr-xr-x root/root    usr/bin/
 hrwxr-xr-x root/root    usr/bin/getconf link to usr/lib/getconf/POSIX_V7_LP64_OFF64
 -rwxr-xr-x root/root    usr/bin/getent
 -rwxr-xr-x root/root    usr/bin/iconv
-lrwxrwxrwx root/root    usr/bin/ld.so -> ../../lib/ld-linux-x86-64.so.2
+-rwxr-xr-x root/root    usr/bin/iconvconfig
+lrwxrwxrwx root/root    usr/bin/ld.so -> ../lib/ld-linux-x86-64.so.2
+-rwxr-xr-x root/root    usr/bin/ldconfig
 -rwxr-xr-x root/root    usr/bin/ldd
 -rwxr-xr-x root/root    usr/bin/locale
 -rwxr-xr-x root/root    usr/bin/localedef
@@ -44,6 +21,7 @@ lrwxrwxrwx root/root    usr/bin/ld.so -> ../../lib/ld-linux-x86-64.so.2
 -rwxr-xr-x root/root    usr/bin/mtrace
 -rwxr-xr-x root/root    usr/bin/pcprofiledump
 -rwxr-xr-x root/root    usr/bin/pldd
+-rwxr-xr-x root/root    usr/bin/sln
 -rwxr-xr-x root/root    usr/bin/sotruss
 -rwxr-xr-x root/root    usr/bin/sprof
 -rwxr-xr-x root/root    usr/bin/xtrace
@@ -826,34 +804,67 @@ hrwxr-xr-x root/root    usr/lib/getconf/POSIX_V6_LP64_OFF64 link to usr/lib/getc
 -rwxr-xr-x root/root    usr/lib/getconf/POSIX_V7_LP64_OFF64
 hrwxr-xr-x root/root    usr/lib/getconf/XBS5_LP64_OFF64 link to usr/lib/getconf/POSIX_V7_LP64_OFF64
 -rw-r--r-- root/root    usr/lib/grcrt1.o
+-rwxr-xr-x root/root    usr/lib/ld-linux-x86-64.so.2
 -rw-r--r-- root/root    usr/lib/libBrokenLocale.a
-lrwxrwxrwx root/root    usr/lib/libBrokenLocale.so -> ../../lib/libBrokenLocale.so.1
+lrwxrwxrwx root/root    usr/lib/libBrokenLocale.so -> libBrokenLocale.so.1
+-rwxr-xr-x root/root    usr/lib/libBrokenLocale.so.1
 -rw-r--r-- root/root    usr/lib/libanl.a
-lrwxrwxrwx root/root    usr/lib/libanl.so -> ../../lib/libanl.so.1
+lrwxrwxrwx root/root    usr/lib/libanl.so -> libanl.so.1
+-rwxr-xr-x root/root    usr/lib/libanl.so.1
 -rw-r--r-- root/root    usr/lib/libc.a
 -rw-r--r-- root/root    usr/lib/libc.so
-lrwxrwxrwx root/root    usr/lib/libc_malloc_debug.so -> ../../lib/libc_malloc_debug.so.0
+-rwxr-xr-x root/root    usr/lib/libc.so.6
+lrwxrwxrwx root/root    usr/lib/libc_malloc_debug.so -> libc_malloc_debug.so.0
+-rwxr-xr-x root/root    usr/lib/libc_malloc_debug.so.0
 -rw-r--r-- root/root    usr/lib/libc_nonshared.a
 -rw-r--r-- root/root    usr/lib/libdl.a
+-rwxr-xr-x root/root    usr/lib/libdl.so.2
 -rw-r--r-- root/root    usr/lib/libg.a
 -rw-r--r-- root/root    usr/lib/libm-2.44.a
 -rw-r--r-- root/root    usr/lib/libm.a
 -rw-r--r-- root/root    usr/lib/libm.so
+-rwxr-xr-x root/root    usr/lib/libm.so.6
 -rw-r--r-- root/root    usr/lib/libmcheck.a
+-rwxr-xr-x root/root    usr/lib/libmemusage.so
 -rw-r--r-- root/root    usr/lib/libmvec.a
-lrwxrwxrwx root/root    usr/lib/libmvec.so -> ../../lib/libmvec.so.1
-lrwxrwxrwx root/root    usr/lib/libnss_compat.so -> ../../lib/libnss_compat.so.2
-lrwxrwxrwx root/root    usr/lib/libnss_db.so -> ../../lib/libnss_db.so.2
-lrwxrwxrwx root/root    usr/lib/libnss_hesiod.so -> ../../lib/libnss_hesiod.so.2
+lrwxrwxrwx root/root    usr/lib/libmvec.so -> libmvec.so.1
+-rwxr-xr-x root/root    usr/lib/libmvec.so.1
+-rwxr-xr-x root/root    usr/lib/libnsl.so.1
+lrwxrwxrwx root/root    usr/lib/libnss_compat.so -> libnss_compat.so.2
+-rwxr-xr-x root/root    usr/lib/libnss_compat.so.2
+lrwxrwxrwx root/root    usr/lib/libnss_db.so -> libnss_db.so.2
+-rwxr-xr-x root/root    usr/lib/libnss_db.so.2
+-rwxr-xr-x root/root    usr/lib/libnss_dns.so.2
+-rwxr-xr-x root/root    usr/lib/libnss_files.so.2
+lrwxrwxrwx root/root    usr/lib/libnss_hesiod.so -> libnss_hesiod.so.2
+-rwxr-xr-x root/root    usr/lib/libnss_hesiod.so.2
+-rwxr-xr-x root/root    usr/lib/libpcprofile.so
 -rw-r--r-- root/root    usr/lib/libpthread.a
+-rwxr-xr-x root/root    usr/lib/libpthread.so.0
 -rw-r--r-- root/root    usr/lib/libresolv.a
-lrwxrwxrwx root/root    usr/lib/libresolv.so -> ../../lib/libresolv.so.2
+lrwxrwxrwx root/root    usr/lib/libresolv.so -> libresolv.so.2
+-rwxr-xr-x root/root    usr/lib/libresolv.so.2
 -rw-r--r-- root/root    usr/lib/librt.a
-lrwxrwxrwx root/root    usr/lib/libthread_db.so -> ../../lib/libthread_db.so.1
+-rwxr-xr-x root/root    usr/lib/librt.so.1
+lrwxrwxrwx root/root    usr/lib/libthread_db.so -> libthread_db.so.1
+-rwxr-xr-x root/root    usr/lib/libthread_db.so.1
 -rw-r--r-- root/root    usr/lib/libutil.a
+-rwxr-xr-x root/root    usr/lib/libutil.so.1
+drwxr-xr-x root/root    usr/lib/locale/
+-rw-r--r-- root/root    usr/lib/locale/LC_ADDRESS
+-rw-r--r-- root/root    usr/lib/locale/LC_COLLATE
+-rw-r--r-- root/root    usr/lib/locale/LC_CTYPE
+-rw-r--r-- root/root    usr/lib/locale/LC_IDENTIFICATION
+-rw-r--r-- root/root    usr/lib/locale/LC_MEASUREMENT
+drwxr-xr-x root/root    usr/lib/locale/LC_MESSAGES/
+-rw-r--r-- root/root    usr/lib/locale/LC_MESSAGES/SYS_LC_MESSAGES
+-rw-r--r-- root/root    usr/lib/locale/LC_MONETARY
+-rw-r--r-- root/root    usr/lib/locale/LC_NAME
+-rw-r--r-- root/root    usr/lib/locale/LC_NUMERIC
+-rw-r--r-- root/root    usr/lib/locale/LC_PAPER
+-rw-r--r-- root/root    usr/lib/locale/LC_TELEPHONE
+-rw-r--r-- root/root    usr/lib/locale/LC_TIME
 -rw-r--r-- root/root    usr/lib/rcrt1.o
-drwxr-xr-x root/root    usr/sbin/
--rwxr-xr-x root/root    usr/sbin/iconvconfig
 drwxr-xr-x root/root    usr/share/
 drwxr-xr-x root/root    usr/share/i18n/
 drwxr-xr-x root/root    usr/share/i18n/charmaps/
@@ -1484,6 +1495,128 @@ drwxr-xr-x root/root    usr/share/info/
 -rw-r--r-- root/root    usr/share/info/libc.info-8.gz
 -rw-r--r-- root/root    usr/share/info/libc.info-9.gz
 -rw-r--r-- root/root    usr/share/info/libc.info.gz
+drwxr-xr-x root/root    usr/share/locale/
+drwxr-xr-x root/root    usr/share/locale/ar/
+drwxr-xr-x root/root    usr/share/locale/ar/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/ar/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/be/
+drwxr-xr-x root/root    usr/share/locale/be/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/be/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/bg/
+drwxr-xr-x root/root    usr/share/locale/bg/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/bg/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/ca/
+drwxr-xr-x root/root    usr/share/locale/ca/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/ca/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/cs/
+drwxr-xr-x root/root    usr/share/locale/cs/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/cs/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/da/
+drwxr-xr-x root/root    usr/share/locale/da/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/da/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/de/
+drwxr-xr-x root/root    usr/share/locale/de/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/de/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/el/
+drwxr-xr-x root/root    usr/share/locale/el/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/el/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/en_GB/
+drwxr-xr-x root/root    usr/share/locale/en_GB/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/en_GB/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/eo/
+drwxr-xr-x root/root    usr/share/locale/eo/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/eo/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/es/
+drwxr-xr-x root/root    usr/share/locale/es/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/es/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/fi/
+drwxr-xr-x root/root    usr/share/locale/fi/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/fi/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/fr/
+drwxr-xr-x root/root    usr/share/locale/fr/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/fr/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/gl/
+drwxr-xr-x root/root    usr/share/locale/gl/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/gl/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/hr/
+drwxr-xr-x root/root    usr/share/locale/hr/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/hr/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/hu/
+drwxr-xr-x root/root    usr/share/locale/hu/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/hu/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/ia/
+drwxr-xr-x root/root    usr/share/locale/ia/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/ia/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/id/
+drwxr-xr-x root/root    usr/share/locale/id/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/id/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/it/
+drwxr-xr-x root/root    usr/share/locale/it/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/it/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/ja/
+drwxr-xr-x root/root    usr/share/locale/ja/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/ja/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/ka/
+drwxr-xr-x root/root    usr/share/locale/ka/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/ka/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/ko/
+drwxr-xr-x root/root    usr/share/locale/ko/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/ko/LC_MESSAGES/libc.mo
+-rw-r--r-- root/root    usr/share/locale/locale.alias
+drwxr-xr-x root/root    usr/share/locale/lt/
+drwxr-xr-x root/root    usr/share/locale/lt/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/lt/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/nb/
+drwxr-xr-x root/root    usr/share/locale/nb/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/nb/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/nl/
+drwxr-xr-x root/root    usr/share/locale/nl/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/nl/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/pl/
+drwxr-xr-x root/root    usr/share/locale/pl/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/pl/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/pt/
+drwxr-xr-x root/root    usr/share/locale/pt/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/pt/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/pt_BR/
+drwxr-xr-x root/root    usr/share/locale/pt_BR/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/pt_BR/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/ro/
+drwxr-xr-x root/root    usr/share/locale/ro/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/ro/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/ru/
+drwxr-xr-x root/root    usr/share/locale/ru/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/ru/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/rw/
+drwxr-xr-x root/root    usr/share/locale/rw/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/rw/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/sk/
+drwxr-xr-x root/root    usr/share/locale/sk/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/sk/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/sl/
+drwxr-xr-x root/root    usr/share/locale/sl/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/sl/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/sr/
+drwxr-xr-x root/root    usr/share/locale/sr/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/sr/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/sv/
+drwxr-xr-x root/root    usr/share/locale/sv/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/sv/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/tr/
+drwxr-xr-x root/root    usr/share/locale/tr/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/tr/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/uk/
+drwxr-xr-x root/root    usr/share/locale/uk/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/uk/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/vi/
+drwxr-xr-x root/root    usr/share/locale/vi/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/vi/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/zh_CN/
+drwxr-xr-x root/root    usr/share/locale/zh_CN/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/zh_CN/LC_MESSAGES/libc.mo
+drwxr-xr-x root/root    usr/share/locale/zh_TW/
+drwxr-xr-x root/root    usr/share/locale/zh_TW/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/zh_TW/LC_MESSAGES/libc.mo
 drwxr-xr-x root/root    var/
 drwxr-xr-x root/root    var/db/
 -rw-r--r-- root/root    var/db/Makefile

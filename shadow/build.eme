@@ -15,10 +15,18 @@ source="https://github.com/shadow-maint/${name}/releases/download/${version}/${n
 build() {
     # shellcheck disable=SC2164
     cd "${name}-${version}"
+
+    # shellcheck disable=SC2016
+    sed -i 's|^usbindir = ${prefix}/sbin$|usbindir = ${prefix}/bin|' src/Makefile.am
     sed -i -e 's/^#ENCRYPT_METHOD.*/ENCRYPT_METHOD YESCRYPT/' etc/login.defs
+
+    autoreconf -fi
 
     ./configure \
         --prefix=/usr \
+        --bindir=/usr/bin \
+        --sbindir=/usr/bin \
+        --libdir=/usr/bin \
         --sysconfdir=/etc \
         --disable-logind \
         --disable-nls \

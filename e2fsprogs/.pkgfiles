@@ -1,38 +1,37 @@
-drwxr-xr-x root/root    bin/
--rwxr-xr-x root/root    bin/chattr
--rwxr-xr-x root/root    bin/compile_et
--rwxr-xr-x root/root    bin/lsattr
--rwxr-xr-x root/root    bin/mk_cmds
 drwxr-xr-x root/root    etc/
 -rw-r--r-- root/root    etc/e2scrub.conf
 -rw-r--r-- root/root    etc/mke2fs.conf
-drwxr-xr-x root/root    lib/
-drwxr-xr-x root/root    lib/udev/
-drwxr-xr-x root/root    lib/udev/rules.d/
--rw-r--r-- root/root    lib/udev/rules.d/64-ext4.rules
--rw-r--r-- root/root    lib/udev/rules.d/96-e2scrub.rules
-drwxr-xr-x root/root    sbin/
--rwxr-xr-x root/root    sbin/badblocks
--rwxr-xr-x root/root    sbin/debugfs
--rwxr-xr-x root/root    sbin/dumpe2fs
--rwxr-xr-x root/root    sbin/e2fsck
--rwxr-xr-x root/root    sbin/e2image
-hrwxr-xr-x root/root    sbin/e2label link to sbin/tune2fs
-hrwxr-xr-x root/root    sbin/e2mmpstatus link to sbin/dumpe2fs
--rwxr-xr-x root/root    sbin/e2scrub
--rwxr-xr-x root/root    sbin/e2scrub_all
--rwxr-xr-x root/root    sbin/e2undo
-hrwxr-xr-x root/root    sbin/fsck.ext2 link to sbin/e2fsck
-hrwxr-xr-x root/root    sbin/fsck.ext3 link to sbin/e2fsck
-hrwxr-xr-x root/root    sbin/fsck.ext4 link to sbin/e2fsck
--rwxr-xr-x root/root    sbin/logsave
--rwxr-xr-x root/root    sbin/mke2fs
-hrwxr-xr-x root/root    sbin/mkfs.ext2 link to sbin/mke2fs
-hrwxr-xr-x root/root    sbin/mkfs.ext3 link to sbin/mke2fs
-hrwxr-xr-x root/root    sbin/mkfs.ext4 link to sbin/mke2fs
--rwxr-xr-x root/root    sbin/resize2fs
--rwxr-xr-x root/root    sbin/tune2fs
 drwxr-xr-x root/root    usr/
+drwxr-xr-x root/root    usr/bin/
+-rwxr-xr-x root/root    usr/bin/badblocks
+-rwxr-xr-x root/root    usr/bin/chattr
+-rwxr-xr-x root/root    usr/bin/compile_et
+-rwxr-xr-x root/root    usr/bin/debugfs
+-rwxr-xr-x root/root    usr/bin/dumpe2fs
+-rwxr-xr-x root/root    usr/bin/e2freefrag
+-rwxr-xr-x root/root    usr/bin/e2fsck
+-rwxr-xr-x root/root    usr/bin/e2image
+hrwxr-xr-x root/root    usr/bin/e2label link to usr/bin/tune2fs
+hrwxr-xr-x root/root    usr/bin/e2mmpstatus link to usr/bin/dumpe2fs
+-rwxr-xr-x root/root    usr/bin/e2scrub
+-rwxr-xr-x root/root    usr/bin/e2scrub_all
+-rwxr-xr-x root/root    usr/bin/e2undo
+-rwxr-xr-x root/root    usr/bin/e4crypt
+-rwxr-xr-x root/root    usr/bin/e4defrag
+-rwxr-xr-x root/root    usr/bin/filefrag
+hrwxr-xr-x root/root    usr/bin/fsck.ext2 link to usr/bin/e2fsck
+hrwxr-xr-x root/root    usr/bin/fsck.ext3 link to usr/bin/e2fsck
+hrwxr-xr-x root/root    usr/bin/fsck.ext4 link to usr/bin/e2fsck
+-rwxr-xr-x root/root    usr/bin/logsave
+-rwxr-xr-x root/root    usr/bin/lsattr
+-rwxr-xr-x root/root    usr/bin/mk_cmds
+-rwxr-xr-x root/root    usr/bin/mke2fs
+hrwxr-xr-x root/root    usr/bin/mkfs.ext2 link to usr/bin/mke2fs
+hrwxr-xr-x root/root    usr/bin/mkfs.ext3 link to usr/bin/mke2fs
+hrwxr-xr-x root/root    usr/bin/mkfs.ext4 link to usr/bin/mke2fs
+-rwxr-xr-x root/root    usr/bin/mklost+found
+-rwxr-xr-x root/root    usr/bin/resize2fs
+-rwxr-xr-x root/root    usr/bin/tune2fs
 drwxr-xr-x root/root    usr/include/
 hrw-r--r-- root/root    usr/include/com_err.h link to usr/include/et/com_err.h
 drwxr-xr-x root/root    usr/include/e2p/
@@ -76,12 +75,10 @@ drwxr-xr-x root/root    usr/lib/pkgconfig/
 -rw-r--r-- root/root    usr/lib/pkgconfig/e2p.pc
 -rw-r--r-- root/root    usr/lib/pkgconfig/ext2fs.pc
 -rw-r--r-- root/root    usr/lib/pkgconfig/ss.pc
-drwxr-xr-x root/root    usr/sbin/
--rwxr-xr-x root/root    usr/sbin/e2freefrag
--rwxr-xr-x root/root    usr/sbin/e4crypt
--rwxr-xr-x root/root    usr/sbin/e4defrag
--rwxr-xr-x root/root    usr/sbin/filefrag
--rwxr-xr-x root/root    usr/sbin/mklost+found
+drwxr-xr-x root/root    usr/lib/udev/
+drwxr-xr-x root/root    usr/lib/udev/rules.d/
+-rw-r--r-- root/root    usr/lib/udev/rules.d/64-ext4.rules
+-rw-r--r-- root/root    usr/lib/udev/rules.d/96-e2scrub.rules
 drwxr-xr-x root/root    usr/share/
 drwxr-xr-x root/root    usr/share/et/
 -rw-r--r-- root/root    usr/share/et/et_c.awk

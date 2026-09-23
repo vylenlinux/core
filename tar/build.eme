@@ -15,12 +15,14 @@ source="https://ftp.gnu.org/gnu/${name}/${name}-${version}.tar.xz
 build() {
     # shellcheck disable=SC2164
     cd "${name}-${version}"
-    patch -Np1 -i "${SRC}/acl-2.40.patch"
 
-    FORCE_UNSAFE_CONFIGURE=1 ./configure \
+    patch -Np1 -i "${SRC}/acl-2.40.patch"
+    export FORCE_UNSAFE_CONFIGURE=1
+
+    ./configure \
         --prefix=/usr \
         --libexecdir="/usr/lib/${name}" \
-        --bindir=/bin \
+        --bindir=/usr/bin \
         --disable-nls
 
     make

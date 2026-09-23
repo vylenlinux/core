@@ -8,12 +8,18 @@ maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 name=iproute2
 version=7.2.0
 release=1
-source="https://git.kernel.org/pub/scm/network/${name}/${name}.git/snapshot/${name}-${version}.tar.gz"
+
+source="https://git.kernel.org/pub/scm/network/${name}/${name}.git/snapshot/${name}-${version}.tar.gz
+    0001-make-iproute2-fhs-compliant.patch"
 
 build() {
     # shellcheck disable=SC2164
     cd "${name}-${version}"
+    patch -Np1 -i "${SRC}/0001-make-iproute2-fhs-compliant.patch"
 
     make
-    make DESTDIR="${PKG}" install
+    make SBINDIR=/usr/bin DESTDIR="${PKG}" install
+
+    # remove unused (empty) directory
+    rm -rf "${PKG}/usr/lib"
 }

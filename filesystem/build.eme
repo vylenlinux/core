@@ -35,7 +35,7 @@ backup="etc/fstab
 
 build() {
     # root dirs
-    for d in bin boot dev etc/opt etc/skel home lib mnt opt run sbin srv var; do
+    for d in boot dev etc/opt etc/skel home mnt opt run srv var; do
         mkdir -p "${PKG}/${d}"
     done
 
@@ -63,9 +63,14 @@ build() {
         mkdir -p "${PKG}/var/${d}"
     done
 
+    ln -s usr/bin "${PKG}/bin"
+    ln -s usr/bin "${PKG}/sbin"
+    ln -s usr/lib "${PKG}/lib"
+    ln -s lib "${PKG}/lib64"
+    ln -s bin "${PKG}/usr/sbin"
+
     ln -sf ../run "${PKG}/var/run"
     ln -s /proc/self/mounts "${PKG}/etc/mtab"
-    ln -s lib "${PKG}/lib64"
 
     for f in btmp faillog lastlog wtmp; do
         touch "${PKG}/var/log/${f}"

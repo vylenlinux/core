@@ -21,19 +21,19 @@ build() {
 
     ./configure \
         --prefix=/usr \
-        --bindir=/sbin \
-        --sbindir=/sbin \
+        --bindir=/usr/bin \
+        --sbindir=/usr/bin \
         --libdir=/usr/lib \
         --sysconfdir=/etc \
         --libexecdir=/lib \
-        --with-rootprefix= \
-        --with-rootlibdir=/lib \
+        --with-rootprefix=/usr \
+        --with-rootlibdir=/usr/lib \
         --disable-static \
         "${OPTS}"
 
     make
 
-    mkdir -p "${PKG}/lib/udev/rules.d"
+    mkdir -p "${PKG}/usr/lib/udev/rules.d"
     mkdir -p "${PKG}/etc/udev/rules.d"
 
     make DESTDIR="${PKG}" install
@@ -41,6 +41,6 @@ build() {
     do_service udev udev-settle udev-trigger
     install -d "${PKG}/etc/runlevels/sysinit"
 
-    ln -sf "/etc/init.d/udev" -t "${PKG}/etc/runlevels/sysinit/"
-    ln -sf "/etc/init.d/udev-trigger" -t "${PKG}/etc/runlevels/sysinit/"
+    ln -sf /etc/init.d/udev -t "${PKG}/etc/runlevels/sysinit/"
+    ln -sf /etc/init.d/udev-trigger -t "${PKG}/etc/runlevels/sysinit/"
 }

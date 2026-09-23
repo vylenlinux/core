@@ -118,24 +118,24 @@ lrwxrwxrwx root/root    etc/runlevels/sysinit/dmesg -> /etc/init.d/dmesg
 lrwxrwxrwx root/root    etc/runlevels/sysinit/sysfs -> /etc/init.d/sysfs
 drwxr-xr-x root/root    etc/sysctl.d/
 -rw-r--r-- root/root    etc/sysctl.d/README
-drwxr-xr-x root/root    sbin/
--rwxr-xr-x root/root    sbin/halt
-lrwxrwxrwx root/root    sbin/init -> /sbin/openrc-init
--rwxr-xr-x root/root    sbin/openrc
--rwxr-xr-x root/root    sbin/openrc-init
--rwxr-xr-x root/root    sbin/openrc-run
--rwxr-xr-x root/root    sbin/openrc-shutdown
-lrwxrwxrwx root/root    sbin/poweroff -> halt
--rwxr-xr-x root/root    sbin/rc-environ
--rwxr-xr-x root/root    sbin/rc-service
--rwxr-xr-x root/root    sbin/rc-sstat
--rwxr-xr-x root/root    sbin/rc-status
--rwxr-xr-x root/root    sbin/rc-update
--rwxr-xr-x root/root    sbin/reboot
-lrwxrwxrwx root/root    sbin/shutdown -> /sbin/openrc-shutdown
--rwxr-xr-x root/root    sbin/start-stop-daemon
--rwxr-xr-x root/root    sbin/supervise-daemon
 drwxr-xr-x root/root    usr/
+drwxr-xr-x root/root    usr/bin/
+-rwxr-xr-x root/root    usr/bin/halt
+lrwxrwxrwx root/root    usr/bin/init -> openrc-init
+-rwxr-xr-x root/root    usr/bin/openrc
+-rwxr-xr-x root/root    usr/bin/openrc-init
+-rwxr-xr-x root/root    usr/bin/openrc-run
+-rwxr-xr-x root/root    usr/bin/openrc-shutdown
+lrwxrwxrwx root/root    usr/bin/poweroff -> halt
+-rwxr-xr-x root/root    usr/bin/rc-environ
+-rwxr-xr-x root/root    usr/bin/rc-service
+-rwxr-xr-x root/root    usr/bin/rc-sstat
+-rwxr-xr-x root/root    usr/bin/rc-status
+-rwxr-xr-x root/root    usr/bin/rc-update
+-rwxr-xr-x root/root    usr/bin/reboot
+lrwxrwxrwx root/root    usr/bin/shutdown -> openrc-shutdown
+-rwxr-xr-x root/root    usr/bin/start-stop-daemon
+-rwxr-xr-x root/root    usr/bin/supervise-daemon
 drwxr-xr-x root/root    usr/include/
 -rw-r--r-- root/root    usr/include/einfo.h
 -rw-r--r-- root/root    usr/include/rc.h

@@ -23,7 +23,4 @@ build() {
     make -C locate dblocation.texi
     make
     make DESTDIR="${PKG}" install
-
-    mkdir -p "${PKG}/bin"
-    mv "${PKG}/usr/bin/find" "${PKG}/bin"
 }

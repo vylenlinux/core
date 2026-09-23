@@ -32,15 +32,12 @@ build() {
     make
     make DESTDIR="${PKG}" install
 
-    mkdir -p "${PKG}/lib"
-    mv "${PKG}/usr/lib"/libncursesw.so.* "${PKG}/lib"
-
-    ln -sf "../../lib/libncursesw.so.${version}" "${PKG}/usr/lib/libncursesw.so"
-    ln -s "libncursesw.so.${version}" "${PKG}/lib/libncurses.so.${version%%.*}"
+    ln -sf "libncursesw.so.${version}" "${PKG}/usr/lib/libncursesw.so"
+    ln -s "libncursesw.so.${version}" "${PKG}/usr/lib/libncurses.so.${version%%.*}"
 
     # Create libtinfo symlinks.
     ln -sfr "${PKG}/usr/lib/libncursesw.so" "${PKG}/usr/lib/libtinfo.so"
-    ln -sfr "${PKG}/lib/libncursesw.so.${version}" "${PKG}/usr/lib/libtinfo.so.${version}"
+    ln -sfr "${PKG}/usr/lib/libncursesw.so.${version}" "${PKG}/usr/lib/libtinfo.so.${version}"
     ln -sfr "${PKG}/usr/lib/libtinfo.so.${version}" "${PKG}/usr/lib/libtinfo.so.6"
     ln -sfr "${PKG}/usr/lib/pkgconfig/ncursesw.pc" "${PKG}/usr/lib/pkgconfig/tinfo.pc"
 

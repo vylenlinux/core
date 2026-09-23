@@ -1,7 +1,3 @@
-drwxr-xr-x root/root    bin/
--rwxr-xr-x root/root    bin/getsubids
--rwxr-xr-x root/root    bin/login
--rwsr-xr-x root/root    bin/su
 drwxr-xr-x root/root    etc/
 drwxr-xr-x root/root    etc/cron/
 drwxr-xr-x root/root    etc/cron/daily/
@@ -24,43 +20,43 @@ drwxr-xr-x root/root    etc/pam.d/
 -rw-r--r-- root/root    etc/pam.d/useradd
 -rw-r--r-- root/root    etc/pam.d/userdel
 -rw-r--r-- root/root    etc/pam.d/usermod
-drwxr-xr-x root/root    lib/
-lrwxrwxrwx root/root    lib/libsubid.so -> libsubid.so.6.0.0
-lrwxrwxrwx root/root    lib/libsubid.so.6 -> libsubid.so.6.0.0
--rwxr-xr-x root/root    lib/libsubid.so.6.0.0
-drwxr-xr-x root/root    sbin/
--rwxr-xr-x root/root    sbin/nologin
 drwxr-xr-x root/root    usr/
 drwxr-xr-x root/root    usr/bin/
 -rwsr-xr-x root/root    usr/bin/chage
 -rwsr-xr-x root/root    usr/bin/chfn
+-rwxr-xr-x root/root    usr/bin/chgpasswd
+-rwxr-xr-x root/root    usr/bin/chpasswd
 -rwsr-xr-x root/root    usr/bin/chsh
 -rwxr-xr-x root/root    usr/bin/faillog
+-rwxr-xr-x root/root    usr/bin/getsubids
 -rwsr-xr-x root/root    usr/bin/gpasswd
+-rwxr-xr-x root/root    usr/bin/groupadd
+-rwxr-xr-x root/root    usr/bin/groupdel
+-rwxr-xr-x root/root    usr/bin/groupmod
+-rwxr-xr-x root/root    usr/bin/grpck
+-rwxr-xr-x root/root    usr/bin/grpconv
+-rwxr-xr-x root/root    usr/bin/grpunconv
 -rwxr-xr-x root/root    usr/bin/lastlog
+lrwxrwxrwx root/root    usr/bin/libsubid.so -> libsubid.so.6.0.0
+lrwxrwxrwx root/root    usr/bin/libsubid.so.6 -> libsubid.so.6.0.0
+-rwxr-xr-x root/root    usr/bin/libsubid.so.6.0.0
+-rwxr-xr-x root/root    usr/bin/login
 -rwsr-xr-x root/root    usr/bin/newgidmap
 -rwsr-xr-x root/root    usr/bin/newgrp
 -rwsr-xr-x root/root    usr/bin/newuidmap
+-rwxr-xr-x root/root    usr/bin/newusers
+-rwxr-xr-x root/root    usr/bin/nologin
 -rwsr-xr-x root/root    usr/bin/passwd
+-rwxr-xr-x root/root    usr/bin/pwck
+-rwxr-xr-x root/root    usr/bin/pwconv
+-rwxr-xr-x root/root    usr/bin/pwunconv
 lrwxrwxrwx root/root    usr/bin/sg -> newgrp
+-rwsr-xr-x root/root    usr/bin/su
+-rwxr-xr-x root/root    usr/bin/useradd
+-rwxr-xr-x root/root    usr/bin/userdel
+-rwxr-xr-x root/root    usr/bin/usermod
+lrwxrwxrwx root/root    usr/bin/vigr -> vipw
+-rwxr-xr-x root/root    usr/bin/vipw
 drwxr-xr-x root/root    usr/include/
 drwxr-xr-x root/root    usr/include/shadow/
 -rw-r--r-- root/root    usr/include/shadow/subid.h
-drwxr-xr-x root/root    usr/sbin/
--rwxr-xr-x root/root    usr/sbin/chgpasswd
--rwxr-xr-x root/root    usr/sbin/chpasswd
--rwxr-xr-x root/root    usr/sbin/groupadd
--rwxr-xr-x root/root    usr/sbin/groupdel
--rwxr-xr-x root/root    usr/sbin/groupmod
--rwxr-xr-x root/root    usr/sbin/grpck
--rwxr-xr-x root/root    usr/sbin/grpconv
--rwxr-xr-x root/root    usr/sbin/grpunconv
--rwxr-xr-x root/root    usr/sbin/newusers
--rwxr-xr-x root/root    usr/sbin/pwck
--rwxr-xr-x root/root    usr/sbin/pwconv
--rwxr-xr-x root/root    usr/sbin/pwunconv
--rwxr-xr-x root/root    usr/sbin/useradd
--rwxr-xr-x root/root    usr/sbin/userdel
--rwxr-xr-x root/root    usr/sbin/usermod
-lrwxrwxrwx root/root    usr/sbin/vigr -> vipw
--rwxr-xr-x root/root    usr/sbin/vipw

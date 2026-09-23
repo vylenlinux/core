@@ -13,11 +13,8 @@ source="https://ftp.gnu.org/gnu/${name}/${name}-${version}.tar.xz"
 build() {
     # shellcheck disable=SC2164
     cd "${name}-${version}"
-
     ./configure --prefix=/usr
+
     make
     make DESTDIR="${PKG}" install
-
-    mkdir -p "${PKG}/bin"
-    mv "${PKG}/usr/bin/${name}" -t "${PKG}/bin/"
 }

@@ -1,6 +1,7 @@
-#!/sbin/openrc-run
+#!/usr/bin/openrc-run
 
-command="${RC_PREFIX}/sbin/dhcpcd"
+# shellcheck disable=SC2034
+command="${RC_PREFIX}/usr/bin/dhcpcd"
 pidfile="${RC_PREFIX}/var/run/dhcpcd/pid"
 command_args="-q"
 name="DHCP Client Daemon"

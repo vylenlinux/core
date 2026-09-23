@@ -20,7 +20,7 @@ build() {
     DESTDIR="${PKG}" meson install --no-rebuild -C build
 
     # Enable setuid bit for the unix_chkpwd
-    chmod 4755 "${PKG}/usr/sbin/unix_chkpwd"
+    chmod 4755 "${PKG}/usr/bin/unix_chkpwd"
 
     # Create PAM configuration files
     do_pam system-account system-auth system-session system-password other

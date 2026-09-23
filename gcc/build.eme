@@ -51,8 +51,6 @@ build() {
     make
     make -j1 DESTDIR="${PKG}" install
 
-    mkdir "${PKG}/lib"
-    ln -s ../usr/bin/cpp -t "${PKG}/lib/"
     ln -s gcc "${PKG}/usr/bin/cc"
 
     install -dm755 "${PKG}/usr/lib/bfd-plugins"

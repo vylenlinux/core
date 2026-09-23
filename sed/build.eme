@@ -5,6 +5,7 @@ description="GNU stream editor"
 homepage="https://www.gnu.org/software/sed/"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
+# shellcheck disable=SC2209
 name=sed
 version=4.10
 release=1
@@ -16,7 +17,7 @@ build() {
 
     ./configure \
         --prefix=/usr \
-        --bindir=/bin \
+        --bindir=/usr/bin \
         --disable-nls
 
     make

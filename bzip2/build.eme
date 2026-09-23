@@ -1,3 +1,6 @@
+#!/bin/sh
+
+# shellcheck disable=SC2034
 description="Programs for compressing and decompressing files"
 homepage="https://sourceware.org/bzip2/"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
@@ -5,32 +8,31 @@ maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 name=bzip2
 version=1.0.8
 release=1
-source="https://www.sourceware.org/pub/bzip2/$name-$version.tar.gz"
+source="https://www.sourceware.org/pub/${name}/${name}-${version}.tar.gz"
 
 build() {
-	cd $name-$version
+    # shellcheck disable=SC2164
+    cd "${name}-${version}"
 
-	sed -i 's@\(ln -s -f \)$(PREFIX)/bin/@\1@' Makefile
-	sed -i "s@(PREFIX)/man@(PREFIX)/share/man@g" Makefile
+    # shellcheck disable=SC2016
+    sed -i 's@\(ln -s -f \)$(PREFIX)/bin/@\1@' Makefile
+    sed -i "s@(PREFIX)/man@(PREFIX)/share/man@g" Makefile
 
-	# use our optimization
-	[ "${CFLAGS}" ] && sed -i "s|-O2|${CFLAGS}|g" Makefile
-	[ "${CFLAGS}" ] && sed -i "s|-O2|${CFLAGS}|g" Makefile-libbz2_so
+    # use our optimization
+    sed -i "s|-O2|${CFLAGS}|g" Makefile
+    sed -i "s|-O2|${CFLAGS}|g" Makefile-libbz2_so
 
-	make -f Makefile-libbz2_so
-	make
-	make PREFIX=$PKG/usr install
+    make -f Makefile-libbz2_so
+    make
+    make PREFIX="${PKG}/usr" install
 
-	mkdir -pv $PKG/bin \
-	          $PKG/lib \
-	          $PKG/usr/lib
+    install -Dm755 bzip2-shared "${PKG}/usr/bin/bzip2"
+    cp -a libbz2.so* -t "${PKG}/usr/lib/"
 
-	cp -v bzip2-shared $PKG/bin/bzip2
-	cp -av libbz2.so* $PKG/lib
-	ln -sv ../../lib/libbz2.so.1.0 $PKG/usr/lib/libbz2.so
-	rm -v $PKG/usr/bin/bunzip2 \
-	      $PKG/usr/bin/bzcat \
-	      $PKG/usr/bin/bzip2
-	ln -sv bzip2 $PKG/bin/bunzip2
-	ln -sv bzip2 $PKG/bin/bzcat
+    rm "${PKG}/usr/bin/bunzip2" \
+        "${PKG}/usr/bin/bzcat"
+
+    ln -s bzip2 "${PKG}/usr/bin/bunzip2"
+    ln -s bzip2 "${PKG}/usr/bin/bzcat"
+    ln -s libbz2.so.1.0 "${PKG}/usr/lib/libbz2.so"
 }

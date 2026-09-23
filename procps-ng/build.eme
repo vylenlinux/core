@@ -13,9 +13,11 @@ source="https://sourceforge.net/projects/${name}/files/Production/${name}-${vers
 build() {
     # shellcheck disable=SC2164
     cd "${name}-${version}"
+    export CONFIG_SHELL=/bin/bash
 
-    CONFIG_SHELL=/bin/bash ./configure \
+    ./configure \
         --prefix=/usr \
+        --sbindir=/usr/bin \
         --disable-kill \
         --disable-modern-top \
         --disable-rpath \

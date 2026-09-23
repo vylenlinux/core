@@ -5,7 +5,7 @@ exec meson setup \
     --libdir=/usr/lib \
     --libexecdir=/usr/lib \
     --bindir=/usr/bin \
-    --sbindir=/usr/sbin \
+    --sbindir=/usr/bin \
     --includedir=/usr/include \
     --datadir=/usr/share \
     --mandir=/usr/share/man \

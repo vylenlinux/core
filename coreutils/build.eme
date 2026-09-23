@@ -23,17 +23,4 @@ build() {
 
     make
     make DESTDIR="${PKG}" install
-
-    mkdir -p "${PKG}/bin" \
-        "${PKG}/usr/sbin"
-
-    for i in cat chgrp chmod chown cp date dd df echo false ln ls mkdir mknod mv pwd rm rmdir stty sync true uname head sleep nice; do
-        mv "${PKG}/usr/bin/${i}" -t "${PKG}/bin/"
-    done
-
-    mv "${PKG}/usr/bin/chroot" -t "${PKG}/usr/sbin/"
-    mkdir -p "${PKG}/usr/share/man/man8"
-
-    mv "${PKG}/usr/share/man/man1/chroot.1" "${PKG}/usr/share/man/man8/chroot.8"
-    sed -i s/\"1\"/\"8\"/1 "${PKG}/usr/share/man/man8/chroot.8"
 }

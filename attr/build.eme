@@ -16,17 +16,11 @@ build() {
 
     ./configure \
         --prefix=/usr \
-        --bindir=/bin \
+        --bindir=/usr/bin \
         --disable-static \
         --sysconfdir=/etc \
         --disable-nls
 
     make
     make DESTDIR="${PKG}" install
-
-    chmod 755 "${PKG}/usr/lib/libattr.so"
-    mkdir -p "${PKG}/lib"
-
-    mv "${PKG}/usr/lib"/libattr.so.* "${PKG}/lib/"
-    ln -sf "../../lib/$(readlink "${PKG}/usr/lib/libattr.so")" "${PKG}/usr/lib/libattr.so"
 }

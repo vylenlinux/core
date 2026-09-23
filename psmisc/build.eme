@@ -1,3 +1,6 @@
+#!/bin/sh
+
+# shellcheck disable=SC2034
 description="Miscellaneous procfs tools"
 homepage="https://gitlab.com/psmisc/psmisc"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
@@ -5,16 +8,16 @@ maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 name=psmisc
 version=23.7
 release=1
-source="https://sourceforge.net/projects/psmisc/files/psmisc/psmisc-$version.tar.xz"
+source="https://sourceforge.net/projects/${name}/files/${name}/${name}-${version}.tar.xz"
 
 build() {
-	cd $name-$version
+    # shellcheck disable=SC2164
+    cd "${name}-${version}"
 
-	./configure --prefix=/usr --disable-nls
-	make
-	make DESTDIR=$PKG install
+    ./configure \
+        --prefix=/usr \
+        --disable-nls
 
-	mkdir -p $PKG/bin
-	mv -v $PKG/usr/bin/fuser   $PKG/bin
-	mv -v $PKG/usr/bin/killall $PKG/bin
+    make
+    make DESTDIR="${PKG}" install
 }

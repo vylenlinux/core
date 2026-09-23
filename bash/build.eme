@@ -13,15 +13,15 @@ source="https://ftp.gnu.org/gnu/${name}/${name}-${version%.*}.tar.gz
     bashrc
     profile"
 
-patch_name="$(printf '%s' "${version}" | awk -F. '{print "bash"$1$2"-"}')"
-patchver="${version##*.}"
+patch_name="$(printf '%s' "${version}" | awk -F. '{printf "bash%s%s-", $1, $2;}')"
+patch_version="${version##*.}"
 
 # Download bash patches
-if [ "${patchver}" -gt 0 ] 2>/dev/null; then
+if [ "${patch_version}" -gt 0 ] 2>/dev/null; then
     _p=1
 
-    while [ "${_p}" -le "${patchver}" ]; do
-        source="${source} https://ftp.gnu.org/gnu/${name}/${name}-${version%.*}-patches/${patch_name}$(printf "%03d" "$_p")"
+    while [ "${_p}" -le "${patch_version}" ]; do
+        source="${source} https://ftp.gnu.org/gnu/${name}/${name}-${version%.*}-patches/${patch_name}$(printf "%03d" "${_p}")"
         _p=$((_p + 1))
     done
 fi
@@ -34,7 +34,7 @@ build() {
     cd "${name}-${version%.*}"
 
     # Apply bash patches
-    if [ "${patchver}" -gt 0 ] 2>/dev/null; then
+    if [ "${patch_version}" -gt 0 ] 2>/dev/null; then
         for p in "${SRC}/${patch_name}"*; do
             patch -Np0 -i "${p}"
         done
@@ -49,9 +49,6 @@ build() {
 
     make
     make DESTDIR="${PKG}" install
-
-    mkdir -p "${PKG}/bin"
-    mv "${PKG}/usr/bin/bash" "${PKG}/bin"
 
     install -Dm644 "${SRC}/bashrc" "${SRC}/profile" -t "${PKG}/etc/"
 }

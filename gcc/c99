@@ -7,7 +7,7 @@ for opt; do
         -std=c99 | -std=iso9899:1999) fl="" ;;
 
         -std=*)
-            printf "%s called with non ISO C99 option %s\n" "$(basename "${0}")" "${opt}" >&2
+            printf "%s called with non ISO C99 option %s\n" "${0##*/}" "${opt}" >&2
             exit 1
         ;;
     esac

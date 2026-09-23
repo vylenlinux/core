@@ -30,4 +30,7 @@ if [ -z "${script_args}" ]; then
     script_args="now"
 fi
 
-exec /sbin/openrc-shutdown "${option_arg}" "${poweroff_arg}" "${script_args}"
+exec /usr/bin/openrc-shutdown \
+    "${option_arg}" \
+    "${poweroff_arg}" \
+    "${script_args}"

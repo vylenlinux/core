@@ -23,9 +23,6 @@ build() {
         src/shared/version.in
 
     vylen-meson build \
-        --bindir=/sbin \
-        --sbindir=/sbin \
-        \
         -Dbranding='"Vylen Linux"' \
         -Dpam=true \
         -Dpkgconfig=true \
@@ -41,12 +38,11 @@ build() {
         ln -sf "/etc/init.d/agetty.tty${i}" -t "${PKG}/etc/runlevels/default/"
     done
 
-    install -d "${PKG}/sbin"
-    ln -s /sbin/openrc-init "${PKG}/sbin/init"
-    ln -s /sbin/openrc-shutdown "${PKG}/sbin/shutdown"
+    ln -s openrc-init "${PKG}/usr/bin/init"
+    ln -s openrc-shutdown "${PKG}/usr/bin/shutdown"
 
-    install -Dm755 "${SRC}/halt" -t "${PKG}/sbin/"
-    install -Dm755 "${SRC}/reboot" -t "${PKG}/sbin/"
+    install -Dm755 "${SRC}/halt" -t "${PKG}/usr/bin/"
+    install -Dm755 "${SRC}/reboot" -t "${PKG}/usr/bin/"
 
-    ln -sf halt "${PKG}/sbin/poweroff"
+    ln -sf halt "${PKG}/usr/bin/poweroff"
 }

@@ -13,7 +13,7 @@ source="https://ftp.gnu.org/gnu/${name}/${name}-${version%.*}.tar.gz
     display-null-prompt.patch
     inputrc"
 
-patch_name="$(printf '%s' "${version}" | awk -F. '{print "readline"$1$2"-"}')"
+patch_name="$(printf '%s' "${version}" | awk -F. '{printf "readline%s%s-", $1, $2;}')"
 patch_version="${version##*.}"
 
 # Download readline patches
@@ -47,15 +47,6 @@ build() {
 
     make SHLIB_LIBS="-lncursesw"
     make SHLIB_LIBS="-lncursesw" DESTDIR="${PKG}" install
-
-    install -d "${PKG}/lib"
-
-    mv "${PKG}/usr/lib"/libreadline.so.* \
-        "${PKG}/usr/lib"/libhistory.so.* \
-    -t "${PKG}/lib"
-
-    ln -sf "../../lib/$(readlink "${PKG}/usr/lib/libreadline.so")" "${PKG}/usr/lib/libreadline.so"
-    ln -sf "../../lib/$(readlink "${PKG}/usr/lib/libhistory.so")" "${PKG}/usr/lib/libhistory.so"
 
     install -Dm644 "${SRC}/inputrc" -t "${PKG}/etc/"
 }

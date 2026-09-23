@@ -12,10 +12,10 @@ release=1
 source="https://ftp.gnu.org/gnu/glibc/glibc-${version}.tar.xz
     lib32.conf"
 
-nostrip="lib.*/ld-.*\.so$
-    lib.*/libc-.*\.so$
-    lib.*/libpthread-.*\.so$
-    lib.*/libthread_db-.*\.so$"
+nostrip="usr/lib32/ld-.*\.so$
+    usr/lib32/libc-.*\.so$
+    usr/lib32/libpthread-.*\.so$
+    usr/lib32/libthread_db-.*\.so$"
 
 build() {
     # shellcheck disable=SC2164
@@ -56,11 +56,11 @@ build() {
 
     install -Dm644 DESTDIR/usr/include/gnu/lib-names-32.h DESTDIR/usr/include/gnu/stubs-32.h -t "${PKG}/usr/include/gnu/"
 
-    install -d "${PKG}/lib"
-    install -d "${PKG}/etc/ld.so.conf.d"
+    install -d "${PKG}/etc/ld.so.conf.d" \
+        "${PKG}/usr/lib"
 
-    ln -s ../usr/lib32/ld-linux.so.2 "${PKG}/lib/ld-linux.so.2"
-    ln -s ../lib/locale "${PKG}/usr/lib32/locale"
+    ln -s /usr/lib32/ld-linux.so.2 -t "${PKG}/usr/lib/"
+    ln -s /usr/lib/locale -t "${PKG}/usr/lib32/"
 
     install -Dm644 "${SRC}/lib32.conf" -t "${PKG}/etc/ld.so.conf.d/"
 }

@@ -7,7 +7,7 @@ for opt; do
         -ansi | -std=c89 | -std=iso9899:1990) fl="" ;;
 
         -std=*)
-            printf "%s called with non ANSI/ISO C option %s\n" "$(basename "${0}")" "${opt}" >&2
+            printf "%s called with non ANSI/ISO C option %s\n" "${0##*/}" "${opt}" >&2
             exit 1
         ;;
     esac
