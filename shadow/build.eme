@@ -6,8 +6,8 @@ homepage="https://github.com/shadow-maint/shadow"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=shadow
-version=4.20.2
-release=2
+version=4.20.3
+release=1
 
 source="https://github.com/shadow-maint/${name}/releases/download/${version}/${name}-${version}.tar.xz
     pwck"
