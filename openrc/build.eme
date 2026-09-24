@@ -6,7 +6,7 @@ maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 homepage="https://github.com/OpenRC/openrc"
 
 name=openrc
-version=0.64
+version=0.64.1
 release=1
 backup="etc/rc.conf"
 

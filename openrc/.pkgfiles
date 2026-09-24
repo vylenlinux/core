@@ -210,7 +210,6 @@ drwxr-xr-x root/root    usr/lib/rc/sbin/
 -rwxr-xr-x root/root    usr/lib/rc/sbin/swclock
 -rwxr-xr-x root/root    usr/lib/rc/sbin/sysv-initctl
 drwxr-xr-x root/root    usr/lib/rc/sh/
--rwxr-xr-x root/root    usr/lib/rc/sh/binfmt.sh
 -rwxr-xr-x root/root    usr/lib/rc/sh/cgroup-release-agent.sh
 -rw-r--r-- root/root    usr/lib/rc/sh/functions.sh
 -rwxr-xr-x root/root    usr/lib/rc/sh/gendepends.sh
@@ -319,6 +318,7 @@ drwxr-xr-x root/root    usr/share/man/man8/
 -rw-r--r-- root/root    usr/share/man/man8/openrc-run.8.gz
 -rw-r--r-- root/root    usr/share/man/man8/openrc-shutdown.8.gz
 -rw-r--r-- root/root    usr/share/man/man8/openrc.8.gz
+-rw-r--r-- root/root    usr/share/man/man8/rc-environ.8.gz
 -rw-r--r-- root/root    usr/share/man/man8/rc-service.8.gz
 -rw-r--r-- root/root    usr/share/man/man8/rc-sstat.8.gz
 -rw-r--r-- root/root    usr/share/man/man8/rc-status.8.gz
