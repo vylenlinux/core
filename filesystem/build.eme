@@ -63,6 +63,8 @@ build() {
         mkdir -p "${PKG}/var/${d}"
     done
 
+    rmdir "${PKG}/usr/sbin"
+
     ln -s usr/bin "${PKG}/bin"
     ln -s usr/bin "${PKG}/sbin"
     ln -s usr/lib "${PKG}/lib"
