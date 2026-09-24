@@ -20,9 +20,4 @@ build() {
 
     meson compile -C build -j "${JOBS:-1}"
     DESTDIR="${PKG}" meson install -C build
-
-    find "${PKG}" \( \
-        -name perllocal.pod -o \
-        -name .packlist \
-    \) -delete
 }
