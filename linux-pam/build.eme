@@ -6,8 +6,8 @@ homepage="https://github.com/linux-pam/linux-pam"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=linux-pam
-version=1.7.2
-release=2
+version=1.7.3
+release=1
 source="${name}-${version}.tar.xz::https://github.com/${name}/${name}/releases/download/v${version}/Linux-PAM-${version}.tar.xz"
 
 build() {
