@@ -1,0 +1,4 @@
+slibdir=/usr/lib
+rtlddir=/usr/lib
+sbindir=/usr/bin
+rootsbindir=/usr/bin

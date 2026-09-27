@@ -1,0 +1,4 @@
+slibdir=/usr/lib32
+rtlddir=/usr/lib32
+sbindir=/usr/bin
+rootsbindir=/usr/bin

@@ -12,7 +12,8 @@ backup="etc/locales"
 
 source="https://ftp.gnu.org/gnu/${name}/${name}-${version}.tar.xz
     genlocales
-    nsswitch.conf"
+    nsswitch.conf
+    configparms"
 
 nostrip="usr/lib/ld-.*\.so$
     usr/lib/libc-.*\.so$
@@ -26,6 +27,8 @@ build() {
     mkdir build
     # shellcheck disable=SC2164
     cd build
+
+    install -Dm644 "${SRC}/configparms" -t .
 
     # shellcheck disable=SC2086
     ../configure \
@@ -43,7 +46,6 @@ build() {
         --enable-multi-arch \
         libc_cv_include_x86_isa_level=no
 
-    sed -i 's|^rootsbindir = .*|rootsbindir = /usr/bin|' config.make
     make
 
     # shellcheck disable=SC2016
@@ -69,12 +71,10 @@ build() {
     cp -r ../C.UTF-8 "${PKG}/usr/lib/locale"
     sed -i '/#C\.UTF-8 /d' "${PKG}/etc/locales"
 
-    mv "${PKG}/usr/sbin/iconvconfig" -t "${PKG}/usr/bin/"
+    mv "${PKG}/usr/bin/iconvconfig" -t "${PKG}/usr/bin/"
 
     # shipped with tzdata
     rm "${PKG}/usr/bin/zdump" \
-        "${PKG}/usr/sbin/zic" \
+        "${PKG}/usr/bin/zic" \
         "${PKG}/usr/bin/tzselect"
-
-    rmdir "${PKG}/usr/sbin"
 }

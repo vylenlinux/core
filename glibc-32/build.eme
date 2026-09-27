@@ -10,7 +10,8 @@ version=2.44
 release=1
 
 source="https://ftp.gnu.org/gnu/glibc/glibc-${version}.tar.xz
-    lib32.conf"
+    lib32.conf
+    configparms"
 
 nostrip="usr/lib32/ld-.*\.so$
     usr/lib32/libc-.*\.so$
@@ -29,10 +30,13 @@ build() {
     # shellcheck disable=SC2164
     cd build
 
+    install -Dm644 "${SRC}/configparms" -t .
+
     ../configure \
         --libdir=/usr/lib32 \
         --libexecdir=/usr/lib32 \
         libc_cv_slibdir=/usr/lib32 \
+        libc_cv_include_x86_isa_level=no \
         i686-pc-linux-gnu \
         --prefix=/usr \
         --with-headers=/usr/include \
@@ -42,8 +46,7 @@ build() {
         --enable-bind-now \
         --enable-kernel=4.14 \
         --enable-stack-protector=strong \
-        --enable-multi-arch \
-        libc_cv_include_x86_isa_level=no
+        --enable-multi-arch
 
     make
 
@@ -52,9 +55,12 @@ build() {
     make install_root="${PWD}/DESTDIR" install
 
     install -dm755 "${PKG}/usr/lib32"
-    cp -R DESTDIR/usr/lib32/* "${PKG}/usr/lib32/"
+    cp -R DESTDIR/usr/lib32/* -t "${PKG}/usr/lib32/"
 
-    install -Dm644 DESTDIR/usr/include/gnu/lib-names-32.h DESTDIR/usr/include/gnu/stubs-32.h -t "${PKG}/usr/include/gnu/"
+    install -Dm644 \
+        DESTDIR/usr/include/gnu/lib-names-32.h \
+        DESTDIR/usr/include/gnu/stubs-32.h \
+    -t "${PKG}/usr/include/gnu/"
 
     install -d "${PKG}/etc/ld.so.conf.d" \
         "${PKG}/usr/lib"
