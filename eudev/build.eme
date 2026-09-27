@@ -6,8 +6,8 @@ homepage="https://github.com/eudev-project/udev"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=eudev
-version=3.2.14
-release=3
+version=3.2.15
+release=1
 source="${name}-${version}.tar.gz::https://github.com/eudev-project/${name}/archive/v${version}.tar.gz"
 
 build() {

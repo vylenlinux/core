@@ -1,5 +1,6 @@
 name = "eudev"
-provider = "repology"
+provider = "github"
 
 [source]
-package = "eudev"
+owner = "eudev-project"
+repo = "eudev"
