@@ -34,6 +34,7 @@ build() {
     ../configure \
         --libexecdir=/usr/lib \
         libc_cv_slibdir=/usr/lib \
+        libc_cv_rtlddir=/usr/lib \
         --enable-sframe \
         --prefix=/usr \
         --with-headers=/usr/include \
@@ -70,8 +71,6 @@ build() {
 
     cp -r ../C.UTF-8 "${PKG}/usr/lib/locale"
     sed -i '/#C\.UTF-8 /d' "${PKG}/etc/locales"
-
-    mv "${PKG}/usr/bin/iconvconfig" -t "${PKG}/usr/bin/"
 
     # shipped with tzdata
     rm "${PKG}/usr/bin/zdump" \
