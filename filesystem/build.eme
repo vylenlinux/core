@@ -69,6 +69,7 @@ build() {
     ln -s usr/bin "${PKG}/sbin"
     ln -s usr/lib "${PKG}/lib"
     ln -s lib "${PKG}/lib64"
+    ln -s lib "${PKG}/usr/lib64"
     ln -s bin "${PKG}/usr/sbin"
 
     ln -sf ../run "${PKG}/var/run"
