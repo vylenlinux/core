@@ -1,5 +1,5 @@
 # /etc/shells
 
-/bin/sh
-/bin/dash
-/bin/bash
+/usr/bin/sh
+/usr/bin/dash
+/usr/bin/bash
