@@ -6,7 +6,7 @@ homepage="https://github.com/PCRE2Project/pcre2"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=pcre2
-version=10.48
+version=10.49
 release=1
 source="https://github.com/PCRE2Project/${name}/releases/download/${name}-${version}/${name}-${version}.tar.bz2"
 
