@@ -13,8 +13,9 @@ source="${name}-${version}.tar.xz::https://github.com/${name}/${name}/releases/d
 build() {
     vylen-meson "Linux-PAM-${version}" build \
         -Ddocs=disabled \
-        -Dlogind=disabled \
-        -Dselinux=disabled
+        -Dlogind=enabled \
+        -Dselinux=disabled \
+        -Delogind=disabled
 
     meson compile -C build
     DESTDIR="${PKG}" meson install --no-rebuild -C build

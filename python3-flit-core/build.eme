@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# shellcheck disable=SC2034
+description="Simplified packaging of Python modules"
+homepage="https://github.com/takluyver/flit"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
+
+name=python3-flit-core
+version=4.1.0
+release=1
+
+source="${name}-${version}.tar.gz::https://github.com/takluyver/flit/archive/${version}/flit-${version}.tar.gz
+    vendor-licence.patch"
+
+build() {
+    # shellcheck disable=SC2164
+    cd "flit-${version}/flit_core"
+    patch -Np1 -i "${SRC}/vendor-licence.patch"
+
+    rm ../tests/test_sdist.py
+    rm -rf flit_core/vendor/
+
+    python3 build_dists.py
+    python3 -m installer -d "${PKG}" dist/*.whl
+}

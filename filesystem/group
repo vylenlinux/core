@@ -21,5 +21,4 @@ uucp:x:19:uucp
 input:x:24:
 mail:x:34:
 kvm:x:61:
-nogroup:x:99:
 users:x:999:

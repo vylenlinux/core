@@ -47,6 +47,4 @@ build() {
     # no desktop files and icons
     rm -r "${PKG}/usr/share/applications" \
         "${PKG}/usr/share/icons"
-
-    rm -f "${PKG}/usr/share/vim/vim92"/*/systemd.vim
 }

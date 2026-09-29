@@ -8,8 +8,13 @@ maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 name=dhcpcd
 version=10.5.2
 release=1
-source="https://github.com/NetworkConfiguration/${name}/releases/download/v${version}/${name}-${version}.tar.xz"
 backup="etc/dhcpcd/dhcpcd.conf"
+
+source="https://github.com/NetworkConfiguration/${name}/releases/download/v${version}/${name}-${version}.tar.xz
+    ${name}.service
+    ${name}_.service
+    ${name}.sysusers
+    ${name}.tmpfiles"
 
 build() {
     # shellcheck disable=SC2164
@@ -27,5 +32,8 @@ build() {
     make
     make DESTDIR="${PKG}" install
 
-    do_service dhcpcd
+    install -Dm644 "${SRC}/${name}.service" -t "${PKG}/usr/lib/systemd/system/"
+    install -Dm644 "${SRC}/${name}_.service" "${PKG}/usr/lib/systemd/system/${name}@.service"
+    install -Dm644 "${SRC}/${name}.sysusers" "${PKG}/usr/lib/sysusers.d/${name}.conf"
+    install -Dm644 "${SRC}/${name}.tmpfiles" "${PKG}/usr/lib/tmpfiles.d/${name}.conf"
 }

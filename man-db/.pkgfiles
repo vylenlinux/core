@@ -20,6 +20,12 @@ lrwxrwxrwx root/root    usr/lib/man-db/libman.so -> libman-2.13.1.so
 lrwxrwxrwx root/root    usr/lib/man-db/libmandb.so -> libmandb-2.13.1.so
 -rwxr-xr-x root/root    usr/lib/man-db/manconv
 -rwxr-xr-x root/root    usr/lib/man-db/zsoelim
+drwxr-xr-x root/root    usr/lib/systemd/
+drwxr-xr-x root/root    usr/lib/systemd/system/
+-rw-r--r-- root/root    usr/lib/systemd/system/man-db.service
+-rw-r--r-- root/root    usr/lib/systemd/system/man-db.timer
+drwxr-xr-x root/root    usr/lib/tmpfiles.d/
+-rw-r--r-- root/root    usr/lib/tmpfiles.d/man-db.conf
 drwxr-xr-x root/root    usr/share/
 drwxr-xr-x root/root    usr/share/locale/
 drwxr-xr-x root/root    usr/share/locale/af/
@@ -196,6 +202,3 @@ drwxr-xr-x root/root    usr/share/man/man8/
 -rw-r--r-- root/root    usr/share/man/man8/accessdb.8.gz
 -rw-r--r-- root/root    usr/share/man/man8/catman.8.gz
 -rw-r--r-- root/root    usr/share/man/man8/mandb.8.gz
-drwxr-xr-x root/root    var/
-drwxr-xr-x root/root    var/cache/
-drwxr-xr-x root/root    var/cache/man/

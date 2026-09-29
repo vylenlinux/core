@@ -1,0 +1,5 @@
+name = "python3-wheel"
+provider = "pypi"
+
+[source]
+package = "wheel"

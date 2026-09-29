@@ -1,0 +1,25 @@
+#!/usr/bin/env sh
+
+# shellcheck disable=SC2034
+description="A low-level library for installing from a Python wheel distribution"
+homepage="https://github.com/pypa/installer"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
+
+name=python3-installer
+version=1.0.1
+release=1
+
+source="${name}-${version}.whl::https://files.pythonhosted.org/packages/py3/i/installer/installer-${version}-py3-none-any.whl
+    default-bytecode-level.patch"
+
+noextract="${name}-${version}.whl"
+
+build() {
+    pyver=$(python3 -c 'import site; print(site.getsitepackages()[0])')
+    mkdir -p "${PKG}/${pyver}"
+
+    bsdtar -xf "${SRC}/${name}-${version}.whl"  -C "${PKG}/${pyver}"
+    patch -Np1 -d "${PKG}/${pyver}" -i "${SRC}/default-bytecode-level.patch"
+
+    python3 -m compileall "${PKG}/${pyver}"
+}

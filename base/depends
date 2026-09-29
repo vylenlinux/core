@@ -1,5 +1,5 @@
 filesystem
-openrc
+systemd
 linux-pam
 linux-api-headers
 glibc
@@ -57,7 +57,6 @@ kbd
 libpipeline
 make
 patch
-eudev
 util-linux
 man-db
 tar
