@@ -1,6 +1,0 @@
-name = "eudev"
-provider = "github"
-
-[source]
-owner = "eudev-project"
-repo = "eudev"
