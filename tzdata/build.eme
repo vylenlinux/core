@@ -6,7 +6,7 @@ homepage="https://www.iana.org/time-zones"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=tzdata
-version=2026d
+version=2026e
 release=1
 
 source="${name}-${version}.tar.gz::https://www.iana.org/time-zones/repository/releases/${name}${version}.tar.gz
