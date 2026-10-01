@@ -6,7 +6,7 @@ homepage="https://www.openssl.org"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=openssl
-version=4.0.2
+version=4.0.3
 release=1
 source="https://github.com/${name}/${name}/releases/download/${name}-${version}/${name}-${version}.tar.gz"
 
