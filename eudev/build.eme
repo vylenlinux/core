@@ -1,0 +1,46 @@
+#!/usr/bin/env sh
+
+# shellcheck disable=SC2034
+description="Programs for dynamic creation of device nodes"
+homepage="https://github.com/eudev-project/udev"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
+
+name=eudev
+version=3.2.15
+release=1
+source="${name}-${version}.tar.gz::https://github.com/eudev-project/${name}/archive/v${version}.tar.gz"
+
+build() {
+    # shellcheck disable=SC2164
+    cd "${name}-${version}"
+    emerald is-installed libxslt && OPTS="--enable-manpages"
+
+    # remove an unneeded group 'sgx'
+    sed -i -e 's/GROUP="sgx", //' rules/50-udev-default.rules
+    autoreconf -fis
+
+    ./configure \
+        --prefix=/usr \
+        --bindir=/usr/bin \
+        --sbindir=/usr/bin \
+        --libdir=/usr/lib \
+        --sysconfdir=/etc \
+        --libexecdir=/lib \
+        --with-rootprefix=/usr \
+        --with-rootlibdir=/usr/lib \
+        --disable-static \
+        "${OPTS}"
+
+    make
+
+    mkdir -p "${PKG}/usr/lib/udev/rules.d"
+    mkdir -p "${PKG}/etc/udev/rules.d"
+
+    make DESTDIR="${PKG}" install
+
+    do_service udev udev-settle udev-trigger
+    install -d "${PKG}/etc/runlevels/sysinit"
+
+    ln -sf /etc/init.d/udev -t "${PKG}/etc/runlevels/sysinit/"
+    ln -sf /etc/init.d/udev-trigger -t "${PKG}/etc/runlevels/sysinit/"
+}

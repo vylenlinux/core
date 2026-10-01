@@ -1,0 +1,36 @@
+#!/bin/sh
+
+option_arg=""
+poweroff_arg=""
+
+while getopts :nwdfhik opt; do
+    case "${opt}" in
+        n | f | h | i) ;;
+        w) poweroff_arg="--write-only" ;;
+        d) option_arg="--no-write" ;;
+        k) poweroff_arg="--kexec" ;;
+
+        [?])
+            printf "%s: invalid command line option\n" "${0##*/}" >&2
+            exit 1
+        ;;
+    esac
+done
+
+shift "$((OPTIND - 1))"
+
+if [ -z "${poweroff_arg}" ]; then
+    poweroff_arg="--reboot"
+fi
+
+# shellcheck disable=SC2124
+script_args="$@"
+
+if [ -z "${script_args}" ]; then
+    script_args="now"
+fi
+
+exec /usr/bin/openrc-shutdown \
+    "${option_arg}" \
+    "${poweroff_arg}" \
+    "${script_args}"

@@ -23,8 +23,7 @@ build() {
         --disable-rpath \
         --disable-static \
         --disable-w-from \
-        --with-ncurses \
-        --with-systemd
+        --with-ncurses
 
     make
     make DESTDIR="${PKG}" install

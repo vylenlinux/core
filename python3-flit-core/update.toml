@@ -1,5 +1,0 @@
-name = "python3-flit-core"
-provider = "pypi"
-
-[source]
-package = "flit-core"

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+emerald is-installed elogind && emerald hook post install elogind
