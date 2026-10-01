@@ -1,4 +1,4 @@
-# /etc/services, created 2026-09-12T21:21:24+0000
+# /etc/services, created 2026-10-01T12:17:39+0200
 # Source: https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xml
 tcpmux              1/tcp
 tcpmux              1/udp
@@ -7798,8 +7798,8 @@ vision-mon       4413/tcp
 vision-mon-disc  4413/udp
 updog            4414/tcp
 brcd-vr-req      4415/tcp
-pjj-player       4416/tcp
-pjj-player-disc  4416/udp
+newmood-player   4416/tcp
+newmood-player   4416/udp
 workflowdir      4417/tcp
 axysbridge       4418/udp
 cbp              4419/tcp
