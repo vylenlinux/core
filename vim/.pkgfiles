@@ -822,7 +822,6 @@ drwxr-xr-x root/root    usr/share/vim/vim92/ftplugin/
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/swig.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/sysctl.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/sysml.vim
--rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/systemd.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/systemverilog.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/tap.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/tcl.vim
@@ -1972,7 +1971,6 @@ drwxr-xr-x root/root    usr/share/vim/vim92/syntax/shared/
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/synload.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/syntax.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/sysctl.vim
--rw-r--r-- root/root    usr/share/vim/vim92/syntax/systemd.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/systemverilog.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/tads.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/tags.vim

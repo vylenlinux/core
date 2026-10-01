@@ -27,7 +27,7 @@ build() {
         -Dbuild-bfs=disabled \
         -Dbuild-minix=disabled \
         -Dbuild-line=disabled \
-        -Dsystemd=enabled
+        -Dsystemd=disabled
 
     meson compile -C build
     DESTDIR="${PKG}" meson install --no-rebuild -C build

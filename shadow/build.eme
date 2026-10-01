@@ -28,7 +28,7 @@ build() {
         --sbindir=/usr/bin \
         --libdir=/usr/bin \
         --sysconfdir=/etc \
-        --enable-logind \
+        --disable-logind \
         --disable-nls \
         --disable-static \
         --enable-lastlog \

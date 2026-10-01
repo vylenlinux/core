@@ -1,8 +1,0 @@
-#!/bin/sh
-
-systemd-sysusers
-systemd-machine-id-setup
-
-systemctl enable \
-    getty@.service \
-    remote-fs.target

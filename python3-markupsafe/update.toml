@@ -1,5 +1,0 @@
-name = "python3-markupsafe"
-provider = "pypi"
-
-[source]
-package = "markupsafe"

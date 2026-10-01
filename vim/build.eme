@@ -6,7 +6,7 @@ homepage="https://www.vim.org/"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=vim
-version=9.2.1152
+version=9.2.1135
 release=1
 
 source="${name}-${version}.tar.gz::https://github.com/${name}/${name}/archive/v${version}/${name}-v${version}.tar.gz
@@ -47,4 +47,6 @@ build() {
     # no desktop files and icons
     rm -r "${PKG}/usr/share/applications" \
         "${PKG}/usr/share/icons"
+
+    rm -f "${PKG}/usr/share/vim/vim92"/*/systemd.vim
 }
