@@ -1,6 +1,0 @@
-#!/bin/sh
-
-INSTALLED_VERSION="$(emerald info --field=installed python3 | cut -d. -f1-2)"
-LATEST_VERSION="$(emerald info --field=version python3 | cut -d. -f1-2)"
-
-[ "${INSTALLED_VERSION}" != "${LATEST_VERSION}" ] && printf 'yes' > /tmp/.python3-major-update

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+post_upgrade() {
+    printf "For MAJOR version upgraded, the toolchain should be rebuild with:\n  - pkgrebuild -t\n"
+}

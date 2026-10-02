@@ -1,3 +1,0 @@
-#!/bin/sh
-
-printf "For MAJOR version upgraded, the toolchain should be rebuild with:\n  - pkgrebuild -t\n"

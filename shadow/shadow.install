@@ -1,0 +1,14 @@
+#!/bin/sh
+
+update_shadow_databases() {
+    pwconv
+    grpconv
+}
+
+post_install() {
+    update_shadow_databases
+}
+
+post_upgrade() {
+    update_shadow_databases
+}
