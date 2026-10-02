@@ -31,12 +31,7 @@ build() {
         -Dzsh-completions=true
 
     meson compile -C build
-    DESTDIR="${PKG}" meson install --no-rebuild -C build
-
-    for i in $(seq 6); do
-        ln -s agetty "${PKG}/etc/init.d/agetty.tty${i}"
-        ln -sf "/etc/init.d/agetty.tty${i}" -t "${PKG}/etc/runlevels/default/"
-    done
+    DESTDIR="${PKG}" meson install --no-rebuild -C buildх
 
     ln -s openrc-init "${PKG}/usr/bin/init"
     ln -s openrc-shutdown "${PKG}/usr/bin/shutdown"

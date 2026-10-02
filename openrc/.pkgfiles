@@ -22,12 +22,6 @@ drwxr-xr-x root/root    etc/conf.d/
 -rw-r--r-- root/root    etc/conf.d/swclock.epkgnew
 drwxr-xr-x root/root    etc/init.d/
 -rwxr-xr-x root/root    etc/init.d/agetty
-lrwxrwxrwx root/root    etc/init.d/agetty.tty1 -> agetty
-lrwxrwxrwx root/root    etc/init.d/agetty.tty2 -> agetty
-lrwxrwxrwx root/root    etc/init.d/agetty.tty3 -> agetty
-lrwxrwxrwx root/root    etc/init.d/agetty.tty4 -> agetty
-lrwxrwxrwx root/root    etc/init.d/agetty.tty5 -> agetty
-lrwxrwxrwx root/root    etc/init.d/agetty.tty6 -> agetty
 -rwxr-xr-x root/root    etc/init.d/backlight
 -rwxr-xr-x root/root    etc/init.d/binfmt
 -rwxr-xr-x root/root    etc/init.d/bootmisc
@@ -97,12 +91,6 @@ lrwxrwxrwx root/root    etc/runlevels/boot/swap -> /etc/init.d/swap
 lrwxrwxrwx root/root    etc/runlevels/boot/sysctl -> /etc/init.d/sysctl
 lrwxrwxrwx root/root    etc/runlevels/boot/termencoding -> /etc/init.d/termencoding
 drwxr-xr-x root/root    etc/runlevels/default/
-lrwxrwxrwx root/root    etc/runlevels/default/agetty.tty1 -> /etc/init.d/agetty.tty1
-lrwxrwxrwx root/root    etc/runlevels/default/agetty.tty2 -> /etc/init.d/agetty.tty2
-lrwxrwxrwx root/root    etc/runlevels/default/agetty.tty3 -> /etc/init.d/agetty.tty3
-lrwxrwxrwx root/root    etc/runlevels/default/agetty.tty4 -> /etc/init.d/agetty.tty4
-lrwxrwxrwx root/root    etc/runlevels/default/agetty.tty5 -> /etc/init.d/agetty.tty5
-lrwxrwxrwx root/root    etc/runlevels/default/agetty.tty6 -> /etc/init.d/agetty.tty6
 lrwxrwxrwx root/root    etc/runlevels/default/local -> /etc/init.d/local
 lrwxrwxrwx root/root    etc/runlevels/default/netmount -> /etc/init.d/netmount
 drwxr-xr-x root/root    etc/runlevels/nonetwork/
