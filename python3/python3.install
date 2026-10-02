@@ -1,15 +1,10 @@
 #!/bin/sh
 
-pre_upgrade() {
-    INSTALLED_VERSION="$(emerald info --field=installed python3 | cut -d. -f1-2)"
-    LATEST_VERSION="$(emerald info --field=version python3 | cut -d. -f1-2)"
-
-    [ "${INSTALLED_VERSION}" != "${LATEST_VERSION}" ] && printf 'yes' > /tmp/.python3-major-update
-}
-
 post_upgrade() {
-    # Rebuild with a major version upgrade
-    if [ -f /tmp/.python3-major-update ]; then
+    current="$(printf '%s' "$1" | cut -d. -f1-2)"
+    latest="$(printf '%s' "$2" | cut -d. -f1-2)"
+
+    if [ "$current" != "$latest" ]; then
         PYTHON_REBUILD="python3-setuptools
             cython3
             ninja
@@ -22,15 +17,18 @@ post_upgrade() {
             python3-setuptools-scm
             python3-build"
 
-        for p in $PYTHON_REBUILD; do
+        for p in ${PYTHON_REBUILD}; do
             emerald is-installed "${p}" && emerald install -fr "${p}"
         done
 
         emerald installed | awk '{print $1;}' | while read -r pkg; do
             [ "${pkg}" = "python3" ] && continue
+
+            case " $PYTHON_REBUILD " in
+                *" $pkg "*) continue ;;
+            esac
+
             emerald files "${pkg}" | grep -Eq '^usr/lib/python[^/]*/site-packages/' && emerald install -fr "${pkg}"
         done
-
-        rm -f /tmp/.python3-major-update
     fi
 }
