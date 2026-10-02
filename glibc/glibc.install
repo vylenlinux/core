@@ -5,6 +5,7 @@ post_upgrade() {
     latest="$(printf '%s' "$2" | cut -d. -f1)"
 
     if [ "${current}" != "${latest}" ]; then
-        printf "For MAJOR version upgraded, the toolchain should be rebuild with:\n  - pkgrebuild -t\n"
+        printf "For a glibc major version upgrade, the toolchain should be rebuilt with:\n"
+        printf "  - pkgrebuild -t"
     fi
 }
