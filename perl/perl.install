@@ -1,19 +1,13 @@
 #!/bin/sh
 
-pre_upgrade() {
-    INSTALLED_VERSION="$(emerald info --field=installed perl | cut -d. -f1-2)"
-    LATEST_VERSION="$(emerald info --field=version perl | cut -d. -f1-2)"
-
-    [ "${INSTALLED_VERSION}" != "${LATEST_VERSION}" ] && printf 'yes' > /tmp/.perl-major-update
-}
-
 post_upgrade() {
-    if [ -f /tmp/.perl-major-update ]; then
+    current="$(printf '%s' "$1" | cut -d. -f1-2)"
+    latest="$(printf '%s' "$2" | cut -d. -f1-2)"
+
+    if [ "$current" != "$latest" ]; then
         emerald installed | awk '{print $1;}' | while read -r pkg; do
             [ "${pkg}" = "perl" ] && continue
             emerald files "${pkg}" | grep -Eq '^usr/lib/perl5/' && emerald install -fr "${pkg}"
         done
-
-        rm -f /tmp/.perl-major-update
     fi
 }
