@@ -1,5 +1,10 @@
 #!/bin/sh
 
 post_upgrade() {
-    printf "For MAJOR version upgraded, the toolchain should be rebuild with:\n  - pkgrebuild -t\n"
+    current="$(printf '%s' "$1" | cut -d. -f1)"
+    latest="$(printf '%s' "$2" | cut -d. -f1)"
+
+    if [ "${current}" != "${latest}" ]; then
+        printf "For MAJOR version upgraded, the toolchain should be rebuild with:\n  - pkgrebuild -t\n"
+    fi
 }
