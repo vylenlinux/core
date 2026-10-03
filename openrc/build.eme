@@ -31,7 +31,7 @@ build() {
         -Dzsh-completions=true
 
     meson compile -C build
-    DESTDIR="${PKG}" meson install --no-rebuild -C buildх
+    DESTDIR="${PKG}" meson install --no-rebuild -C build
 
     ln -s openrc-init "${PKG}/usr/bin/init"
     ln -s openrc-shutdown "${PKG}/usr/bin/shutdown"
