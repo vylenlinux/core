@@ -6,7 +6,7 @@ homepage="https://www.kernel.org/"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=linux-api-headers
-version=7.2.8
+version=7.2.9
 release=1
 source="https://www.kernel.org/pub/linux/kernel/v${version%%.*}.x/linux-${version}.tar.xz"
 
