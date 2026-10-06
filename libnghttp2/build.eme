@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 # shellcheck disable=SC2034
 description="Framing layer of HTTP/2 is implemented as a reusable C library"

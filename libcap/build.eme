@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 # shellcheck disable=SC2034
 description="Implements the user-space interfaces to the POSIX 1003.1e capabilities available in Linux kernels"

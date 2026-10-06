@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 # shellcheck disable=SC2034
 description="A library for the arithmetic of complex numbers with arbitrarily high precision and correct rounding of the result"
