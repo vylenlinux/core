@@ -2,7 +2,7 @@
 
 # shellcheck disable=SC2034
 description="Programs for dynamic creation of device nodes"
-homepage="https://github.com/eudev-project/udev"
+homepage="https://github.com/eudev-project/eudev"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=eudev
@@ -15,8 +15,12 @@ build() {
     cd "${name}-${version}"
     emerald is-installed libxslt && OPTS="--enable-manpages"
 
-    # remove an unneeded group 'sgx'
-    sed -i -e 's/GROUP="sgx", //' rules/50-udev-default.rules
+    # remove an unneeded group 'sgx' and 'render'
+    sed \
+        -e 's/GROUP="sgx", //' \
+        -e 's/GROUP="render"/GROUP="video"/' \
+    -i rules/50-udev-default.rules
+
     autoreconf -fis
 
     ./configure \

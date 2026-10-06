@@ -18,24 +18,24 @@ depend() {
 
 start_pre() {
     # make sure /dev is a mounted devtmpfs
-    if ! mountinfo -q -f devtmpfs /dev; then
+    mountinfo -q -f devtmpfs /dev || {
         eerror "Udev requires /dev to be a mounted devtmpfs."
         eerror "Please reconfigure your system."
 
         return 1
-    fi
+    }
 
     # load unix domain sockets if built as module, Bug #221253
     # and not yet loaded, Bug #363549
-    if [ ! -e /proc/net/unix ]; then
-        if ! modprobe unix; then
+    [ -e /proc/net/unix ] || {
+        modprobe unix || {
             eerror "Cannot load the unix domain socket module"
             return 1
-        fi
-    fi
+        }
+    }
 
     if [ -e /proc/sys/kernel/hotplug ]; then
-        echo "" >/proc/sys/kernel/hotplug
+        printf "" >/proc/sys/kernel/hotplug
     fi
 
     if yesno "${udev_debug:-NO}"; then
@@ -48,10 +48,16 @@ start_pre() {
 
 stop() {
     ebegin "Stopping ${name:-$RC_SVCNAME}"
-    udevadm control --exit || start-stop-daemon --stop --exec "${command}" --pidfile "${pidfile}"
 
-    eend $? "Failed to stop $RC_SVCNAME"
-    [ $? -eq 0 ] && rm -f "${pidfile}" /run/udev/control
+    udevadm control --exit || start-stop-daemon \
+        --stop \
+        --exec "${command}" \
+        --pidfile "${pidfile}"
+
+    ret="$?"
+    eend "$ret" "Failed to stop $RC_SVCNAME"
+
+    [ "$ret" -eq 0 ] && rm -f "${pidfile}" /run/udev/control
 }
 
 reload() {

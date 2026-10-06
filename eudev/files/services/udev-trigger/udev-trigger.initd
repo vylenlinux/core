@@ -32,7 +32,9 @@ start_pre() {
 }
 
 display_hotplugged_services() {
-    local svcfile svc services
+    local svcfile
+    local svc
+    local services
 
     for svcfile in "${RC_SVCDIR}/hotplugged"/*; do
         svc="${svcfile##*/}"
@@ -79,7 +81,7 @@ dev_root_link() {
     # btrfs filesystems have bogus major/minor numbers
     [ "${ROOT_MAJOR}" != 0 ] || return 0
 
-    echo 'ACTION=="add|change", SUBSYSTEM=="block", ENV{MAJOR}=="'"${ROOT_MAJOR}"'", ENV{MINOR}=="'"${ROOT_MINOR}"'", SYMLINK+="root"' > "${RULESDIR}/61-dev-root-link.rules"
+    printf 'ACTION=="add|change", SUBSYSTEM=="block", ENV{MAJOR}=="%s", ENV{MINOR}=="%s", SYMLINK+="root"\n' "$ROOT_MAJOR" "$ROOT_MINOR" > "${RULESDIR}/61-dev-root-link.rules"
     return 0
 }
 
@@ -93,7 +95,7 @@ start() {
 
     get_bootparam "nocoldplug" && rc_coldplug="no"
 
-    if ! yesno "${rc_coldplug:-"${RC_COLDPLUG:-yes}"}"; then
+    yesno "${rc_coldplug:-"${RC_COLDPLUG:-yes}"}" || {
         einfo "Setting /dev permissions and symbolic links"
 
         udevadm trigger --attr-match=dev --action=add
@@ -101,7 +103,7 @@ start() {
 
         ewarn "Skipping udev coldplug sequence"
         return $?
-    fi
+    }
 
     ebegin "Populating /dev with existing devices through uevents"
 
