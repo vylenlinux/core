@@ -1,5 +1,6 @@
 name = "binutils"
-provider = "repology"
+provider = "ftp"
 
-[source]
-package = "binutils"
+[ftp]
+url = "https://ftp.gnu.org/gnu/%(name)"
+filename = "%(name)-{version}.tar.xz"
