@@ -7,7 +7,7 @@ maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=linux-pam
 version=1.7.3
-release=1
+release=2
 source="${name}-${version}.tar.xz::https://github.com/${name}/${name}/releases/download/v${version}/Linux-PAM-${version}.tar.xz"
 
 build() {
@@ -21,7 +21,4 @@ build() {
 
     # Enable setuid bit for the unix_chkpwd
     chmod 4755 "${PKG}/usr/bin/unix_chkpwd"
-
-    # Create PAM configuration files
-    do_pam system-account system-auth system-session system-password other
 }

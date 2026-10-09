@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# shellcheck disable=SC2034
+description="Base PAM configuration"
+homepage="https://vylen.gitlab.io/"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
+
+name=pambase
+version=20261009
+release=1
+
+build() {
+    do_pam system-account system-auth system-session system-password other
+}
