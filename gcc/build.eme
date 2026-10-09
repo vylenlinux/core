@@ -54,7 +54,7 @@ build() {
     ln -s gcc "${PKG}/usr/bin/cc"
 
     install -dm755 "${PKG}/usr/lib/bfd-plugins"
-    ln -sf "../../lib/gcc/$(gcc -dumpmachine)/${version}/liblto_plugin.so" -t "${PKG}/usr/lib/bfd-plugins/"
+    ln -sf "/usr/lib/gcc/$(gcc -dumpmachine)/${version}/liblto_plugin.so" -t "${PKG}/usr/lib/bfd-plugins/"
 
     mkdir -p "${PKG}/usr/share/gdb/auto-load/usr/lib"
     mv "${PKG}/usr/lib"/*gdb.py -t "${PKG}/usr/share/gdb/auto-load/usr/lib/"
