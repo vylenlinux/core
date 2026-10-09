@@ -1,4 +1,4 @@
-#!/usr/bn/env sh
+#!/bin/sh
 
 # shellcheck disable=SC2034
 description="The GNU Bourne Again shell"
