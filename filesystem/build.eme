@@ -35,7 +35,7 @@ backup="etc/fstab
 
 build() {
     # root dirs
-    for d in boot dev etc/opt etc/skel home mnt opt run srv var; do
+    for d in boot dev etc/skel home mnt opt run srv var; do
         mkdir -p "${PKG}/${d}"
     done
 

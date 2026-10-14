@@ -10,7 +10,6 @@ drwxr-xr-x root/root    etc/
 -rw-r--r-- root/root    etc/ld.so.conf.epkgnew
 -rw-r--r-- root/root    etc/locale.conf.epkgnew
 lrwxrwxrwx root/root    etc/mtab -> /proc/self/mounts
-drwxr-xr-x root/root    etc/opt/
 -rw-r--r-- root/root    etc/os-release
 -rw-r--r-- root/root    etc/passwd.epkgnew
 drwxr-xr-x root/root    etc/profile.d/
