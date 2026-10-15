@@ -3,4 +3,4 @@ provider = "ftp"
 
 [ftp]
 url = "https://www.iana.org/time-zones/repository/releases/"
-filename = "tzdata%(name).tar.gz"
+filename = "%(name)%(version).tar.gz"
