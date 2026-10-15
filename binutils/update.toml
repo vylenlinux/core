@@ -3,4 +3,4 @@ provider = "ftp"
 
 [ftp]
 url = "https://ftp.gnu.org/gnu/%(name)"
-filename = "%(name)-%(name).tar.xz"
+filename = "%(name)-%(version).tar.xz"
