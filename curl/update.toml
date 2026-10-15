@@ -3,4 +3,4 @@ provider = "ftp"
 
 [ftp]
 url = "https://curl.haxx.se/download/"
-filename = "curl-%(name).tar.xz"
+filename = "%(name)-%(version).tar.xz"
