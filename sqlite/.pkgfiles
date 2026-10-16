@@ -5,15 +5,15 @@ drwxr-xr-x root/root    usr/include/
 -rw-r--r-- root/root    usr/include/sqlite3.h
 -rw-r--r-- root/root    usr/include/sqlite3ext.h
 drwxr-xr-x root/root    usr/lib/
-lrwxrwxrwx root/root    usr/lib/libsqlite3.so -> libsqlite3.so.3.54.0
-lrwxrwxrwx root/root    usr/lib/libsqlite3.so.0 -> libsqlite3.so.3.54.0
--rwxr-xr-x root/root    usr/lib/libsqlite3.so.3.54.0
+lrwxrwxrwx root/root    usr/lib/libsqlite3.so -> libsqlite3.so.3.54.1
+lrwxrwxrwx root/root    usr/lib/libsqlite3.so.0 -> libsqlite3.so.3.54.1
+-rwxr-xr-x root/root    usr/lib/libsqlite3.so.3.54.1
 drwxr-xr-x root/root    usr/lib/pkgconfig/
 -rw-r--r-- root/root    usr/lib/pkgconfig/sqlite3.pc
 drwxr-xr-x root/root    usr/lib/tcl9.0/
-drwxr-xr-x root/root    usr/lib/tcl9.0/sqlite3.54.0/
--rwxr-xr-x root/root    usr/lib/tcl9.0/sqlite3.54.0/libtcl9sqlite3.54.0.so
--rw-r--r-- root/root    usr/lib/tcl9.0/sqlite3.54.0/pkgIndex.tcl
+drwxr-xr-x root/root    usr/lib/tcl9.0/sqlite3.54.1/
+-rwxr-xr-x root/root    usr/lib/tcl9.0/sqlite3.54.1/libtcl9sqlite3.54.1.so
+-rw-r--r-- root/root    usr/lib/tcl9.0/sqlite3.54.1/pkgIndex.tcl
 drwxr-xr-x root/root    usr/share/
 drwxr-xr-x root/root    usr/share/man/
 drwxr-xr-x root/root    usr/share/man/man1/
