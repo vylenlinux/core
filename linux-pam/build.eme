@@ -7,18 +7,37 @@ maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=linux-pam
 version=1.7.3
-release=2
+release=1
+
+backup="etc/security/access.conf
+    etc/security/faillock.conf
+    etc/security/group.conf
+    etc/security/limits.conf
+    etc/security/namespace.conf
+    etc/security/namespace.init
+    etc/security/pwhistory.conf
+    etc/security/pam_env.conf
+    etc/security/time.conf
+    etc/environment"
+
 source="${name}-${version}.tar.xz::https://github.com/${name}/${name}/releases/download/v${version}/Linux-PAM-${version}.tar.xz"
 
 build() {
     vylen-meson "Linux-PAM-${version}" build \
         -Ddocs=disabled \
-        -Dlogind=disabled \
-        -Dselinux=disabled
+        -Dlogind=enabled \
+        -Delogind=disabled \
+        -Dselinux=disabled \
+        -Deconf=disabled \
+        -Dpam_userdb=disabled \
+        -Dpwaccess=disabled \
+        -Dvendordir=''
 
     meson compile -C build
     DESTDIR="${PKG}" meson install --no-rebuild -C build
 
     # Enable setuid bit for the unix_chkpwd
     chmod 4755 "${PKG}/usr/bin/unix_chkpwd"
+
+    do_tmpfiles "${name}"
 }

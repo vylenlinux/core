@@ -19,14 +19,39 @@ build() {
         --prefix=/usr \
         --libexecdir=/usr/bin \
         --localstatedir=/var \
-        --disable-logger \
-        --disable-whois \
-        --disable-rcp \
+        --sysconfdir=/etc \
+        --without-wrap \
+        --with-pam \
+        --enable-ftp \
+        --enable-ftpd \
+        --enable-telnet \
+        --enable-telnetd \
+        --enable-talk \
+        --enable-talkd \
+        --enable-rlogin \
+        --enable-rlogind \
+        --enable-rsh \
+        --enable-rshd \
+        --enable-rcp \
+        --enable-hostname \
+        --enable-dnsdomainname \
         --disable-rexec \
-        --disable-rlogin \
-        --disable-rsh \
-        --disable-servers
+        --disable-rexecd \
+        --disable-tftpd \
+        --disable-logger \
+        --disable-syslogd \
+        --disable-inetd \
+        --disable-whois \
+        --disable-uucpd
 
     make
     make DESTDIR="${PKG}" install
+
+    chmod -s "${PKG}/usr/bin/rcp" \
+        "${PKG}/usr/bin/rlogin" \
+        "${PKG}/usr/bin/rsh"
+
+    do_pam rlogin rsh
+    do_service ftpd rlogin rsh talk telnet
+    do_sysusers "${name}"
 }

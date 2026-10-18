@@ -9,6 +9,13 @@ name=pambase
 version=20261009
 release=1
 
+backup="etc/pam.d/system-account
+    etc/pam.d/system-auth
+    etc/pam.d/system-session
+    etc/pam.d/system-password
+    etc/pam.d/other
+    etc/pam.d/runuser"
+
 build() {
-    do_pam system-account system-auth system-session system-password other
+    do_pam system-account system-auth system-session system-password other runuser
 }

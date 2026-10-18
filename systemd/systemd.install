@@ -1,0 +1,16 @@
+#!/bin/sh
+
+post_common() {
+    systemd-sysusers
+}
+
+post_install() {
+    systemd-machine-id-setup
+    post_common
+
+    systemctl preset-all
+}
+
+post_upgrade() {
+    post_common
+}

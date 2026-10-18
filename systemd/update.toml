@@ -1,0 +1,6 @@
+name = "systemd"
+provider = "github"
+
+[source]
+owner = "%(name)"
+repo = "%(name)"

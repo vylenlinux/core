@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# shellcheck disable=SC2034
+description="Python module that implements a XML/HTML/XHTML Markup safe string"
+homepage="https://pypi.python.org/pypi/MarkupSafe"
+maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
+
+name=python3-markupsafe
+version=3.0.4
+release=1
+source="${name}-${version}.tar.gz::https://pypi.io/packages/source/m/markupsafe/markupsafe-${version}.tar.gz"
+
+build() {
+    # shellcheck disable=SC2164
+    cd "markupsafe-${version}"
+    python3 setup.py build
+
+    python3 setup.py install \
+        --root="${PKG}" \
+        --optimize=1 \
+        --skip-build
+}

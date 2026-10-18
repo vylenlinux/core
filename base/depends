@@ -14,7 +14,6 @@ diffutils
 e2fsprogs
 elfutils
 emerald
-eudev
 expat
 file
 filesystem
@@ -49,7 +48,6 @@ make
 man-db
 man-pages
 ncurses
-openrc
 patch
 perl
 pkgconf
@@ -58,6 +56,7 @@ psmisc
 readline
 sed
 shadow
+systemd
 tar
 texinfo
 tzdata

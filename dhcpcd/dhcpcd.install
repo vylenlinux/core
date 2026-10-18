@@ -1,6 +1,0 @@
-#!/bin/sh
-
-pre_install() {
-    getent group dhcpcd >/dev/null || groupadd -r dhcpcd
-    getent passwd dhcpcd >/dev/null || useradd -r -M -g dhcpcd -G dhcpcd -c "dhcpcd user" -d /var/lib/dhcpcd -s /usr/bin/nologin dhcpcd
-}

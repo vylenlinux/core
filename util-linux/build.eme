@@ -20,15 +20,20 @@ build() {
         -Dbuild-su=disabled \
         -Dbuild-sulogin=disabled \
         -Dbuild-nologin=disabled \
-        -Dbuild-runuser=disabled \
         -Dbuild-vipw=disabled \
         -Dbuild-raw=disabled \
         -Dbuild-newgrp=disabled \
         -Dbuild-bfs=disabled \
         -Dbuild-minix=disabled \
         -Dbuild-line=disabled \
-        -Dsystemd=disabled
+        -Dsystemd=enabled
 
     meson compile -C build
     DESTDIR="${PKG}" meson install --no-rebuild -C build
+
+    sed -i '/ListenStream/ aRuntimeDirectory=uuidd' "${PKG}/usr/lib/systemd/system/uuidd.socket"
+
+    do_service rfkill-block rfkill-unblock
+    do_sysusers "${name}"
+    do_udev_rules 60-rfkill
 }
