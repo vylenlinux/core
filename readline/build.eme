@@ -10,7 +10,6 @@ version=8.3.6
 release=1
 
 source="https://ftp.gnu.org/gnu/${name}/${name}-${version%.*}.tar.gz
-    display-null-prompt.patch
     inputrc"
 
 patch_name="$(printf '%s' "${version}" | awk -F. '{printf "readline%s%s-", $1, $2;}')"
