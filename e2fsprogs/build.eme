@@ -30,8 +30,8 @@ build() {
         --disable-uuidd \
         --disable-fuse2fs
 
-    make UDEV_RULES_DIR=/usr/lib/udev/rules.d
-    make UDEV_RULES_DIR=/usr/lib/udev/rules.d DESTDIR="${PKG}" install install-libs
+    make
+    make DESTDIR="${PKG}" install install-libs
 
     for i in libcom_err libe2p libext2fs libss; do
         chmod u+w "${PKG}/usr/lib/${i}.a"

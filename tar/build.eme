@@ -7,7 +7,7 @@ maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=tar
 version=1.35
-release=2
+release=1
 
 source="https://ftp.gnu.org/gnu/${name}/${name}-${version}.tar.xz
     acl-2.40.patch"

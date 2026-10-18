@@ -6,7 +6,7 @@ homepage="https://vylen.gitlab.io/"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=base
-version=20260313
+version=20261018
 release=1
 
 build() {

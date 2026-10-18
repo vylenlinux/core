@@ -21,11 +21,11 @@ build() {
         --libexecdir=/usr/lib \
         --disable-setuid \
         --disable-cache-owner \
-        --with-systemdtmpfilesdir=no \
-        --with-systemdsystemunitdir=no
+        --with-systemdsystemunitdir=/usr/lib/systemd/system
 
     make
     make DESTDIR="${PKG}" install
 
-    install -d "${PKG}/var/cache/man"
+    install -dm755 "${PKG}/usr/lib/systemd/system/timers.target.wants"
+    ln -s ../man-db.timer "${PKG}/usr/lib/systemd/system/timers.target.wants/man-db.timer"
 }

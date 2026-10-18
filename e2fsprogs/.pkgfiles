@@ -54,6 +54,8 @@ drwxr-xr-x root/root    usr/include/ss/
 -rw-r--r-- root/root    usr/include/ss/ss.h
 -rw-r--r-- root/root    usr/include/ss/ss_err.h
 drwxr-xr-x root/root    usr/lib/
+drwxr-xr-x root/root    usr/lib/e2fsprogs/
+-rwxr-xr-x root/root    usr/lib/e2fsprogs/e2scrub_fail
 -rw-r--r-- root/root    usr/lib/libcom_err.a
 lrwxrwxrwx root/root    usr/lib/libcom_err.so -> libcom_err.so.2
 lrwxrwxrwx root/root    usr/lib/libcom_err.so.2 -> libcom_err.so.2.1
@@ -75,6 +77,13 @@ drwxr-xr-x root/root    usr/lib/pkgconfig/
 -rw-r--r-- root/root    usr/lib/pkgconfig/e2p.pc
 -rw-r--r-- root/root    usr/lib/pkgconfig/ext2fs.pc
 -rw-r--r-- root/root    usr/lib/pkgconfig/ss.pc
+drwxr-xr-x root/root    usr/lib/systemd/
+drwxr-xr-x root/root    usr/lib/systemd/system/
+-rw-r--r-- root/root    usr/lib/systemd/system/e2scrub@.service
+-rw-r--r-- root/root    usr/lib/systemd/system/e2scrub_all.service
+-rw-r--r-- root/root    usr/lib/systemd/system/e2scrub_all.timer
+-rw-r--r-- root/root    usr/lib/systemd/system/e2scrub_fail@.service
+-rw-r--r-- root/root    usr/lib/systemd/system/e2scrub_reap.service
 drwxr-xr-x root/root    usr/lib/udev/
 drwxr-xr-x root/root    usr/lib/udev/rules.d/
 -rw-r--r-- root/root    usr/lib/udev/rules.d/64-ext4.rules

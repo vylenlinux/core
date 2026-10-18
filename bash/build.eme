@@ -9,9 +9,13 @@ name=bash
 version=5.3.20
 release=1
 
+backup="etc/profile
+    etc/bashrc"
+
 source="https://ftp.gnu.org/gnu/${name}/${name}-${version%.*}.tar.gz
     bashrc
-    profile"
+    profile
+    config-top.h.in"
 
 patch_name="$(printf '%s' "${version}" | awk -F. '{printf "bash%s%s-", $1, $2;}')"
 patch_version="${version##*.}"
@@ -26,12 +30,10 @@ if [ "${patch_version}" -gt 0 ] 2>/dev/null; then
     done
 fi
 
-backup="etc/profile
-    etc/bashrc"
-
 build() {
     # shellcheck disable=SC2164
     cd "${name}-${version%.*}"
+    cat "${SRC}/config-top.h.in" >> config-top.h
 
     # Apply bash patches
     if [ "${patch_version}" -gt 0 ] 2>/dev/null; then

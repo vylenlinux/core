@@ -1,0 +1,5 @@
+name = "python3-jinja2"
+provider = "pypi"
+
+[source]
+package = "jinja2"

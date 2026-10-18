@@ -1,8 +1,0 @@
-#!/bin/sh
-
-#
-# /etc/cron/daily/pwck: verify integrity of password and group files
-#
-
-/usr/bin/pwck -r
-/usr/bin/grpck -r

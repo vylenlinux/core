@@ -6,7 +6,7 @@ homepage="https://vylen.gitlab.io/"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=filesystem
-version=20260416
+version=20261018
 release=1
 
 source="fstab
@@ -20,6 +20,7 @@ source="fstab
     passwd
     resolv.conf
     shells
+    gshadow
     ld.so.conf
     vylenlinux-logo.png::https://gitlab.com/vylen/artworks/-/raw/main/png/round_colored.png"
 
@@ -31,6 +32,7 @@ backup="etc/fstab
     etc/passwd
     etc/resolv.conf
     etc/shells
+    etc/gshadow
     etc/ld.so.conf"
 
 build() {
@@ -84,10 +86,12 @@ build() {
     chmod 664 "${PKG}/var/log/lastlog"
     chmod 600 "${PKG}/var/log/btmp"
 
-    for e in fstab group hosts hostname locale.conf os-release passwd resolv.conf shells issue ld.so.conf; do
+    for e in fstab group hosts hostname locale.conf os-release passwd resolv.conf shells issue gshadow ld.so.conf; do
         install -m644 "${e}" -t "${PKG}/etc/"
     done
 
     install -Dm644 locale.sh -t "${PKG}/etc/profile.d/"
     install -Dm644 "${SRC}/vylenlinux-logo.png" -t "${PKG}/usr/share/pixmaps/"
+
+    do_sysusers vylen
 }

@@ -1,5 +1,0 @@
-#!/bin/sh
-
-post_upgrade() {
-    emerald is-installed elogind && emerald hook post install elogind
-}

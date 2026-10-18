@@ -1,0 +1,8 @@
+# Begin /etc/pam.d/runuser
+
+auth       sufficient   pam_rootok.so
+account    include      system-account
+session    required     pam_env.so
+session    include      system-session
+
+# End /etc/pam.d/runuser
