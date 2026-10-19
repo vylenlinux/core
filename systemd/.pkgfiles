@@ -2596,4 +2596,4 @@ drwxr-xr-x root/root    usr/share/zsh/site-functions/
 -rw-r--r-- root/root    usr/share/zsh/site-functions/_varlinkctl
 drwxr-xr-x root/root    var/
 drwxr-xr-x root/root    var/log/
-drwxr-xr-x root/root    var/log/journal/
+drwxr-sr-x root/root    var/log/journal/

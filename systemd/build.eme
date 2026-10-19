@@ -62,4 +62,6 @@ build() {
 
     rm -rf "${PKG}/usr/share/factory"
     do_pam systemd-user
+
+    chmod 2755 "${PKG}/var/log/journal"
 }
