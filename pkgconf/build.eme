@@ -6,7 +6,7 @@ homepage="https://github.com/pkgconf/pkgconf"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=pkgconf
-version=3.0.9
+version=3.0.10
 release=1
 source="https://github.com/${name}/${name}/releases/download/${name}-${version}/${name}-${version}.tar.xz"
 
