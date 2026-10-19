@@ -14,7 +14,7 @@ build() {
     # shellcheck disable=SC2164
     cd "${name}-${version}"
 
-    # Don't build or install locate because we use mlocate,
+    # Don't build or install locate because we use plocate,
     # which is a secure version of locate.
     sed -e '/^SUBDIRS/s/locate//' -e 's/frcode locate updatedb//' -i Makefile.in
     ./configure --prefix=/usr
