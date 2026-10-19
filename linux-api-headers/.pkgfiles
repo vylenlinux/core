@@ -158,7 +158,9 @@ drwxr-xr-x root/root    usr/include/linux/
 -rw-r--r-- root/root    usr/include/linux/affs_hardblocks.h
 -rw-r--r-- root/root    usr/include/linux/agpgart.h
 -rw-r--r-- root/root    usr/include/linux/aio_abi.h
+-rw-r--r-- root/root    usr/include/linux/alloc_tag.h
 -rw-r--r-- root/root    usr/include/linux/am437x-vpfe.h
+-rw-r--r-- root/root    usr/include/linux/amd-pmf.h
 -rw-r--r-- root/root    usr/include/linux/amt.h
 drwxr-xr-x root/root    usr/include/linux/android/
 -rw-r--r-- root/root    usr/include/linux/android/binder.h
@@ -207,7 +209,6 @@ drwxr-xr-x root/root    usr/include/linux/android/
 drwxr-xr-x root/root    usr/include/linux/byteorder/
 -rw-r--r-- root/root    usr/include/linux/byteorder/big_endian.h
 -rw-r--r-- root/root    usr/include/linux/byteorder/little_endian.h
--rw-r--r-- root/root    usr/include/linux/cachefiles.h
 -rw-r--r-- root/root    usr/include/linux/can.h
 drwxr-xr-x root/root    usr/include/linux/can/
 -rw-r--r-- root/root    usr/include/linux/can/bcm.h
@@ -278,7 +279,6 @@ drwxr-xr-x root/root    usr/include/linux/dvb/
 -rw-r--r-- root/root    usr/include/linux/dvb/video.h
 -rw-r--r-- root/root    usr/include/linux/dw100.h
 -rw-r--r-- root/root    usr/include/linux/edd.h
--rw-r--r-- root/root    usr/include/linux/efs_fs_sb.h
 -rw-r--r-- root/root    usr/include/linux/elf-em.h
 -rw-r--r-- root/root    usr/include/linux/elf-fdpic.h
 -rw-r--r-- root/root    usr/include/linux/elf.h
@@ -419,6 +419,7 @@ drwxr-xr-x root/root    usr/include/linux/io_uring/
 -rw-r--r-- root/root    usr/include/linux/ipv6_route.h
 -rw-r--r-- root/root    usr/include/linux/irqnr.h
 -rw-r--r-- root/root    usr/include/linux/iso_fs.h
+-rw-r--r-- root/root    usr/include/linux/issei.h
 -rw-r--r-- root/root    usr/include/linux/isst_if.h
 -rw-r--r-- root/root    usr/include/linux/ivtv.h
 -rw-r--r-- root/root    usr/include/linux/ivtvfb.h
@@ -467,6 +468,8 @@ drwxr-xr-x root/root    usr/include/linux/media/amlogic/
 -rw-r--r-- root/root    usr/include/linux/media/amlogic/c3-isp-config.h
 drwxr-xr-x root/root    usr/include/linux/media/arm/
 -rw-r--r-- root/root    usr/include/linux/media/arm/mali-c55-config.h
+drwxr-xr-x root/root    usr/include/linux/media/dreamchip/
+-rw-r--r-- root/root    usr/include/linux/media/dreamchip/rppx1-config.h
 drwxr-xr-x root/root    usr/include/linux/media/raspberrypi/
 -rw-r--r-- root/root    usr/include/linux/media/raspberrypi/pisp_be_config.h
 -rw-r--r-- root/root    usr/include/linux/media/raspberrypi/pisp_common.h
@@ -1059,9 +1062,7 @@ drwxr-xr-x root/root    usr/include/sound/intel/avs/
 -rw-r--r-- root/root    usr/include/sound/sb16_csp.h
 -rw-r--r-- root/root    usr/include/sound/scarlett2.h
 -rw-r--r-- root/root    usr/include/sound/sfnt_info.h
--rw-r--r-- root/root    usr/include/sound/skl-tplg-interface.h
 -rw-r--r-- root/root    usr/include/sound/snd_ar_tokens.h
--rw-r--r-- root/root    usr/include/sound/snd_sst_tokens.h
 drwxr-xr-x root/root    usr/include/sound/sof/
 -rw-r--r-- root/root    usr/include/sound/sof/abi.h
 -rw-r--r-- root/root    usr/include/sound/sof/fw.h
