@@ -6,7 +6,7 @@ homepage="https://curl.se/docs/caextract.html"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=ca-certificates
-version=20260925
+version=20261020
 release=1
 
 _noyear="${version#????}"
@@ -18,6 +18,6 @@ build() {
     install -Dm644 "${name}-${version}.pem" "${PKG}/etc/ssl/cert.pem"
     install -d "${PKG}/etc/ssl/certs"
 
-    ln -s /etc/ssl/cert.pem "${PKG}/etc/ssl/certs/ca-certificates.crt"
+    ln -s /etc/ssl/cert.pem "${PKG}/etc/ssl/certs/${name}.crt"
     ln -s /etc/ssl/cert.pem "${PKG}/etc/ssl/ca-bundle.crt"
 }
