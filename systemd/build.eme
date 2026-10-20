@@ -7,7 +7,7 @@ maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=systemd
 version=262.1
-release=1
+release=2
 
 backup="etc/pam.d/systemd-user
     etc/pam.d/systemd-run0"
@@ -64,4 +64,6 @@ build() {
     chmod 2755 "${PKG}/var/log/journal"
 
     do_pam systemd-user
+    do_systemd_system_eg 10-vylen
+    do_systemd_system_preset 99-default
 }

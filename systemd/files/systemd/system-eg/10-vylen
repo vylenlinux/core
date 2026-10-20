@@ -1,0 +1,4 @@
+#!/bin/sh
+
+printf 'PATH=/usr/local/sbin:/usr/local/bin:/usr/bin\n'
+printf 'XDG_DATA_DIRS=/usr/local/share:/usr/share\n'
