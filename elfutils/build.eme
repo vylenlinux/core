@@ -6,15 +6,16 @@ homepage="https://sourceware.org/elfutils/"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=elfutils
-version=0.196
+version=0.197
 release=1
 source="https://sourceware.org/ftp/${name}/${version}/${name}-${version}.tar.bz2"
 
 build() {
     # shellcheck disable=SC2164
     cd "${name}-${version}"
+    export CFLAGS="${CFLAGS} -ffat-lto-objects"
 
-    CFLAGS="${CFLAGS} -ffat-lto-objects" ./configure \
+    ./configure \
         --prefix=/usr \
         --program-prefix="eu-" \
         --sysconfdir=/etc \
