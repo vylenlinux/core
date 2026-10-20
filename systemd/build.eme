@@ -61,7 +61,8 @@ build() {
     DESTDIR="${PKG}" meson install --no-rebuild -C build
 
     rm -rf "${PKG}/usr/share/factory"
-    do_pam systemd-user
-
     chmod 2755 "${PKG}/var/log/journal"
+
+    do_pam systemd-user
+    do_systemd_system_eg 10-vylen
 }
