@@ -7,7 +7,8 @@ maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=glibc
 version=2.44
-release=1
+release=2
+
 backup="etc/locales"
 
 source="https://ftp.gnu.org/gnu/${name}/${name}-${version}.tar.xz
