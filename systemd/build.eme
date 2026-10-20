@@ -64,5 +64,4 @@ build() {
     chmod 2755 "${PKG}/var/log/journal"
 
     do_pam systemd-user
-    do_systemd_system_eg 10-vylen
 }
