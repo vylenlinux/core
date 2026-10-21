@@ -1933,7 +1933,7 @@ drwxr-xr-x root/root    usr/lib/python3.15/ensurepip/__pycache__/
 -rw-r--r-- root/root    usr/lib/python3.15/ensurepip/__pycache__/_uninstall.cpython-315.opt-2.pyc
 -rw-r--r-- root/root    usr/lib/python3.15/ensurepip/__pycache__/_uninstall.cpython-315.pyc
 drwxr-xr-x root/root    usr/lib/python3.15/ensurepip/_bundled/
--rw-r--r-- root/root    usr/lib/python3.15/ensurepip/_bundled/pip-26.2.1-py3-none-any.whl
+-rw-r--r-- root/root    usr/lib/python3.15/ensurepip/_bundled/pip-26.2.2-py3-none-any.whl
 -rw-r--r-- root/root    usr/lib/python3.15/ensurepip/_uninstall.py
 -rw-r--r-- root/root    usr/lib/python3.15/enum.py
 -rw-r--r-- root/root    usr/lib/python3.15/filecmp.py
