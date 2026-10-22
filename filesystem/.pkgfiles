@@ -34,8 +34,6 @@ drwxr-xr-x root/root    usr/
 drwxr-xr-x root/root    usr/bin/
 drwxr-xr-x root/root    usr/include/
 drwxr-xr-x root/root    usr/lib/
-drwxr-xr-x root/root    usr/lib/sysusers.d/
--rw-r--r-- root/root    usr/lib/sysusers.d/vylen.conf
 lrwxrwxrwx root/root    usr/lib64 -> lib
 drwxr-xr-x root/root    usr/local/
 drwxr-xr-x root/root    usr/local/bin/

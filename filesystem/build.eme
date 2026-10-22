@@ -6,7 +6,7 @@ homepage="https://vylen.gitlab.io/"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=filesystem
-version=20261018
+version=20261022
 release=1
 
 source="fstab
@@ -92,6 +92,4 @@ build() {
 
     install -Dm644 locale.sh -t "${PKG}/etc/profile.d/"
     install -Dm644 "${SRC}/vylenlinux-logo.png" -t "${PKG}/usr/share/pixmaps/"
-
-    do_sysusers vylen
 }
