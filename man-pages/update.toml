@@ -1,5 +1,6 @@
 name = "man-pages"
-provider = "repology"
+provider = "ftp"
 
-[source]
-package = "manpages"
+[ftp]
+url = "https://www.kernel.org/pub/linux/docs/%(name)"
+filename = "%(name)-%(version).tar.xz"

@@ -1,6 +1,9 @@
 drwxr-xr-x root/root    usr/
 drwxr-xr-x root/root    usr/bin/
 -rwxr-xr-x root/root    usr/bin/diffman-git
+-rwxr-xr-x root/root    usr/bin/git-bisect-rebase
+-rwxr-xr-x root/root    usr/bin/git-bisect-rebase--callback
+-rwxr-xr-x root/root    usr/bin/git-bisect-rebase--continue
 -rwxr-xr-x root/root    usr/bin/grepc
 -rwxr-xr-x root/root    usr/bin/grepc_c
 -rwxr-xr-x root/root    usr/bin/grepc_mk
@@ -15,6 +18,7 @@ drwxr-xr-x root/root    usr/share/man/man0/
 drwxr-xr-x root/root    usr/share/man/man1/
 -rw-r--r-- root/root    usr/share/man/man1/diffman-git.1.gz
 -rw-r--r-- root/root    usr/share/man/man1/getent.1.gz
+-rw-r--r-- root/root    usr/share/man/man1/git-bisect-rebase.1.gz
 -rw-r--r-- root/root    usr/share/man/man1/grepc.1.gz
 -rw-r--r-- root/root    usr/share/man/man1/grepc_c.1.gz
 -rw-r--r-- root/root    usr/share/man/man1/iconv.1.gz
@@ -912,6 +916,7 @@ drwxr-xr-x root/root    usr/share/man/man2const/
 drwxr-xr-x root/root    usr/share/man/man2type/
 -rw-r--r-- root/root    usr/share/man/man2type/dqblk.2type.gz
 -rw-r--r-- root/root    usr/share/man/man2type/dqinfo.2type.gz
+-rw-r--r-- root/root    usr/share/man/man2type/file_attr.2type.gz
 -rw-r--r-- root/root    usr/share/man/man2type/fs_disk_quota.2type.gz
 -rw-r--r-- root/root    usr/share/man/man2type/in_pktinfo.2type.gz
 -rw-r--r-- root/root    usr/share/man/man2type/ip_mreq.2type.gz
@@ -2908,6 +2913,7 @@ drwxr-xr-x root/root    usr/share/man/man5/
 -rw-r--r-- root/root    usr/share/man/man5/proc_pid_seccomp.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/proc_pid_setgroups.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/proc_pid_smaps.5.gz
+-rw-r--r-- root/root    usr/share/man/man5/proc_pid_smaps_rollup.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/proc_pid_stack.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/proc_pid_stat.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/proc_pid_statm.5.gz
@@ -2929,6 +2935,7 @@ drwxr-xr-x root/root    usr/share/man/man5/
 -rw-r--r-- root/root    usr/share/man/man5/proc_sys_debug.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/proc_sys_dev.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/proc_sys_fs.5.gz
+-rw-r--r-- root/root    usr/share/man/man5/proc_sys_fs_inotify.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/proc_sys_kernel.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/proc_sys_net.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/proc_sys_net_ipv4.5.gz
@@ -2958,6 +2965,23 @@ drwxr-xr-x root/root    usr/share/man/man5/
 -rw-r--r-- root/root    usr/share/man/man5/services.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/shells.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/slabinfo.5.gz
+-rw-r--r-- root/root    usr/share/man/man5/sys_block.5.gz
+-rw-r--r-- root/root    usr/share/man/man5/sys_bus.5.gz
+-rw-r--r-- root/root    usr/share/man/man5/sys_class.5.gz
+-rw-r--r-- root/root    usr/share/man/man5/sys_class_net.5.gz
+-rw-r--r-- root/root    usr/share/man/man5/sys_dev.5.gz
+-rw-r--r-- root/root    usr/share/man/man5/sys_devices.5.gz
+-rw-r--r-- root/root    usr/share/man/man5/sys_firmware.5.gz
+-rw-r--r-- root/root    usr/share/man/man5/sys_fs.5.gz
+-rw-r--r-- root/root    usr/share/man/man5/sys_fs_cgroup.5.gz
+-rw-r--r-- root/root    usr/share/man/man5/sys_fs_smackfs.5.gz
+-rw-r--r-- root/root    usr/share/man/man5/sys_hypervisor.5.gz
+-rw-r--r-- root/root    usr/share/man/man5/sys_kernel.5.gz
+-rw-r--r-- root/root    usr/share/man/man5/sys_kernel_cgroup.5.gz
+-rw-r--r-- root/root    usr/share/man/man5/sys_kernel_debug.5.gz
+-rw-r--r-- root/root    usr/share/man/man5/sys_kernel_mm.5.gz
+-rw-r--r-- root/root    usr/share/man/man5/sys_module.5.gz
+-rw-r--r-- root/root    usr/share/man/man5/sys_power.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/sysfs.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/termcap.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/tmpfs.5.gz
