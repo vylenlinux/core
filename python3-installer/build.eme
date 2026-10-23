@@ -15,11 +15,10 @@ source="${name}-${version}.whl::https://files.pythonhosted.org/packages/py3/i/in
 noextract="${name}-${version}.whl"
 
 build() {
-    python_site_packages=$(python3 -c 'import site; print(site.getsitepackages()[0]);')
-    mkdir -p "${PKG}/${python_site_packages}"
+    mkdir -p "${PKG}/${PYTHON_SITE_PACKAGES}"
 
-    bsdtar -xf "${SRC}/${name}-${version}.whl"  -C "${PKG}/${python_site_packages}"
-    patch -d "${PKG}/${python_site_packages}" -Np1 -i "${SRC}/default-bytecode-level.patch"
+    bsdtar -xf "${SRC}/${name}-${version}.whl" -C "${PKG}/${PYTHON_SITE_PACKAGES}"
+    patch -d "${PKG}/${PYTHON_SITE_PACKAGES}" -Np1 -i "${SRC}/default-bytecode-level.patch"
 
-    python3 -m compileall "${PKG}/${python_site_packages}"
+    python3 -m compileall "${PKG}/${PYTHON_SITE_PACKAGES}"
 }
