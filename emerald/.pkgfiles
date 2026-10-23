@@ -45,6 +45,3 @@ drwxr-xr-x root/root    var/cache/emerald/
 drwxrwxrwx root/root    var/cache/emerald/packages/
 drwxrwxrwx root/root    var/cache/emerald/sources/
 drwxrwxrwx root/root    var/cache/emerald/work/
-drwxr-xr-x root/root    var/lib/
-drwxr-xr-x root/root    var/lib/emerald/
-drwxrwxrwx root/root    var/lib/emerald/cbuild/
