@@ -8,10 +8,6 @@ maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 name=systemd
 version=262.1
 release=2
-
-backup="etc/pam.d/systemd-user
-    etc/pam.d/systemd-run0"
-
 source="${name}-${version}.tar.gz::https://github.com/${name}/${name}/archive/refs/tags/v${version}.tar.gz"
 
 build() {
@@ -31,7 +27,6 @@ build() {
         -Duserdb=false \
         -Dmode=release \
         -Dpam=enabled \
-        -Dpamconfdir=/etc/pam.d \
         -Ddev-kvm-mode=0660 \
         -Dnobody-group=nogroup \
         -Dsysupdate=disabled \

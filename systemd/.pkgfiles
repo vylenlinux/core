@@ -7,9 +7,6 @@ drwxr-xr-x root/root    etc/binfmt.d/
 drwx------ root/root    etc/credstore.encrypted/
 drwx------ root/root    etc/credstore/
 drwxr-xr-x root/root    etc/modules-load.d/
-drwxr-xr-x root/root    etc/pam.d/
--rw-r--r-- root/root    etc/pam.d/systemd-run0.epkgnew
--rw-r--r-- root/root    etc/pam.d/systemd-user.epkgnew
 drwxr-xr-x root/root    etc/profile.d/
 lrwxrwxrwx root/root    etc/profile.d/70-systemd-shell-extra.sh -> ../../usr/lib/systemd/profile.d/70-systemd-shell-extra.sh
 lrwxrwxrwx root/root    etc/profile.d/80-systemd-osc-context.sh -> ../../usr/lib/systemd/profile.d/80-systemd-osc-context.sh
@@ -152,6 +149,9 @@ drwxr-xr-x root/root    usr/lib/modprobe.d/
 -rw-r--r-- root/root    usr/lib/modprobe.d/README
 -rw-r--r-- root/root    usr/lib/modprobe.d/systemd.conf
 drwxr-xr-x root/root    usr/lib/modules-load.d/
+drwxr-xr-x root/root    usr/lib/pam.d/
+-rw-r--r-- root/root    usr/lib/pam.d/systemd-run0
+-rw-r--r-- root/root    usr/lib/pam.d/systemd-user
 drwxr-xr-x root/root    usr/lib/pkgconfig/
 -rw-r--r-- root/root    usr/lib/pkgconfig/libsystemd.pc
 -rw-r--r-- root/root    usr/lib/pkgconfig/libudev.pc

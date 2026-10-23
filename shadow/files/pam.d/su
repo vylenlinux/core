@@ -1,4 +1,4 @@
-# Begin /etc/pam.d/su
+# Begin /usr/lib/pam.d/su
 
 auth      sufficient  pam_rootok.so
 auth      include     system-auth
@@ -6,4 +6,4 @@ account   include     system-account
 session   required    pam_env.so
 session   include     system-session
 
-# End /etc/pam.d/su
+# End /usr/lib/pam.d/su

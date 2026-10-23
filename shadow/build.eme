@@ -9,23 +9,7 @@ name=shadow
 version=4.20.3
 release=1
 
-backup="etc/pam.d/chage
-    etc/pam.d/chfn
-    etc/pam.d/chgpasswd
-    etc/pam.d/chpasswd
-    etc/pam.d/chsh
-    etc/pam.d/groupadd
-    etc/pam.d/groupdel
-    etc/pam.d/groupmems
-    etc/pam.d/groupmod
-    etc/pam.d/login
-    etc/pam.d/newusers
-    etc/pam.d/passwd
-    etc/pam.d/su
-    etc/pam.d/useradd
-    etc/pam.d/userdel
-    etc/pam.d/usermod
-    etc/login.defs
+backup="etc/login.defs
     etc/default/useradd"
 
 source="https://github.com/shadow-maint/${name}/releases/download/${version}/${name}-${version}.tar.xz
@@ -66,11 +50,11 @@ build() {
     install -Dm600 "${SRC}/useradd.defaults" "${PKG}/etc/default/useradd"
 
     do_pam chage chpasswd login passwd su
-    sed -e "s/chpasswd/newusers/" "${PKG}/etc/pam.d/chpasswd" > "${PKG}/etc/pam.d/newusers"
+    sed -e "s/chpasswd/newusers/" "${PKG}/usr/lib/pam.d/chpasswd" > "${PKG}/usr/lib/pam.d/newusers"
 
     for bin in chfn chgpasswd chsh groupadd groupdel groupmems groupmod useradd userdel usermod; do
-        install -m644 "${PKG}/etc/pam.d/chage" "${PKG}/etc/pam.d/${bin}"
-        sed -i "s/chage/${bin}/" "${PKG}/etc/pam.d/${bin}"
+        install -m644 "${PKG}/usr/lib/pam.d/chage" "${PKG}/usr/lib/pam.d/${bin}"
+        sed -i "s/chage/${bin}/" "${PKG}/usr/lib/pam.d/${bin}"
     done
 
     do_service "${name}"

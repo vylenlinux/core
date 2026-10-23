@@ -1,8 +1,9 @@
-drwxr-xr-x root/root    etc/
-drwxr-xr-x root/root    etc/pam.d/
--rw-r--r-- root/root    etc/pam.d/other.epkgnew
--rw-r--r-- root/root    etc/pam.d/runuser.epkgnew
--rw-r--r-- root/root    etc/pam.d/system-account.epkgnew
--rw-r--r-- root/root    etc/pam.d/system-auth.epkgnew
--rw-r--r-- root/root    etc/pam.d/system-password.epkgnew
--rw-r--r-- root/root    etc/pam.d/system-session.epkgnew
+drwxr-xr-x root/root    usr/
+drwxr-xr-x root/root    usr/lib/
+drwxr-xr-x root/root    usr/lib/pam.d/
+-rw-r--r-- root/root    usr/lib/pam.d/other
+-rw-r--r-- root/root    usr/lib/pam.d/runuser
+-rw-r--r-- root/root    usr/lib/pam.d/system-account
+-rw-r--r-- root/root    usr/lib/pam.d/system-auth
+-rw-r--r-- root/root    usr/lib/pam.d/system-password
+-rw-r--r-- root/root    usr/lib/pam.d/system-session
