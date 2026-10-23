@@ -16,13 +16,12 @@ source="${name}-${version}.tar.gz::https://github.com/mgorny/gpep517/archive/v${
 build() {
     # shellcheck disable=SC2164
     cd "gpep517-${version}"
+
     patch -Np1 -i "${SRC}/default.bytecode.level.patch"
+    mkdir -p "${PKG}/${PYTHON_SITE_PACKAGES}"
 
-    python_site_packages=$(python3 -c 'import site; print(site.getsitepackages()[0])')
-    mkdir -p "${PKG}/${python_site_packages}"
-
-    cp -a gpep517 "${PKG}/${python_site_packages}"
-    python3 -m compileall "${PKG}/${python_site_packages}"
+    cp -a gpep517 "${PKG}/${PYTHON_SITE_PACKAGES}"
+    python3 -m compileall "${PKG}/${PYTHON_SITE_PACKAGES}"
 
     install -Dm755 "${SRC}/gpep517" -t "${PKG}/usr/bin/"
 }
