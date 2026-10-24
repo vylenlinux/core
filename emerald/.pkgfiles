@@ -18,6 +18,8 @@ drwxr-xr-x root/root    usr/bin/
 -rwxr-xr-x root/root    usr/bin/revdep
 -rwxr-xr-x root/root    usr/bin/updateconf
 -rwxr-xr-x root/root    usr/bin/xchroot
+drwxr-xr-x root/root    usr/lib/
+drwxr-xr-x root/root    usr/lib/revdep.d/
 drwxr-xr-x root/root    usr/ports/
 drwxr-xr-x root/root    usr/share/
 drwxr-xr-x root/root    usr/share/man/
