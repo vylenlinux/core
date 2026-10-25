@@ -1,4 +1,4 @@
-# /etc/services, created 2026-10-01T12:17:39+0200
+# /etc/services, created 2026-10-25T14:53:40+0100
 # Source: https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xml
 tcpmux              1/tcp
 tcpmux              1/udp
@@ -8174,6 +8174,7 @@ lutcp            4913/tcp
 bones            4914/tcp
 bones            4914/udp
 frcs             4915/tcp
+fmsg             4930/tcp
 an-signaling     4936/udp
 atsc-mh-ssc      4937/udp
 eq-office-4940   4940/tcp
@@ -9820,6 +9821,7 @@ warppipe         8007/udp
 http-alt         8008/tcp
 http-alt         8008/udp
 nvme-disc        8009/tcp
+bier-echo        8011/udp
 cfg-cloud        8015/tcp
 ads-s            8016/tcp
 cisco-cloudsec   8017/udp
