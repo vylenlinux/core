@@ -17,8 +17,8 @@ process() {
     printf 'Processing protocols\n'
 
     awk -F "[<>]" -v url="${url_protocol_numbers}" -v date_time="${datetime}" 'BEGIN {
-        print "# /etc/protocols, created " date_time;
-        print "# Source: " url;
+        printf "# /etc/protocols, created %s\n", date_time;
+        printf "# Source: %s\n", url;
     } /<record/ {
         v = n = "";
     } /<value/ {
@@ -34,9 +34,9 @@ process() {
 
     printf 'Processing services\n'
 
-    awk -F "[<>]" -v url="${url_service_names_port_numbers}" -v date_time="${datetime}" 'BEGIN{
-        print "# /etc/services, created " date_time;
-        print "# Source: " url;
+    awk -F "[<>]" -v url="${url_service_names_port_numbers}" -v date_time="${datetime}" 'BEGIN {
+        printf "# /etc/services, created %s\n", date_time;
+        printf "# Source: %s\n", url;
     } /<record/ {
         n = u = p = c = "";
     } /<name/ && !/\(/ {
