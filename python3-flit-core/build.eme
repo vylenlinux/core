@@ -6,7 +6,7 @@ homepage="https://github.com/takluyver/flit"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=python3-flit-core
-version=4.1.0
+version=4.2.0
 release=1
 
 source="${name}-${version}.tar.gz::https://github.com/takluyver/flit/archive/${version}/flit-${version}.tar.gz
