@@ -2,14 +2,14 @@
 
 # shellcheck disable=SC2034
 description="Wrappers to build Python packages using PEP 517 hooks"
-homepage="https://github.com/pypa/pep517"
+homepage="https://github.com/gentoo/gpep517"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=python3-gpep517
 version=23
 release=1
 
-source="${name}-${version}.tar.gz::https://github.com/mgorny/gpep517/archive/v${version}/gpep517-v${version}.tar.gz
+source="${name}-${version}.tar.gz::https://github.com/gentoo/gpep517/archive/v${version}/gpep517-v${version}.tar.gz
     default.bytecode.level.patch
     gpep517"
 
