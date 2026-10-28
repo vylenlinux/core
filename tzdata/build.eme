@@ -6,7 +6,7 @@ homepage="https://www.iana.org/time-zones"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=tzdata
-version=2026e
+version=2026f
 release=1
 
 source="${name}-${version}.tar.gz::https://www.iana.org/time-zones/repository/releases/${name}${version}.tar.gz
@@ -29,7 +29,7 @@ build() {
         ./zic -L leapseconds -d "${ZONEINFO}/right" -y "sh yearistype.sh" "${tz}"
     done
 
-    cp zone.tab zone1970.tab iso3166.tab "${ZONEINFO}"
+    cp zone.tab zone1970.tab iso3166.tab -t "${ZONEINFO}/"
     ./zic -d "${ZONEINFO}" -p America/New_York
 
     # conflict with glibc
