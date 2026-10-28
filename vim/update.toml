@@ -6,5 +6,4 @@ owner = "vim"
 repo = "vim"
 
 [github]
-use_releases = false
 use_tags = true

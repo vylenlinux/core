@@ -6,5 +6,4 @@ owner = "libarchive"
 repo = "bzip2"
 
 [github]
-use_releases = false
 use_tags = true
