@@ -30,7 +30,7 @@ build() {
     done
 
     cp zone.tab zone1970.tab iso3166.tab -t "${ZONEINFO}/"
-    ./zic -d "${ZONEINFO}" -p America/New_York
+    ./zic -d "${ZONEINFO}"
 
     # conflict with glibc
     rm "${PKG}/etc/localtime"

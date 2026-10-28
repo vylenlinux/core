@@ -1256,7 +1256,6 @@ hrw-r--r-- root/root    usr/share/zoneinfo/posix/Universal link to usr/share/zon
 hrw-r--r-- root/root    usr/share/zoneinfo/posix/W-SU link to usr/share/zoneinfo/posix/Europe/Moscow
 hrw-r--r-- root/root    usr/share/zoneinfo/posix/WET link to usr/share/zoneinfo/posix/Europe/Lisbon
 hrw-r--r-- root/root    usr/share/zoneinfo/posix/Zulu link to usr/share/zoneinfo/posix/Etc/UTC
-hrw-r--r-- root/root    usr/share/zoneinfo/posixrules link to usr/share/zoneinfo/America/New_York
 drwxr-xr-x root/root    usr/share/zoneinfo/right/
 drwxr-xr-x root/root    usr/share/zoneinfo/right/Africa/
 hrw-r--r-- root/root    usr/share/zoneinfo/right/Africa/Abidjan link to usr/share/zoneinfo/right/Atlantic/Reykjavik
