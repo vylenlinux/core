@@ -2,7 +2,7 @@
 
 # shellcheck disable=SC2034
 description="A built-package format for Python"
-homepage="https://pypi.python.org/pypi/wheel"
+homepage="https://pypi.org/project/wheel/"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=python3-wheel

@@ -2,7 +2,7 @@
 
 # shellcheck disable=SC2034
 description="The GNU generic library support script"
-homepage="https://www.gnu.org/software/libtool"
+homepage="https://www.gnu.org/software/libtool/"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=libtool

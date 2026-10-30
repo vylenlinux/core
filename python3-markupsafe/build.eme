@@ -2,7 +2,7 @@
 
 # shellcheck disable=SC2034
 description="Python module that implements a XML/HTML/XHTML Markup safe string"
-homepage="https://pypi.python.org/pypi/MarkupSafe"
+homepage="https://pypi.org/project/MarkupSafe/"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=python3-markupsafe

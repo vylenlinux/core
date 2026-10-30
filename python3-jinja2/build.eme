@@ -2,7 +2,7 @@
 
 # shellcheck disable=SC2034
 description="A simple pythonic template language written in Python"
-homepage="https://palletsprojects.com/p/jinja/"
+homepage="https://palletsprojects.com/projects/jinja/"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=python3-jinja2
