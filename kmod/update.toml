@@ -1,5 +1,6 @@
 name = "kmod"
-provider = "repology"
+provider = "ftp"
 
-[source]
-package = "kmod"
+[ftp]
+url = "https://www.kernel.org/pub/linux/utils/kernel/%(name)/"
+filename = "%(name)-%(version).tar.xz"
