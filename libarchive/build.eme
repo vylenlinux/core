@@ -6,13 +6,14 @@ homepage="https://libarchive.org/"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=libarchive
-version=3.8.10
+version=3.8.11
 release=1
-source="https://github.com/${name}/${name}/releases/download/v${version}/${name}-${version}.tar.xz"
+source="${name}-${version}.tar.gz::https://github.com/${name}/${name}/archive/refs/tags/v${version}.tar.gz"
 
 build() {
     # shellcheck disable=SC2164
     cd "${name}-${version}"
+    autoreconf -fi
 
     ./configure \
         --prefix=/usr \

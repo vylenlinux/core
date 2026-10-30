@@ -1,5 +1,9 @@
 name = "libarchive"
-provider = "repology"
+provider = "github"
 
 [source]
-package = "libarchive"
+owner = "%(name)"
+repo = "%(name)"
+
+[github]
+use_tags = true
