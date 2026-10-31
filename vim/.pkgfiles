@@ -1015,6 +1015,7 @@ drwxr-xr-x root/root    usr/share/vim/vim92/indent/
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/pascal.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/perl.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/php.vim
+-rw-r--r-- root/root    usr/share/vim/vim92/indent/pkl.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/postscr.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/pov.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/prolog.vim
