@@ -4,3 +4,6 @@ provider = "github"
 [source]
 owner = "libexpat"
 repo = "libexpat"
+
+[version]
+exclude = ["V*"]
