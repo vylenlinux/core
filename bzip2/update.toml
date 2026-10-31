@@ -4,6 +4,3 @@ provider = "github"
 [source]
 owner = "libarchive"
 repo = "bzip2"
-
-[github]
-use_tags = true

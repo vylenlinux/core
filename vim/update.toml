@@ -4,6 +4,3 @@ provider = "github"
 [source]
 owner = "vim"
 repo = "vim"
-
-[github]
-use_tags = true
