@@ -1,5 +1,9 @@
 name = "b3sum"
-provider = "repology"
+provider = "sourcehut"
 
 [source]
-package = "cb3sum"
+owner = "~mcf"
+repo = "b3sum"
+
+[sourcehut]
+mode = "commit"
