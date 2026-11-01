@@ -3,7 +3,7 @@ provider = "sourcehut"
 
 [source]
 owner = "~mcf"
-repo = "b3sum"
+repo = "%(name)"
 
 [sourcehut]
 mode = "commit"
