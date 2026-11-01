@@ -1,9 +1,5 @@
 name = "b3sum"
-provider = "sourcehut"
+provider = "git"
 
 [source]
-owner = "~mcf"
-repo = "%(name)"
-
-[sourcehut]
-mode = "commit"
+url = "https://git.sr.ht/~mcf/%(name)"
