@@ -1,5 +1,6 @@
 name = "libnghttp2"
-provider = "repology"
+provider = "github"
 
 [source]
-package = "nghttp2"
+owner = "nghttp2"
+repo = "nghttp2"
