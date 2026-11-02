@@ -1,7 +1,6 @@
 name = "linux-api-headers"
-provider = "ftp"
+provider = "repology"
 dedup_key = "linux"
 
-[ftp]
-url = "https://www.kernel.org/pub/linux/kernel/v%(version).x/"
-filename = "linux-%(version).tar.xz"
+[source]
+package = "linux"
