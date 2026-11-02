@@ -6,7 +6,7 @@ homepage="https://libexpat.github.io"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=expat
-version=2.9.0
+version=2.10.0
 release=1
 
 _version="$(printf "%s" "${version}" | sed 's/\./_/g')"
