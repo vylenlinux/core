@@ -1,5 +1,6 @@
 name = "lz4"
-provider = "repology"
+provider = "github"
 
 [source]
-package = "lz4"
+owner = "%(name)"
+repo = "%(name)"

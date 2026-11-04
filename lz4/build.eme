@@ -1,14 +1,19 @@
+#!/bin/sh
+
+# shellcheck disable=SC2034
 description="Extremely fast compression algorithm"
 homepage="https://lz4.org/"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=lz4
-version=1.10.0
+version=1.11.0
 release=1
-source="$name-$version.tar.gz::https://github.com/lz4/lz4/archive/v$version.tar.gz"
+source="${name}-${version}.tar.gz::https://github.com/${name}/${name}/archive/v${version}.tar.gz"
 
 build() {
-	cd $name-$version
-	make PREFIX=/usr
-	make DESTDIR=$PKG PREFIX=/usr install
+    # shellcheck disable=SC2164
+    cd "${name}-${version}"
+
+    make PREFIX=/usr
+    make PREFIX=/usr DESTDIR="${PKG}" install
 }
