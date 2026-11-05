@@ -164,14 +164,6 @@ drwxr-xr-x root/root    usr/lib/sysctl.d/
 -rw-r--r-- root/root    usr/lib/sysctl.d/50-pid-max.conf
 -rw-r--r-- root/root    usr/lib/sysctl.d/README
 drwxr-xr-x root/root    usr/lib/systemd/
-drwxr-xr-x root/root    usr/lib/systemd/boot/
-drwxr-xr-x root/root    usr/lib/systemd/boot/efi/
--rw-r--r-- root/root    usr/lib/systemd/boot/efi/addonia32.efi.stub
--rw-r--r-- root/root    usr/lib/systemd/boot/efi/addonx64.efi.stub
--rw-r--r-- root/root    usr/lib/systemd/boot/efi/linuxia32.efi.stub
--rw-r--r-- root/root    usr/lib/systemd/boot/efi/linuxx64.efi.stub
--rw-r--r-- root/root    usr/lib/systemd/boot/efi/systemd-bootia32.efi
--rw-r--r-- root/root    usr/lib/systemd/boot/efi/systemd-bootx64.efi
 drwxr-xr-x root/root    usr/lib/systemd/catalog/
 -rw-r--r-- root/root    usr/lib/systemd/catalog/systemd.be.catalog
 -rw-r--r-- root/root    usr/lib/systemd/catalog/systemd.be@latin.catalog
@@ -264,7 +256,6 @@ drwxr-xr-x root/root    usr/lib/systemd/ssh_config.d/
 drwxr-xr-x root/root    usr/lib/systemd/system-environment-generators/
 -rwxr-xr-x root/root    usr/lib/systemd/system-environment-generators/10-vylen
 drwxr-xr-x root/root    usr/lib/systemd/system-generators/
--rwxr-xr-x root/root    usr/lib/systemd/system-generators/systemd-bless-boot-generator
 -rwxr-xr-x root/root    usr/lib/systemd/system-generators/systemd-clonesetup-generator
 -rwxr-xr-x root/root    usr/lib/systemd/system-generators/systemd-cryptsetup-generator
 -rwxr-xr-x root/root    usr/lib/systemd/system-generators/systemd-debug-generator
@@ -405,7 +396,6 @@ lrwxrwxrwx root/root    usr/lib/systemd/system/remote-fs.target.wants/var-lib-ma
 -rw-r--r-- root/root    usr/lib/systemd/system/sockets.target
 drwxr-xr-x root/root    usr/lib/systemd/system/sockets.target.wants/
 lrwxrwxrwx root/root    usr/lib/systemd/system/sockets.target.wants/systemd-ask-password.socket -> ../systemd-ask-password.socket
-lrwxrwxrwx root/root    usr/lib/systemd/system/sockets.target.wants/systemd-bootctl.socket -> ../systemd-bootctl.socket
 lrwxrwxrwx root/root    usr/lib/systemd/system/sockets.target.wants/systemd-coredump.socket -> ../systemd-coredump.socket
 lrwxrwxrwx root/root    usr/lib/systemd/system/sockets.target.wants/systemd-creds.socket -> ../systemd-creds.socket
 lrwxrwxrwx root/root    usr/lib/systemd/system/sockets.target.wants/systemd-cryptenroll.socket -> ../systemd-cryptenroll.socket
@@ -453,7 +443,6 @@ lrwxrwxrwx root/root    usr/lib/systemd/system/sysinit.target.wants/sys-kernel-d
 lrwxrwxrwx root/root    usr/lib/systemd/system/sysinit.target.wants/sys-kernel-tracing.mount -> ../sys-kernel-tracing.mount
 lrwxrwxrwx root/root    usr/lib/systemd/system/sysinit.target.wants/systemd-ask-password-console.path -> ../systemd-ask-password-console.path
 lrwxrwxrwx root/root    usr/lib/systemd/system/sysinit.target.wants/systemd-binfmt.service -> ../systemd-binfmt.service
-lrwxrwxrwx root/root    usr/lib/systemd/system/sysinit.target.wants/systemd-boot-random-seed.service -> ../systemd-boot-random-seed.service
 lrwxrwxrwx root/root    usr/lib/systemd/system/sysinit.target.wants/systemd-hibernate-clear.service -> ../systemd-hibernate-clear.service
 lrwxrwxrwx root/root    usr/lib/systemd/system/sysinit.target.wants/systemd-hwdb-update.service -> ../systemd-hwdb-update.service
 lrwxrwxrwx root/root    usr/lib/systemd/system/sysinit.target.wants/systemd-journal-catalog-update.service -> ../systemd-journal-catalog-update.service
@@ -494,13 +483,7 @@ lrwxrwxrwx root/root    usr/lib/systemd/system/system-update-pre.target.wants/sy
 -rw-r--r-- root/root    usr/lib/systemd/system/systemd-backlight@.service
 -rw-r--r-- root/root    usr/lib/systemd/system/systemd-battery-check.service
 -rw-r--r-- root/root    usr/lib/systemd/system/systemd-binfmt.service
--rw-r--r-- root/root    usr/lib/systemd/system/systemd-bless-boot.service
 -rw-r--r-- root/root    usr/lib/systemd/system/systemd-boot-check-no-failures.service
--rw-r--r-- root/root    usr/lib/systemd/system/systemd-boot-clear-sysfail.service
--rw-r--r-- root/root    usr/lib/systemd/system/systemd-boot-random-seed.service
--rw-r--r-- root/root    usr/lib/systemd/system/systemd-boot-update.service
--rw-r--r-- root/root    usr/lib/systemd/system/systemd-bootctl.socket
--rw-r--r-- root/root    usr/lib/systemd/system/systemd-bootctl@.service
 -rw-r--r-- root/root    usr/lib/systemd/system/systemd-bsod.service
 -rw-r--r-- root/root    usr/lib/systemd/system/systemd-confext-initrd.service
 -rw-r--r-- root/root    usr/lib/systemd/system/systemd-confext-sysroot.service
@@ -628,8 +611,6 @@ lrwxrwxrwx root/root    usr/lib/systemd/system/system-update-pre.target.wants/sy
 -rw-r--r-- root/root    usr/lib/systemd/system/systemd-sysinstall.service
 -rw-r--r-- root/root    usr/lib/systemd/system/systemd-sysinstall.socket
 -rw-r--r-- root/root    usr/lib/systemd/system/systemd-sysinstall@.service
--rw-r--r-- root/root    usr/lib/systemd/system/systemd-sysupdate-notify-bootctl.socket
--rw-r--r-- root/root    usr/lib/systemd/system/systemd-sysupdate-notify-bootctl@.service
 -rw-r--r-- root/root    usr/lib/systemd/system/systemd-sysupdate-notify-sysext.socket
 -rw-r--r-- root/root    usr/lib/systemd/system/systemd-sysupdate-notify-sysext@.service
 -rw-r--r-- root/root    usr/lib/systemd/system/systemd-sysusers.service
@@ -679,7 +660,6 @@ drwxr-xr-x root/root    usr/lib/systemd/system/user@0.service.d/
 -rwxr-xr-x root/root    usr/lib/systemd/systemd-backlight
 -rwxr-xr-x root/root    usr/lib/systemd/systemd-battery-check
 -rwxr-xr-x root/root    usr/lib/systemd/systemd-binfmt
--rwxr-xr-x root/root    usr/lib/systemd/systemd-bless-boot
 -rwxr-xr-x root/root    usr/lib/systemd/systemd-boot-check-no-failures
 -rwxr-xr-x root/root    usr/lib/systemd/systemd-bsod
 -rwxr-xr-x root/root    usr/lib/systemd/systemd-clonesetup
@@ -2193,7 +2173,6 @@ drwxr-xr-x root/root    usr/share/man/man5/
 -rw-r--r-- root/root    usr/share/man/man5/journald.conf.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/journald.conf.d.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/journald@.conf.5.gz
--rw-r--r-- root/root    usr/share/man/man5/loader.conf.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/locale.conf.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/localtime.5.gz
 -rw-r--r-- root/root    usr/share/man/man5/logind.conf.5.gz
@@ -2277,14 +2256,7 @@ drwxr-xr-x root/root    usr/share/man/man7/
 -rw-r--r-- root/root    usr/share/man/man7/file-hierarchy.7.gz
 -rw-r--r-- root/root    usr/share/man/man7/hwdb.7.gz
 -rw-r--r-- root/root    usr/share/man/man7/kernel-command-line.7.gz
--rw-r--r-- root/root    usr/share/man/man7/linuxaa64.efi.stub.7.gz
--rw-r--r-- root/root    usr/share/man/man7/linuxia32.efi.stub.7.gz
--rw-r--r-- root/root    usr/share/man/man7/linuxx64.efi.stub.7.gz
--rw-r--r-- root/root    usr/share/man/man7/sd-boot.7.gz
--rw-r--r-- root/root    usr/share/man/man7/sd-stub.7.gz
 -rw-r--r-- root/root    usr/share/man/man7/smbios-type-11.7.gz
--rw-r--r-- root/root    usr/share/man/man7/systemd-boot.7.gz
--rw-r--r-- root/root    usr/share/man/man7/systemd-stub.7.gz
 -rw-r--r-- root/root    usr/share/man/man7/systemd.directives.7.gz
 -rw-r--r-- root/root    usr/share/man/man7/systemd.environment-generator.7.gz
 -rw-r--r-- root/root    usr/share/man/man7/systemd.generator.7.gz
@@ -2327,13 +2299,8 @@ drwxr-xr-x root/root    usr/share/man/man8/
 -rw-r--r-- root/root    usr/share/man/man8/systemd-battery-check.service.8.gz
 -rw-r--r-- root/root    usr/share/man/man8/systemd-binfmt.8.gz
 -rw-r--r-- root/root    usr/share/man/man8/systemd-binfmt.service.8.gz
--rw-r--r-- root/root    usr/share/man/man8/systemd-bless-boot-generator.8.gz
--rw-r--r-- root/root    usr/share/man/man8/systemd-bless-boot.8.gz
--rw-r--r-- root/root    usr/share/man/man8/systemd-bless-boot.service.8.gz
 -rw-r--r-- root/root    usr/share/man/man8/systemd-boot-check-no-failures.8.gz
 -rw-r--r-- root/root    usr/share/man/man8/systemd-boot-check-no-failures.service.8.gz
--rw-r--r-- root/root    usr/share/man/man8/systemd-boot-clear-sysfail.service.8.gz
--rw-r--r-- root/root    usr/share/man/man8/systemd-boot-random-seed.service.8.gz
 -rw-r--r-- root/root    usr/share/man/man8/systemd-bsod.8.gz
 -rw-r--r-- root/root    usr/share/man/man8/systemd-bsod.service.8.gz
 -rw-r--r-- root/root    usr/share/man/man8/systemd-clonesetup-generator.8.gz
@@ -2496,11 +2463,6 @@ drwxr-xr-x root/root    usr/share/man/man8/
 -rw-r--r-- root/root    usr/share/man/man8/systemd-tmpfiles-setup-dev.service.8.gz
 -rw-r--r-- root/root    usr/share/man/man8/systemd-tmpfiles-setup.service.8.gz
 -rw-r--r-- root/root    usr/share/man/man8/systemd-tmpfiles.8.gz
--rw-r--r-- root/root    usr/share/man/man8/systemd-tpm2-clear.service.8.gz
--rw-r--r-- root/root    usr/share/man/man8/systemd-tpm2-generator.8.gz
--rw-r--r-- root/root    usr/share/man/man8/systemd-tpm2-setup-early.service.8.gz
--rw-r--r-- root/root    usr/share/man/man8/systemd-tpm2-setup.8.gz
--rw-r--r-- root/root    usr/share/man/man8/systemd-tpm2-setup.service.8.gz
 -rw-r--r-- root/root    usr/share/man/man8/systemd-udev-settle.service.8.gz
 -rw-r--r-- root/root    usr/share/man/man8/systemd-udevd-kernel.socket.8.gz
 -rw-r--r-- root/root    usr/share/man/man8/systemd-udevd-varlink.socket.8.gz
