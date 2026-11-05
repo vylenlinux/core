@@ -6,7 +6,7 @@ homepage="https://curl.se/docs/caextract.html"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=ca-certificates
-version=20261020
+version=20261105
 release=1
 
 _noyear="${version#????}"
