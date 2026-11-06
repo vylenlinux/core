@@ -3,3 +3,6 @@ provider = "repology"
 
 [source]
 package = "bash"
+
+[version]
+remove = ["p"]
