@@ -1,5 +1,6 @@
 name = "groff"
-provider = "repology"
+provider = "ftp"
 
-[source]
-package = "groff"
+[ftp]
+url = "https://ftp.gnu.org/gnu/%(name)"
+filename = "%(name)-%(version).tar.gz"
