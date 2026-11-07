@@ -8,3 +8,4 @@ repo = "libexpat"
 [version]
 exclude = ["V*"]
 strip_prefix = "R_"
+replace = { _ = "." }
