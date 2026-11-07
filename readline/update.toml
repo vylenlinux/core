@@ -3,3 +3,6 @@ provider = "repology"
 
 [source]
 package = "readline"
+
+[version]
+replace = { p = "." }
