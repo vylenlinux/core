@@ -1,5 +1,6 @@
 name = "automake"
-provider = "repology"
+provider = "ftp"
 
-[source]
-package = "automake"
+[ftp]
+url = "https://ftp.gnu.org/gnu/%(name)/"
+filename = "%(name)-%(version).tar.xz"
