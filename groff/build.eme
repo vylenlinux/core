@@ -13,8 +13,9 @@ source="https://ftp.gnu.org/gnu/${name}/${name}-${version}.tar.gz"
 build() {
     # shellcheck disable=SC2164
     cd "${name}-${version}"
+    export PAGE=A4
 
-    PAGE=A4 ./configure \
+    ./configure \
         --prefix=/usr \
         --sysconfdir=/etc \
         --without-x \
