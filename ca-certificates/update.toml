@@ -7,5 +7,6 @@ package = "ca-certificates"
 [repology]
 ignore_versions = [
     "20260816",
-    "20260910"
+    "20260910",
+    "20261107" # fake version
 ]
