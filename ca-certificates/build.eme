@@ -6,12 +6,10 @@ homepage="https://curl.se/docs/caextract.html"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=ca-certificates
-version=20261105
+version=2026.11.05
 release=1
 
-_noyear="${version#????}"
-_version="${version%????}-${_noyear%??}-${version#??????}"
-
+_version="$(printf '%s' "${version}" | tr '.' '-')"
 source="${name}-${version}.pem::https://curl.se/ca/cacert-${_version}.pem"
 
 build() {
