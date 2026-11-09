@@ -1,12 +1,9 @@
 name = "ca-certificates"
-provider = "repology"
+provider = "html"
 
-[source]
-package = "ca-certificates"
+[html]
+url = "https://curl.se/docs/caextract.html"
+filename = "cacert-%(version).pem"
 
-[repology]
-ignore_versions = [
-    "20260816",
-    "20260910",
-    "20261107" # fake version
-]
+[version]
+replace = { - = "." }
