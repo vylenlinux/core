@@ -456,6 +456,7 @@ drwxr-xr-x root/root    usr/share/vim/vim92/ftplugin/
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/arch.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/arduino.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/art.vim
+-rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/ascendc.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/asciidoc.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/asm.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/ftplugin/aspvbs.vim
@@ -899,6 +900,7 @@ drwxr-xr-x root/root    usr/share/vim/vim92/indent/
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/ada.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/ant.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/arduino.vim
+-rw-r--r-- root/root    usr/share/vim/vim92/indent/ascendc.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/astro.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/automake.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/indent/awk.vim
@@ -1327,6 +1329,7 @@ drwxr-xr-x root/root    usr/share/vim/vim92/syntax/
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/arch.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/arduino.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/art.vim
+-rw-r--r-- root/root    usr/share/vim/vim92/syntax/ascendc.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/asciidoc.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/asm.vim
 -rw-r--r-- root/root    usr/share/vim/vim92/syntax/asm68k.vim
