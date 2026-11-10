@@ -1,5 +1,6 @@
 name = "git"
-provider = "repology"
+provider = "ftp"
 
-[source]
-package = "git"
+[ftp]
+url = "https://www.kernel.org/pub/software/scm/%(name)/"
+filename = "%(name)-%(version).tar.xz"
