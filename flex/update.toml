@@ -1,5 +1,6 @@
 name = "flex"
-provider = "repology"
+provider = "github"
 
 [source]
-package = "flex"
+owner = "westes"
+repo = "%(name)"
