@@ -1,5 +1,6 @@
 name = "dash"
-provider = "repology"
+provider = "ftp"
 
-[source]
-package = "dash-shell"
+[ftp]
+url = "http://gondor.apana.org.au/~herbert/%(name)/files/"
+filename = "%(name)-%(version).tar.gz"
