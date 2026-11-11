@@ -6,7 +6,7 @@ homepage="https://vylen.gitlab.io/"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=filesystem
-version=20261022
+version=20261111
 release=1
 
 source="fstab
