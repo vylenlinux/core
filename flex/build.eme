@@ -6,7 +6,7 @@ homepage="https://github.com/westes/flex"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=flex
-version=2.6.6
+version=2.6.8
 release=1
 source="https://github.com/westes/${name}/releases/download/v${version}/${name}-${version}.tar.gz"
 
