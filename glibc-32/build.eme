@@ -7,10 +7,9 @@ homepage="https://www.gnu.org/software/libc/"
 
 name=glibc-32
 version=2.44
-release=1
+release=2
 
 source="https://ftp.gnu.org/gnu/glibc/glibc-${version}.tar.xz
-    lib32.conf
     configparms"
 
 nostrip="usr/lib32/ld-.*\.so$
@@ -54,7 +53,9 @@ build() {
     sed '/test-installation/s@$(PERL)@echo not running@' -i ../Makefile
     make install_root="${PWD}/DESTDIR" install
 
-    install -dm755 "${PKG}/usr/lib32"
+    install -dm755 "${PKG}/usr/lib32" \
+        "${PKG}/usr/lib"
+
     cp -R DESTDIR/usr/lib32/* -t "${PKG}/usr/lib32/"
 
     install -Dm644 \
@@ -62,11 +63,8 @@ build() {
         DESTDIR/usr/include/gnu/stubs-32.h \
     -t "${PKG}/usr/include/gnu/"
 
-    install -d "${PKG}/etc/ld.so.conf.d" \
-        "${PKG}/usr/lib"
-
     ln -s /usr/lib32/ld-linux.so.2 -t "${PKG}/usr/lib/"
     ln -s /usr/lib/locale -t "${PKG}/usr/lib32/"
 
-    install -Dm644 "${SRC}/lib32.conf" -t "${PKG}/etc/ld.so.conf.d/"
+    do_ld_so_conf lib32
 }

@@ -1,6 +1,3 @@
-drwxr-xr-x root/root    etc/
-drwxr-xr-x root/root    etc/ld.so.conf.d/
--rw-r--r-- root/root    etc/ld.so.conf.d/lib32.conf
 drwxr-xr-x root/root    usr/
 drwxr-xr-x root/root    usr/include/
 drwxr-xr-x root/root    usr/include/gnu/
@@ -8,6 +5,8 @@ drwxr-xr-x root/root    usr/include/gnu/
 -rw-r--r-- root/root    usr/include/gnu/stubs-32.h
 drwxr-xr-x root/root    usr/lib/
 lrwxrwxrwx root/root    usr/lib/ld-linux.so.2 -> /usr/lib32/ld-linux.so.2
+drwxr-xr-x root/root    usr/lib/ld.so.conf.d/
+-rw-r--r-- root/root    usr/lib/ld.so.conf.d/lib32.conf
 drwxr-xr-x root/root    usr/lib32/
 -rw-r--r-- root/root    usr/lib32/Mcrt1.o
 -rw-r--r-- root/root    usr/lib32/Scrt1.o
