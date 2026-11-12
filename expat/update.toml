@@ -5,7 +5,9 @@ provider = "github"
 owner = "libexpat"
 repo = "libexpat"
 
-[version]
-exclude = ["V*"]
+[version.normalize]
 strip_prefix = "R_"
-replace = { _ = "." }
+replace = { "_" = "." }
+
+[version.filter]
+exclude = ["^V.*"]

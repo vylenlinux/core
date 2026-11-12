@@ -5,5 +5,5 @@ provider = "github"
 owner = "PCRE2Project"
 repo = "pcre2"
 
-[version]
+[version.normalize]
 strip_prefix = "%(name)-"

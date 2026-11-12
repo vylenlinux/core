@@ -5,5 +5,5 @@ provider = "github"
 owner = "libarchive"
 repo = "bzip2"
 
-[version]
+[version.normalize]
 strip_prefix = "%(name)-"

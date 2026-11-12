@@ -3,7 +3,9 @@ provider = "html"
 
 [html]
 url = "https://curl.se/docs/caextract.html"
-filename = "cacert-%(version).pem"
+selector = "table a[href^=\"/ca/cacert-\"]"
+attribute = "href"
+version_regex = '^/ca/cacert-([0-9]{4}-[0-9]{2}-[0-9]{2})\.pem$'
 
-[version]
-replace = { - = "." }
+[version.normalize]
+replace = { "-" = "." }

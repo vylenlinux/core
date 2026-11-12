@@ -4,5 +4,8 @@ provider = "repology"
 [source]
 package = "bash"
 
-[version]
+[version.filter]
+include = ['^.*\..*\.p.*$']
+
+[version.normalize]
 remove = ["p"]

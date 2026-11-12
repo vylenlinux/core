@@ -4,5 +4,5 @@ provider = "repology"
 [source]
 package = "readline"
 
-[version]
-replace = { p = "." }
+[version.normalize]
+replace = { "p" = "." }
