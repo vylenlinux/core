@@ -2,5 +2,5 @@ name = "binutils"
 provider = "ftp"
 
 [ftp]
-url = "https://ftp.gnu.org/gnu/%(name)"
+url = "https://ftp.gnu.org/gnu/%(name)/"
 filename = "%(name)-%(version).tar.xz"
