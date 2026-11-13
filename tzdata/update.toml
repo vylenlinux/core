@@ -2,5 +2,5 @@ name = "tzdata"
 provider = "ftp"
 
 [ftp]
-url = "https://www.iana.org/time-zones/repository/releases/"
+url = "https://data.iana.org/time-zones/releases/"
 filename = "%(name)%(version).tar.gz"
