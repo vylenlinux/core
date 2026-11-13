@@ -2,5 +2,5 @@ name = "man-pages"
 provider = "ftp"
 
 [ftp]
-url = "https://www.kernel.org/pub/linux/docs/%(name)"
+url = "https://www.kernel.org/pub/linux/docs/%(name)/"
 filename = "%(name)-%(version).tar.xz"
