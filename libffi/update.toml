@@ -1,5 +1,6 @@
 name = "libffi"
-provider = "repology"
+provider = "github"
 
 [source]
-package = "libffi"
+owner = "%(name)"
+repo = "%(name)"
