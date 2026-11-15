@@ -1,5 +1,9 @@
 name = "pkgconf"
-provider = "repology"
+provider = "github"
 
 [source]
-package = "pkgconf"
+owner = "%(name)"
+repo = "%(name)"
+
+[version.normalize]
+strip_prefix = "%(name)-"
