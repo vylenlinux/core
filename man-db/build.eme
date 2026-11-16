@@ -6,7 +6,7 @@ homepage="https://gitlab.com/man-db/man-db"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=man-db
-version=2.13.1
+version=2.13.2
 release=1
 source="https://download-mirror.savannah.gnu.org/releases/${name}/${name}-${version}.tar.xz"
 
@@ -27,5 +27,5 @@ build() {
     make DESTDIR="${PKG}" install
 
     install -dm755 "${PKG}/usr/lib/systemd/system/timers.target.wants"
-    ln -s ../man-db.timer "${PKG}/usr/lib/systemd/system/timers.target.wants/man-db.timer"
+    ln -s ../man-db.timer -t "${PKG}/usr/lib/systemd/system/timers.target.wants/"
 }

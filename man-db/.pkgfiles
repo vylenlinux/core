@@ -14,10 +14,10 @@ lrwxrwxrwx root/root    usr/bin/apropos -> whatis
 drwxr-xr-x root/root    usr/lib/
 drwxr-xr-x root/root    usr/lib/man-db/
 -rwxr-xr-x root/root    usr/lib/man-db/globbing
--rwxr-xr-x root/root    usr/lib/man-db/libman-2.13.1.so
-lrwxrwxrwx root/root    usr/lib/man-db/libman.so -> libman-2.13.1.so
--rwxr-xr-x root/root    usr/lib/man-db/libmandb-2.13.1.so
-lrwxrwxrwx root/root    usr/lib/man-db/libmandb.so -> libmandb-2.13.1.so
+-rwxr-xr-x root/root    usr/lib/man-db/libman-2.13.2.so
+lrwxrwxrwx root/root    usr/lib/man-db/libman.so -> libman-2.13.2.so
+-rwxr-xr-x root/root    usr/lib/man-db/libmandb-2.13.2.so
+lrwxrwxrwx root/root    usr/lib/man-db/libmandb.so -> libmandb-2.13.2.so
 -rwxr-xr-x root/root    usr/lib/man-db/manconv
 -rwxr-xr-x root/root    usr/lib/man-db/zsoelim
 drwxr-xr-x root/root    usr/lib/systemd/
@@ -111,6 +111,10 @@ drwxr-xr-x root/root    usr/share/locale/ko/
 drwxr-xr-x root/root    usr/share/locale/ko/LC_MESSAGES/
 -rw-r--r-- root/root    usr/share/locale/ko/LC_MESSAGES/man-db-gnulib.mo
 -rw-r--r-- root/root    usr/share/locale/ko/LC_MESSAGES/man-db.mo
+drwxr-xr-x root/root    usr/share/locale/lv/
+drwxr-xr-x root/root    usr/share/locale/lv/LC_MESSAGES/
+-rw-r--r-- root/root    usr/share/locale/lv/LC_MESSAGES/man-db-gnulib.mo
+-rw-r--r-- root/root    usr/share/locale/lv/LC_MESSAGES/man-db.mo
 drwxr-xr-x root/root    usr/share/locale/ms/
 drwxr-xr-x root/root    usr/share/locale/ms/LC_MESSAGES/
 -rw-r--r-- root/root    usr/share/locale/ms/LC_MESSAGES/man-db-gnulib.mo
