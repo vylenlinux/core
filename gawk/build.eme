@@ -6,23 +6,19 @@ homepage="https://www.gnu.org/software/gawk/"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=gawk
-version=5.4.1
+version=5.4.2
 release=1
 source="https://ftp.gnu.org/gnu/${name}/${name}-${version}.tar.xz"
 
 build() {
     # shellcheck disable=SC2164
     cd "${name}-${version}"
-    export ac_cv_libsigsegv=no
-
-    # ensure some unneeded files are not installed
-    sed -i 's/extras//' Makefile.in
 
     ./configure \
         --prefix=/usr \
         --libexecdir=/usr/lib \
         --sysconfdir=/etc \
-        --disable-nls
+        --without-libsigsegv
 
     make
     make DESTDIR="${PKG}" install
