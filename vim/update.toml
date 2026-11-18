@@ -2,5 +2,5 @@ name = "vim"
 provider = "github"
 
 [source]
-owner = "vim"
-repo = "vim"
+owner = "%(name)"
+repo = "%(name)"

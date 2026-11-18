@@ -6,10 +6,10 @@ homepage="https://www.vim.org/"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=vim
-version=9.2.1364
+version=9.2.1366
 release=1
 
-source="${name}-${version}.tar.gz::https://github.com/${name}/${name}/archive/v${version}/${name}-v${version}.tar.gz
+source="https://github.com/${name}/${name}/archive/v${version}/${name}-${version}.tar.gz
     vimrc
     feature.h.in"
 
