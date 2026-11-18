@@ -6,7 +6,7 @@ homepage="https://www.vim.org/"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=vim
-version=9.2.1366
+version=9.2.1370
 release=1
 
 source="https://github.com/${name}/${name}/archive/v${version}/${name}-${version}.tar.gz
