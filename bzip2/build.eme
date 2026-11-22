@@ -7,8 +7,10 @@ maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=bzip2
 version=1.0.8
-release=1
-source="https://www.sourceware.org/pub/${name}/${name}-${version}.tar.gz"
+release=2
+
+source="https://www.sourceware.org/pub/${name}/${name}-${version}.tar.gz
+    ${name}.pc"
 
 build() {
     # shellcheck disable=SC2164
@@ -26,13 +28,15 @@ build() {
     make
     make PREFIX="${PKG}/usr" install
 
-    install -Dm755 bzip2-shared "${PKG}/usr/bin/bzip2"
+    install -Dm755 "${name}-shared" "${PKG}/usr/bin/${name}"
     cp -a libbz2.so* -t "${PKG}/usr/lib/"
 
     rm "${PKG}/usr/bin/bunzip2" \
         "${PKG}/usr/bin/bzcat"
 
-    ln -s bzip2 "${PKG}/usr/bin/bunzip2"
-    ln -s bzip2 "${PKG}/usr/bin/bzcat"
+    ln -s "${name}" "${PKG}/usr/bin/bunzip2"
+    ln -s "${name}" "${PKG}/usr/bin/bzcat"
     ln -s libbz2.so.1.0 "${PKG}/usr/lib/libbz2.so"
+
+    install -Dm644 "${SRC}/${name}.pc" -t "${PKG}/usr/lib/pkgconfig/"
 }
