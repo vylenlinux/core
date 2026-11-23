@@ -1,5 +1,9 @@
 name = "iana-etc"
-provider = "repology"
+provider = "html"
 
-[source]
-package = "iana-etc"
+[html]
+url = "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xml"
+selector = "registry > updated"
+version_regex = '^(\d{4}-\d{2}-\d{2})$'
+date_format = "%Y-%m-%d"
+date_output_format = "%Y%m%d"

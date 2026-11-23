@@ -1,4 +1,4 @@
-# /etc/services, created 2026-11-06T13:07:24+0100
+# /etc/services, created 2026-11-23T20:13:05+0100
 # Source: https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xml
 tcpmux              1/tcp
 tcpmux              1/udp
@@ -9499,6 +9499,7 @@ scenidm          7128/tcp
 scenidm          7128/udp
 scenccs          7129/tcp
 scenccs          7129/udp
+ambesasql        7151/tcp
 cabsm-comm       7161/tcp
 cabsm-comm       7161/udp
 caistoragemgr    7162/tcp
@@ -9835,6 +9836,7 @@ oa-system        8022/tcp
 oa-system        8022/udp
 arca-api         8023/tcp
 arca-api         8023/udp
+gaap             8024/udp
 ca-audit-da      8025/tcp
 ca-audit-da      8025/udp
 ca-audit-ds      8026/tcp
