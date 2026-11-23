@@ -6,7 +6,7 @@ homepage="https://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=kmod
-version=34.3
+version=34.4
 release=1
 source="https://www.kernel.org/pub/linux/utils/kernel/${name}/${name}-${version}.tar.xz"
 
