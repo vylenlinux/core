@@ -1,5 +1,12 @@
 name = "shadow"
-provider = "repology"
+provider = "github"
 
 [source]
-package = "shadow"
+owner = "%(name)-maint"
+repo = "%(name)"
+
+[version.filter]
+exclude = [
+    '^2000.*',
+    '^1999.*'
+]

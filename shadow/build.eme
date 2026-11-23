@@ -6,13 +6,13 @@ homepage="https://github.com/shadow-maint/shadow"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=shadow
-version=4.20.3
+version=4.20.4
 release=1
 
 backup="etc/login.defs
     etc/default/useradd"
 
-source="https://github.com/shadow-maint/${name}/releases/download/${version}/${name}-${version}.tar.xz
+source="https://github.com/${name}-maint/${name}/releases/download/${version}/${name}-${version}.tar.xz
     useradd.defaults"
 
 build() {
