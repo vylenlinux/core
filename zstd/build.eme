@@ -1,15 +1,19 @@
+#!/bin/sh
+
+# shellcheck disable=SC2034
 description="Zstandard - Fast real-time compression algorithm"
-homepage="https://facebook.github.io/zstd/"
+homepage="https://meta.github.io/zstd/"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=zstd
-version=1.5.7
+version=1.6.0
 release=1
-source="https://github.com/facebook/zstd/releases/download/v$version/$name-$version.tar.gz"
+source="https://github.com/meta/${name}/releases/download/v${version}/${name}-${version}.tar.gz"
 
 build() {
-	cd $name-$version
+    # shellcheck disable=SC2164
+    cd "${name}-${version}"
 
-	make
-	make PREFIX=/usr DESTDIR=$PKG install
+    make
+    make PREFIX=/usr DESTDIR="${PKG}" install
 }

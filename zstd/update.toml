@@ -1,5 +1,6 @@
 name = "zstd"
-provider = "repology"
+provider = "github"
 
 [source]
-package = "zstd"
+owner = "meta"
+repo = "%(name)"
