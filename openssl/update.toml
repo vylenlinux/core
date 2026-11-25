@@ -1,5 +1,12 @@
 name = "openssl"
-provider = "repology"
+provider = "github"
 
 [source]
-package = "openssl"
+owner = "%(name)"
+repo = "%(name)"
+
+[version.normalize]
+strip_prefix = "%(name)-"
+
+[version.filter]
+include = ['^%(name)-.*$']

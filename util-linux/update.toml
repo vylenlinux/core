@@ -1,5 +1,13 @@
 name = "util-linux"
-provider = "repology"
+provider = "github"
 
 [source]
-package = "util-linux"
+owner = "%(name)"
+repo = "%(name)"
+
+[version.filter]
+exclude = [
+    '^v.*-rc.*$',
+    '^v.*-devel$',
+    '^.*-start$'
+]

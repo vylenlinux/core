@@ -1,5 +1,6 @@
 name = "libxcrypt"
-provider = "repology"
+provider = "github"
 
 [source]
-package = "libxcrypt"
+owner = "besser82"
+repo = "%(name)"

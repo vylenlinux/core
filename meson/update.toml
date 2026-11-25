@@ -1,5 +1,9 @@
 name = "meson"
-provider = "repology"
+provider = "github"
 
 [source]
-package = "meson"
+owner = "mesonbuild"
+repo = "%(name)"
+
+[version.filter]
+exclude = ['.*rc.*']

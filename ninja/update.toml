@@ -1,5 +1,6 @@
 name = "ninja"
-provider = "repology"
+provider = "github"
 
 [source]
-package = "ninja"
+owner = "ninja-build"
+repo = "%(name)"

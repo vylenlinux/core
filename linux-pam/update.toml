@@ -1,5 +1,6 @@
 name = "linux-pam"
-provider = "repology"
+provider = "github"
 
 [source]
-package = "pam"
+owner = "%(name)"
+repo = "%(name)"

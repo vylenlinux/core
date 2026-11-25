@@ -1,5 +1,6 @@
 name = "xz"
-provider = "repology"
+provider = "github"
 
 [source]
-package = "xz"
+owner = "tukaani-project"
+repo = "%(name)"
