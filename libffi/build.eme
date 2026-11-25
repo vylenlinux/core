@@ -6,7 +6,7 @@ homepage="https://sourceware.org/libffi/"
 maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=libffi
-version=3.8.1
+version=3.8.2
 release=1
 source="https://github.com/${name}/${name}/releases/download/v${version}/${name}-${version}.tar.gz"
 
@@ -16,10 +16,12 @@ build() {
 
     ./configure \
         --prefix=/usr \
+        \
+        --enable-pax_emutramp \
+        \
         --disable-static \
         --disable-multi-os-directory \
-        --disable-exec-static-tramp \
-        --enable-pax_emutramp
+        --disable-exec-static-tramp
 
     make
     make DESTDIR="${PKG}" install
