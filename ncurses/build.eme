@@ -7,12 +7,12 @@ maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=ncurses
 version=6.6
-release=1
+release=2
 
 _version="$(printf "%s" "${version}" | sed 's/\./_/g')"
-snapshot=20251230
+snapshot=20261121
 
-source="${name}-${version}.tar.gz::https://github.com/ThomasDickey/${name}-snapshots/archive/v${_version}_${snapshot}.tar.gz"
+source="${name}-${version}-${snapshot}.tar.gz::https://github.com/ThomasDickey/${name}-snapshots/archive/v${_version}_${snapshot}.tar.gz"
 
 build() {
     # shellcheck disable=SC2164

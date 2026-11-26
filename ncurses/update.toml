@@ -1,5 +1,12 @@
 name = "ncurses"
-provider = "repology"
+provider = "github"
 
 [source]
-package = "ncurses"
+owner = "ThomasDickey"
+repo = "ncurses-snapshots"
+
+[version]
+local_format = "{{version}}.{{snapshot}}"
+
+[version.normalize]
+replace = { "_" = "." }
