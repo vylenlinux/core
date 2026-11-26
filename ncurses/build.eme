@@ -17,7 +17,7 @@ source="${name}-${version}-${snapshot}.tar.gz::https://github.com/ThomasDickey/$
 build() {
     # shellcheck disable=SC2164
     cd "${name}-snapshots-${_version}_${snapshot}"
-    sed -i '/LIBTOOL_INSTALL/d' c++/Makefile.in
+    sed '/LIBTOOL_INSTALL/d' -i c++/Makefile.in
 
     ./configure \
         --prefix=/usr \
@@ -36,20 +36,20 @@ build() {
     ln -s "libncursesw.so.${version}" "${PKG}/usr/lib/libncurses.so.${version%%.*}"
 
     # Create libtinfo symlinks.
-    ln -sfr "${PKG}/usr/lib/libncursesw.so" "${PKG}/usr/lib/libtinfo.so"
-    ln -sfr "${PKG}/usr/lib/libncursesw.so.${version}" "${PKG}/usr/lib/libtinfo.so.${version}"
-    ln -sfr "${PKG}/usr/lib/libtinfo.so.${version}" "${PKG}/usr/lib/libtinfo.so.6"
-    ln -sfr "${PKG}/usr/lib/pkgconfig/ncursesw.pc" "${PKG}/usr/lib/pkgconfig/tinfo.pc"
+    ln -s "libncursesw.so.${version}" "${PKG}/usr/lib/libtinfo.so"
+    ln -s "libncursesw.so.${version}" "${PKG}/usr/lib/libtinfo.so.${version}"
+    ln -s "libncursesw.so.${version}" "${PKG}/usr/lib/libtinfo.so.6"
+    ln -s ncursesw.pc "${PKG}/usr/lib/pkgconfig/tinfo.pc"
 
-    for lib in ncurses form panel menu; do
+    for lib in "${name}" form panel menu; do
         rm -f "${PKG}/usr/lib/lib${lib}.so"
         printf "INPUT(-l%sw)\n" "${lib}" > "${PKG}/usr/lib/lib${lib}.so"
 
-        ln -sf "${lib}w.pc" "${PKG}/usr/lib/pkgconfig/${lib}.pc"
+        ln -s "${lib}w.pc" "${PKG}/usr/lib/pkgconfig/${lib}.pc"
     done
 
     rm -f "${PKG}/usr/lib/libcursesw.so"
     printf "INPUT(-lncursesw)\n" > "${PKG}/usr/lib/libcursesw.so"
 
-    ln -sf libncurses.so "${PKG}/usr/lib/libcurses.so"
+    ln -s libncurses.so "${PKG}/usr/lib/libcurses.so"
 }
