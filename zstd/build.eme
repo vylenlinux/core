@@ -7,13 +7,11 @@ maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 
 name=zstd
 version=1.6.0
-release=1
+release=2
 source="https://github.com/meta/${name}/releases/download/v${version}/${name}-${version}.tar.gz"
 
 build() {
-    # shellcheck disable=SC2164
-    cd "${name}-${version}"
-
-    make
-    make PREFIX=/usr DESTDIR="${PKG}" install
+    vylen-meson "${name}-${version}/build/meson" build
+    meson compile -C build
+    DESTDIR="${PKG}" meson install --no-rebuild -C build
 }
