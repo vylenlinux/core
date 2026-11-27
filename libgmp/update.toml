@@ -1,5 +1,6 @@
 name = "libgmp"
-provider = "repology"
+provider = "ftp"
 
-[source]
-package = "gmp"
+[ftp]
+url = "https://ftp.gnu.org/gnu/gmp/"
+filename = "gmp-%(version).tar.xz"

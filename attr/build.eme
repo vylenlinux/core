@@ -8,7 +8,7 @@ maintainer="Vylen Linux Team <wonkru-dev@proton.me>"
 name=attr
 version=2.6.0
 release=1
-source="https://download-mirror.savannah.gnu.org/releases/${name}/${name}-${version}.tar.xz"
+source="https://download.savannah.gnu.org/releases/${name}/${name}-${version}.tar.xz"
 
 build() {
     # shellcheck disable=SC2164

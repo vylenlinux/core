@@ -1,5 +1,6 @@
 name = "acl"
-provider = "repology"
+provider = "ftp"
 
-[source]
-package = "acl"
+[ftp]
+url = "https://download.savannah.gnu.org/releases/%(name)/"
+filename = "%(name)-%(version).tar.gz"

@@ -1,5 +1,6 @@
 name = "glibc"
-provider = "repology"
+provider = "ftp"
 
-[source]
-package = "glibc"
+[ftp]
+url = "https://ftp.gnu.org/gnu/%(name)/"
+filename = "%(name)-%(version).tar.xz"

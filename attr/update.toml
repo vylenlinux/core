@@ -1,5 +1,6 @@
 name = "attr"
-provider = "repology"
+provider = "ftp"
 
-[source]
-package = "attr"
+[ftp]
+url = "https://download.savannah.gnu.org/releases/%(name)/"
+filename = "%(name)-%(version).tar.xz"

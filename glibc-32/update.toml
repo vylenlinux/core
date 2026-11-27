@@ -1,6 +1,7 @@
 name = "glibc-32"
-provider = "repology"
+provider = "ftp"
 dedup_key = "glibc"
 
-[source]
-package = "glibc"
+[ftp]
+url = "https://ftp.gnu.org/gnu/glibc/"
+filename = "glibc-%(version).tar.xz"

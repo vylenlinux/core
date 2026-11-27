@@ -1,5 +1,6 @@
 name = "libisl"
-provider = "repology"
+provider = "ftp"
 
-[source]
-package = "isl"
+[ftp]
+url = "https://libisl.sourceforge.io/"
+filename = "isl-%(version).tar.bz2"

@@ -1,5 +1,6 @@
 name = "gzip"
-provider = "repology"
+provider = "ftp"
 
-[source]
-package = "gzip"
+[ftp]
+url = "https://ftp.gnu.org/gnu/%(name)/"
+filename = "%(name)-%(version).tar.xz"

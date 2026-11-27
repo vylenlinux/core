@@ -1,5 +1,6 @@
 name = "kbd"
-provider = "repology"
+provider = "ftp"
 
-[source]
-package = "kbd"
+[ftp]
+url = "https://www.kernel.org/pub/linux/utils/%(name)/"
+filename = "%(name)-%(version).tar.xz"

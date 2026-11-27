@@ -1,5 +1,6 @@
 name = "libpipeline"
-provider = "repology"
+provider = "ftp"
 
-[source]
-package = "libpipeline"
+[ftp]
+url = "https://download.savannah.gnu.org/releases/%(name)/"
+filename = "%(name)-%(version).tar.gz"

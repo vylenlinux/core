@@ -1,5 +1,6 @@
 name = "m4"
-provider = "repology"
+provider = "ftp"
 
-[source]
-package = "m4"
+[ftp]
+url = "https://ftp.gnu.org/gnu/%(name)/"
+filename = "%(name)-%(version).tar.xz"

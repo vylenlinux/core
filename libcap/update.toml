@@ -1,5 +1,6 @@
 name = "libcap"
-provider = "repology"
+provider = "ftp"
 
-[source]
-package = "libcap"
+[ftp]
+url = "https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/"
+filename = "%(name)-%(version).tar.xz"

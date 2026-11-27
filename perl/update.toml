@@ -1,5 +1,12 @@
 name = "perl"
-provider = "repology"
+provider = "github"
 
 [source]
-package = "perl"
+owner = "%(name)"
+repo = "%(name)5"
+
+[version.filter]
+exclude = [
+    '^v5\.[0-9]*[13579]\..*$', # devel
+    '^v.*-RC.*$'               # devel
+]

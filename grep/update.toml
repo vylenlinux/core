@@ -1,5 +1,6 @@
 name = "grep"
-provider = "repology"
+provider = "ftp"
 
-[source]
-package = "grep"
+[ftp]
+url = "https://ftp.gnu.org/gnu/%(name)/"
+filename = "%(name)-%(version).tar.xz"

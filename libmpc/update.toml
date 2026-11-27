@@ -1,5 +1,6 @@
 name = "libmpc"
-provider = "repology"
+provider = "ftp"
 
-[source]
-package = "gnumpc"
+[ftp]
+url = "https://ftp.gnu.org/gnu/mpc/"
+filename = "mpc-%(version).tar.xz"
