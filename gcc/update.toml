@@ -1,5 +1,8 @@
 name = "gcc"
-provider = "repology"
+provider = "cgit"
 
 [source]
-package = "gcc"
+url = "https://gcc.gnu.org/git/%(name).git"
+
+[cgit]
+tag_prefix = "releases/%(name)-"
