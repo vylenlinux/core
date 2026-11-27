@@ -1,5 +1,5 @@
 name = "e2fsprogs"
-provider = "repology"
+provider = "cgit"
 
 [source]
-package = "e2fsprogs"
+url = "https://git.kernel.org/pub/scm/fs/ext2/%(name).git"
