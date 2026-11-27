@@ -4,3 +4,6 @@ provider = "github"
 [source]
 owner = "%(name)"
 repo = "%(name)"
+
+[version.filter]
+exclude = ['.*-rc.*']
